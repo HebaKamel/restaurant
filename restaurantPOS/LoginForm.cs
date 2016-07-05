@@ -78,7 +78,7 @@ namespace restaurantPOS
                 //        control.Font = new Font(pfc.Families[0], 20, FontStyle.Regular);
                 //    }
                 //}
-                /////////////////////
+                
             }
             else
             {
@@ -123,7 +123,6 @@ namespace restaurantPOS
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
             //if (!string.IsNullOrEmpty(txtUserName.Text) && !string.IsNullOrEmpty(txtPassword.Text))
             if (!string.IsNullOrEmpty(txtUserName.Text) && string.IsNullOrEmpty(txtPassword.Text))
             {
