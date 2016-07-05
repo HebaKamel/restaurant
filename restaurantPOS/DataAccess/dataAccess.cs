@@ -115,7 +115,7 @@ namespace restaurantPOS.DataAccess
         #endregion
 
         #region clients
-        public int addClient(string clientNameEn, string clientNameAr, string clientAddressEn, string clientAddressAr, string clientTelephoneNo, string clientMobileNo)
+        public int addClient(string clientNameEn, string clientNameAr, string clientAddressEn, string clientAddressAr, string clientTelephoneNo, string clientMobileNo, int isVIP, string clientEmail)
         {
             //transaction = con.BeginTransaction("SampleTransaction");
             int clientId;
@@ -128,14 +128,18 @@ namespace restaurantPOS.DataAccess
                 cmd.Parameters.Add("@clientAddressEn", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@clientAddressAr", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@clientTelephoneNo", SqlDbType.NVarChar);
-                cmd.Parameters.Add("@clientMobileNo", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@clientMobileNo", SqlDbType.NVarChar);cmd.Parameters.Add("@clientIsVIP", SqlDbType.Int);
+                cmd.Parameters.Add("@clientEmail", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@clientId", SqlDbType.Int).Direction = ParameterDirection.Output;
+
                 cmd.Parameters["@clientNameEn"].Value = clientNameEn;
                 cmd.Parameters["@clientNameAr"].Value = clientNameAr;
                 cmd.Parameters["@clientAddressEn"].Value = clientAddressEn;
                 cmd.Parameters["@clientAddressAr"].Value = clientAddressAr;
                 cmd.Parameters["@clientTelephoneNo"].Value = clientTelephoneNo;
                 cmd.Parameters["@clientMobileNo"].Value = clientMobileNo;
+                cmd.Parameters["@clientIsVIP"].Value = isVIP;
+                cmd.Parameters["@clientEmail"].Value = clientEmail;
                 if (con.State != ConnectionState.Open)
                     con.Open();
                 cmd.ExecuteNonQuery();
@@ -146,7 +150,7 @@ namespace restaurantPOS.DataAccess
             return clientId;
         }
 
-        public DataTable getClient(string clientNameEn, string clientNameAr, string clientAddressEn, string clientAddressAr, string clientTelephoneNo, string clientMobileNo, int? clientId = 0)
+        public DataTable getClient(string clientNameEn, string clientNameAr, string clientAddressEn, string clientAddressAr, string clientTelephoneNo, string clientMobileNo, string clientEmail, int? clientId = 0, int? isVip = 0)
         {
             if (clientId == 0) clientId = null;
             if(clientNameEn == "") clientNameEn = null;
@@ -155,6 +159,9 @@ namespace restaurantPOS.DataAccess
             if(clientAddressAr == "") clientAddressAr = null;
             if(clientTelephoneNo == "") clientTelephoneNo = null;
             if (clientMobileNo == "") clientMobileNo = null;
+            if (clientMobileNo == "") clientMobileNo = null;
+            if (isVip == 0) isVip = null;
+            if (clientEmail == "") clientEmail = null;
             DataTable dt = new DataTable();
             using (SqlCommand cmd = new SqlCommand("SearchClient", con))
             {
@@ -166,6 +173,8 @@ namespace restaurantPOS.DataAccess
                 cmd.Parameters.Add("@clientAddressAr", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@clientTelephoneNo", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@clientMobileNo", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@clientIsVIP", SqlDbType.Int);
+                cmd.Parameters.Add("@clientEmail", SqlDbType.NVarChar);
                 cmd.Parameters["@clientId"].Value = clientId;
                 cmd.Parameters["@clientNameEn"].Value = clientNameEn;
                 cmd.Parameters["@clientNameAr"].Value = clientNameAr;
@@ -173,6 +182,8 @@ namespace restaurantPOS.DataAccess
                 cmd.Parameters["@clientAddressAr"].Value = clientAddressAr;
                 cmd.Parameters["@clientTelephoneNo"].Value = clientTelephoneNo;
                 cmd.Parameters["@clientMobileNo"].Value = clientMobileNo;
+                cmd.Parameters["@clientIsVIP"].Value = isVip;
+                cmd.Parameters["@clientEmail"].Value = clientEmail;
                 if (con.State != ConnectionState.Open)
                     con.Open();
                 dt.Load(cmd.ExecuteReader());
@@ -203,7 +214,7 @@ namespace restaurantPOS.DataAccess
             return deleted;
         }
 
-        public int updateClient(string clientNameEn, string clientNameAr, string clientAddressEn, string clientAddressAr, string clientTelephoneNo, string clientMobileNo, int? clientId = 0)
+        public int updateClient(string clientNameEn, string clientNameAr, string clientAddressEn, string clientAddressAr, string clientTelephoneNo, string clientMobileNo, string clientEmail, int? clientId = 0, int? isVip = 0)
         {
             int updated = 0;
             if (clientId == 0) clientId = null;
@@ -223,6 +234,9 @@ namespace restaurantPOS.DataAccess
                 cmd.Parameters.Add("@clientAddressAr", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@clientTelephoneNo", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@clientMobileNo", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@clientIsVIP", SqlDbType.Int);
+                cmd.Parameters.Add("@clientEmail", SqlDbType.NVarChar);
+
                 cmd.Parameters["@clientId"].Value = clientId;
                 cmd.Parameters["@clientNameEn"].Value = clientNameEn;
                 cmd.Parameters["@clientNameAr"].Value = clientNameAr;
@@ -230,6 +244,8 @@ namespace restaurantPOS.DataAccess
                 cmd.Parameters["@clientAddressAr"].Value = clientAddressAr;
                 cmd.Parameters["@clientTelephoneNo"].Value = clientTelephoneNo;
                 cmd.Parameters["@clientMobileNo"].Value = clientMobileNo;
+                cmd.Parameters["@clientIsVIP"].Value = isVip;
+                cmd.Parameters["@clientEmail"].Value = clientEmail;
                 if (con.State != ConnectionState.Open)
                     con.Open();
                 SqlParameter returnParameter = cmd.Parameters.Add("RetVal", SqlDbType.Int);

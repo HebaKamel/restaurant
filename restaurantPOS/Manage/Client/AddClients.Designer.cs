@@ -51,8 +51,14 @@
             this.lblNameEnglish = new DevExpress.XtraEditors.LabelControl();
             this.lblLandLine = new DevExpress.XtraEditors.LabelControl();
             this.groupControlButtons = new DevExpress.XtraEditors.GroupControl();
-            this.btnAdd = new restaurantPOS.GelButton();
+            this.lblEmailEn = new DevExpress.XtraEditors.LabelControl();
+            this.lblEmailAr = new DevExpress.XtraEditors.LabelControl();
+            this.txtEmail = new DevExpress.XtraEditors.TextEdit();
+            this.lblIsVipEn = new DevExpress.XtraEditors.LabelControl();
+            this.lblIsVipAr = new DevExpress.XtraEditors.LabelControl();
+            this.chkIsVip = new System.Windows.Forms.CheckBox();
             this.btnClear = new restaurantPOS.GelButton();
+            this.btnAdd = new restaurantPOS.GelButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControlAddClients)).BeginInit();
             this.splitContainerControlAddClients.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlAddClientInfo)).BeginInit();
@@ -65,6 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNameEnglish.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlButtons)).BeginInit();
             this.groupControlButtons.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerControlAddClients
@@ -80,7 +87,7 @@
             this.splitContainerControlAddClients.Panel1.Text = "Panel1";
             this.splitContainerControlAddClients.Panel2.Text = "Panel2";
             this.splitContainerControlAddClients.Size = new System.Drawing.Size(830, 700);
-            this.splitContainerControlAddClients.SplitterPosition = 332;
+            this.splitContainerControlAddClients.SplitterPosition = 411;
             this.splitContainerControlAddClients.TabIndex = 1;
             this.splitContainerControlAddClients.Text = "splitContainerControlAddClients";
             // 
@@ -89,7 +96,9 @@
             this.groupControlAddClientInfo.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.groupControlAddClientInfo.Appearance.Options.UseBackColor = true;
             this.groupControlAddClientInfo.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.groupControlAddClientInfo.Controls.Add(this.chkIsVip);
             this.groupControlAddClientInfo.Controls.Add(this.lblAddClientHeader);
+            this.groupControlAddClientInfo.Controls.Add(this.txtEmail);
             this.groupControlAddClientInfo.Controls.Add(this.txtLandLine);
             this.groupControlAddClientInfo.Controls.Add(this.txtAddrArabic);
             this.groupControlAddClientInfo.Controls.Add(this.txtMobile);
@@ -104,14 +113,18 @@
             this.groupControlAddClientInfo.Controls.Add(this.lblAddrEnglish);
             this.groupControlAddClientInfo.Controls.Add(this.lblAddrArabicAr);
             this.groupControlAddClientInfo.Controls.Add(this.lblAddrArabic);
+            this.groupControlAddClientInfo.Controls.Add(this.lblIsVipAr);
+            this.groupControlAddClientInfo.Controls.Add(this.lblEmailAr);
             this.groupControlAddClientInfo.Controls.Add(this.lblNameEnglishAr);
+            this.groupControlAddClientInfo.Controls.Add(this.lblIsVipEn);
             this.groupControlAddClientInfo.Controls.Add(this.lblLandLineAr);
+            this.groupControlAddClientInfo.Controls.Add(this.lblEmailEn);
             this.groupControlAddClientInfo.Controls.Add(this.lblNameEnglish);
             this.groupControlAddClientInfo.Controls.Add(this.lblLandLine);
             this.groupControlAddClientInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControlAddClientInfo.Location = new System.Drawing.Point(0, 0);
             this.groupControlAddClientInfo.Name = "groupControlAddClientInfo";
-            this.groupControlAddClientInfo.Size = new System.Drawing.Size(830, 269);
+            this.groupControlAddClientInfo.Size = new System.Drawing.Size(830, 348);
             this.groupControlAddClientInfo.TabIndex = 47;
             this.groupControlAddClientInfo.Text = "Add Client Info";
             // 
@@ -296,23 +309,66 @@
             this.groupControlButtons.Controls.Add(this.btnClear);
             this.groupControlButtons.Controls.Add(this.btnAdd);
             this.groupControlButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupControlButtons.Location = new System.Drawing.Point(0, 269);
+            this.groupControlButtons.Location = new System.Drawing.Point(0, 348);
             this.groupControlButtons.Name = "groupControlButtons";
             this.groupControlButtons.Size = new System.Drawing.Size(830, 63);
             this.groupControlButtons.TabIndex = 46;
             this.groupControlButtons.Text = "groupControl1";
             // 
-            // btnAdd
+            // lblEmailEn
             // 
-            this.btnAdd.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
-            this.btnAdd.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
-            this.btnAdd.Location = new System.Drawing.Point(429, 19);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(155, 28);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.lblEmailEn.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmailEn.Location = new System.Drawing.Point(146, 268);
+            this.lblEmailEn.Name = "lblEmailEn";
+            this.lblEmailEn.Size = new System.Drawing.Size(39, 19);
+            this.lblEmailEn.TabIndex = 50;
+            this.lblEmailEn.Text = "Email";
+            // 
+            // lblEmailAr
+            // 
+            this.lblEmailAr.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmailAr.Location = new System.Drawing.Point(606, 268);
+            this.lblEmailAr.Name = "lblEmailAr";
+            this.lblEmailAr.Size = new System.Drawing.Size(108, 19);
+            this.lblEmailAr.TabIndex = 50;
+            this.lblEmailAr.Text = "البريد الالكترونى";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(201, 265);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Properties.Appearance.Options.UseFont = true;
+            this.txtEmail.Size = new System.Drawing.Size(383, 26);
+            this.txtEmail.TabIndex = 57;
+            // 
+            // lblIsVipEn
+            // 
+            this.lblIsVipEn.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIsVipEn.Location = new System.Drawing.Point(142, 304);
+            this.lblIsVipEn.Name = "lblIsVipEn";
+            this.lblIsVipEn.Size = new System.Drawing.Size(43, 19);
+            this.lblIsVipEn.TabIndex = 50;
+            this.lblIsVipEn.Text = "Is VIP";
+            // 
+            // lblIsVipAr
+            // 
+            this.lblIsVipAr.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIsVipAr.Location = new System.Drawing.Point(606, 306);
+            this.lblIsVipAr.Name = "lblIsVipAr";
+            this.lblIsVipAr.Size = new System.Drawing.Size(43, 19);
+            this.lblIsVipAr.TabIndex = 50;
+            this.lblIsVipAr.Text = "Is VIP";
+            // 
+            // chkIsVip
+            // 
+            this.chkIsVip.AutoSize = true;
+            this.chkIsVip.Location = new System.Drawing.Point(348, 308);
+            this.chkIsVip.Name = "chkIsVip";
+            this.chkIsVip.Size = new System.Drawing.Size(80, 17);
+            this.chkIsVip.TabIndex = 59;
+            this.chkIsVip.Text = "checkBox1";
+            this.chkIsVip.UseVisualStyleBackColor = true;
             // 
             // btnClear
             // 
@@ -325,6 +381,18 @@
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
+            this.btnAdd.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
+            this.btnAdd.Location = new System.Drawing.Point(429, 19);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(155, 28);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // AddClients
             // 
@@ -353,6 +421,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNameEnglish.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlButtons)).EndInit();
             this.groupControlButtons.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -383,6 +452,12 @@
         private DevExpress.XtraEditors.LabelControl lblNameEnglishAr;
         private DevExpress.XtraEditors.LabelControl lblLandLineAr;
         private GelButton btnClear;
+        private System.Windows.Forms.CheckBox chkIsVip;
+        private DevExpress.XtraEditors.TextEdit txtEmail;
+        private DevExpress.XtraEditors.LabelControl lblIsVipAr;
+        private DevExpress.XtraEditors.LabelControl lblEmailAr;
+        private DevExpress.XtraEditors.LabelControl lblIsVipEn;
+        private DevExpress.XtraEditors.LabelControl lblEmailEn;
 
 
     }

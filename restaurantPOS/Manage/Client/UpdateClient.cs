@@ -32,7 +32,7 @@ namespace restaurantPOS.Manage.Client
         private void UpdateClient_Load(object sender, EventArgs e)
         {
             setLanguage();
-            DataTable clientDT = db.getClient(null, null, null, null, null, null, this.clientId);
+            DataTable clientDT = db.getClient(null, null, null, null, null, null, null, this.clientId, null);
             if (clientDT.Rows.Count > 0)
             {
                 txtNameEnglish.Text = clientDT.Rows[0]["client_name_en"].ToString();
@@ -41,10 +41,10 @@ namespace restaurantPOS.Manage.Client
                 txtAddrArabic.Text = clientDT.Rows[0]["client_address_ar"].ToString();
                 txtLandLine.Text = clientDT.Rows[0]["client_telephone_no"].ToString();
                 txtMobile.Text = clientDT.Rows[0]["client_mobile_no"].ToString();
+                txtEmail.Text = clientDT.Rows[0]["client_email"].ToString();if (clientDT.Rows[0]["Is_VIP"].ToString() == "True")
+                    chkIsVip.Checked = true;
             }
-
         }
-
         private void setLanguage()
         {
             if (Settings.Default.Language == "En")
@@ -57,6 +57,8 @@ namespace restaurantPOS.Manage.Client
                 lblAddrEnglishAr.Visible = false;
                 lblLandLineAr.Visible = false;
                 lblMobileAr.Visible = false;
+                lblIsVipAr.Visible = false;
+                lblEmailAr.Visible = false;
             }
             else
             {
@@ -68,12 +70,15 @@ namespace restaurantPOS.Manage.Client
                 lblAddrEnglish.Visible = false;
                 lblLandLine.Visible = false;
                 lblMobile.Visible = false;
-            }
+                lblIsVipEn.Visible = false;
+                lblEmailEn.Visible = false;}
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            int updated = db.updateClient(txtNameEnglish.Text, txtNameArabic.Text, txtAddrEnglish.Text, txtAddrArabic.Text, txtLandLine.Text, txtMobile.Text, this.clientId);
+            int isVip = 0;
+            if (chkIsVip.Checked) isVip = 1;
+            int updated = db.updateClient(txtNameEnglish.Text, txtNameArabic.Text, txtAddrEnglish.Text, txtAddrArabic.Text, txtLandLine.Text, txtMobile.Text, txtEmail.Text, this.clientId, isVip);
             if (updated == 0)
             {
                 if (Settings.Default.Language == "En")

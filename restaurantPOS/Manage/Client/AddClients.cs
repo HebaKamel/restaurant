@@ -73,6 +73,8 @@ namespace restaurantPOS.Manage.Client
                 lblAddrEnglishAr.Visible = false;
                 lblLandLineAr.Visible = false;
                 lblMobileAr.Visible = false;
+                lblIsVipAr.Visible = false;
+                lblEmailAr.Visible = false;
             }
             else
             {
@@ -85,6 +87,8 @@ namespace restaurantPOS.Manage.Client
                 lblAddrEnglish.Visible = false;
                 lblLandLine.Visible = false;
                 lblMobile.Visible = false;
+                lblIsVipEn.Visible = false;
+                lblEmailEn.Visible = false;
             }
         }
 
@@ -121,8 +125,10 @@ namespace restaurantPOS.Manage.Client
         {
             if (validation() == "")
             {
+                int isVip = 0;
+                if (chkIsVip.Checked) isVip = 1;
                 int clientId = db.addClient(txtNameEnglish.Text, txtNameArabic.Text, txtAddrEnglish.Text,
-                                          txtAddrArabic.Text, txtLandLine.Text, txtMobile.Text);
+                                          txtAddrArabic.Text, txtLandLine.Text, txtMobile.Text, isVip, txtEmail.Text);
                 if (clientId != 0)
                     XtraMessageBox.Show(messagesEn.insertedSuccessfully, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 else

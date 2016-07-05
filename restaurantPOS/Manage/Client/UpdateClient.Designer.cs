@@ -48,12 +48,19 @@
             this.lblLandLine = new DevExpress.XtraEditors.LabelControl();
             this.lblClientHeader = new System.Windows.Forms.Label();
             this.btnUpdate = new restaurantPOS.GelButton();
+            this.lblEmailEn = new DevExpress.XtraEditors.LabelControl();
+            this.lblEmailAr = new DevExpress.XtraEditors.LabelControl();
+            this.txtEmail = new DevExpress.XtraEditors.TextEdit();
+            this.chkIsVip = new System.Windows.Forms.CheckBox();
+            this.lblIsVipAr = new DevExpress.XtraEditors.LabelControl();
+            this.lblIsVipEn = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtLandLine.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAddrArabic.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMobile.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAddrEnglish.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNameArabic.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNameEnglish.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // txtLandLine
@@ -231,7 +238,7 @@
             // 
             this.btnUpdate.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
             this.btnUpdate.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
-            this.btnUpdate.Location = new System.Drawing.Point(273, 241);
+            this.btnUpdate.Location = new System.Drawing.Point(271, 312);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(155, 28);
             this.btnUpdate.TabIndex = 77;
@@ -239,13 +246,72 @@
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // lblEmailEn
+            // 
+            this.lblEmailEn.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmailEn.Location = new System.Drawing.Point(110, 238);
+            this.lblEmailEn.Name = "lblEmailEn";
+            this.lblEmailEn.Size = new System.Drawing.Size(39, 19);
+            this.lblEmailEn.TabIndex = 67;
+            this.lblEmailEn.Text = "Email";
+            // 
+            // lblEmailAr
+            // 
+            this.lblEmailAr.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmailAr.Location = new System.Drawing.Point(572, 238);
+            this.lblEmailAr.Name = "lblEmailAr";
+            this.lblEmailAr.Size = new System.Drawing.Size(108, 19);
+            this.lblEmailAr.TabIndex = 66;
+            this.lblEmailAr.Text = "البريد الالكترونى";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(167, 235);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Properties.Appearance.Options.UseFont = true;
+            this.txtEmail.Size = new System.Drawing.Size(383, 26);
+            this.txtEmail.TabIndex = 75;
+            // 
+            // chkIsVip
+            // 
+            this.chkIsVip.AutoSize = true;
+            this.chkIsVip.Location = new System.Drawing.Point(318, 279);
+            this.chkIsVip.Name = "chkIsVip";
+            this.chkIsVip.Size = new System.Drawing.Size(80, 17);
+            this.chkIsVip.TabIndex = 79;
+            this.chkIsVip.Text = "checkBox1";
+            this.chkIsVip.UseVisualStyleBackColor = true;
+            // 
+            // lblIsVipAr
+            // 
+            this.lblIsVipAr.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIsVipAr.Location = new System.Drawing.Point(576, 277);
+            this.lblIsVipAr.Name = "lblIsVipAr";
+            this.lblIsVipAr.Size = new System.Drawing.Size(43, 19);
+            this.lblIsVipAr.TabIndex = 78;
+            this.lblIsVipAr.Text = "Is VIP";
+            // 
+            // lblIsVipEn
+            // 
+            this.lblIsVipEn.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIsVipEn.Location = new System.Drawing.Point(110, 279);
+            this.lblIsVipEn.Name = "lblIsVipEn";
+            this.lblIsVipEn.Size = new System.Drawing.Size(43, 19);
+            this.lblIsVipEn.TabIndex = 80;
+            this.lblIsVipEn.Text = "Is VIP";
+            // 
             // UpdateClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(701, 281);
+            this.ClientSize = new System.Drawing.Size(701, 349);
+            this.Controls.Add(this.lblIsVipEn);
+            this.Controls.Add(this.chkIsVip);
+            this.Controls.Add(this.lblIsVipAr);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.lblClientHeader);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtLandLine);
             this.Controls.Add(this.txtAddrArabic);
             this.Controls.Add(this.txtMobile);
@@ -260,8 +326,10 @@
             this.Controls.Add(this.lblAddrEnglish);
             this.Controls.Add(this.lblAddrArabicAr);
             this.Controls.Add(this.lblAddrArabic);
+            this.Controls.Add(this.lblEmailAr);
             this.Controls.Add(this.lblNameEnglishAr);
             this.Controls.Add(this.lblLandLineAr);
+            this.Controls.Add(this.lblEmailEn);
             this.Controls.Add(this.lblNameEnglish);
             this.Controls.Add(this.lblLandLine);
             this.MaximizeBox = false;
@@ -277,6 +345,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtAddrEnglish.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNameArabic.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNameEnglish.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -304,5 +373,11 @@
         private DevExpress.XtraEditors.LabelControl lblLandLine;
         private System.Windows.Forms.Label lblClientHeader;
         private GelButton btnUpdate;
+        private DevExpress.XtraEditors.LabelControl lblEmailEn;
+        private DevExpress.XtraEditors.LabelControl lblEmailAr;
+        private DevExpress.XtraEditors.TextEdit txtEmail;
+        private System.Windows.Forms.CheckBox chkIsVip;
+        private DevExpress.XtraEditors.LabelControl lblIsVipAr;
+        private DevExpress.XtraEditors.LabelControl lblIsVipEn;
     }
 }
