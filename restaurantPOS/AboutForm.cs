@@ -20,7 +20,12 @@ namespace restaurantPOS
         private void AboutForm_Load(object sender, EventArgs e)
         {
             //kajoooooooooooooooooooooooooooooooo
+<<<<<<< HEAD
             //ana bardo tanyyyyyyyyyyyyy :D 
+=======
+
+            //Heba
+>>>>>>> origin/master
         }
     }
 }
