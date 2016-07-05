@@ -103,6 +103,8 @@
             this.navBarGroupUnitsSettings = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItemAddUnit = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemUpdateDeleteUnit = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlBottom)).BeginInit();
             this.groupControlBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlTop)).BeginInit();
@@ -538,7 +540,7 @@
             // 
             // navBarControlLeft
             // 
-            this.navBarControlLeft.ActiveGroup = this.navBarGroupGoodsSettings;
+            this.navBarControlLeft.ActiveGroup = this.navBarGroupProgramSettings;
             this.navBarControlLeft.AllowDrop = false;
             this.navBarControlLeft.BackColor = System.Drawing.Color.Transparent;
             this.navBarControlLeft.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -551,7 +553,9 @@
             this.navBarGroupClientSettings,
             this.navBarGroupMenuSettings,
             this.navBarGroupUnitsSettings,
-            this.navBarGroupGoodsSettings});
+            this.navBarGroupGoodsSettings,
+            this.navBarGroup1,
+            this.navBarGroup2});
             this.navBarControlLeft.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
             this.navBarItemBrandName,
             this.navBarItemBrandSlogan,
@@ -586,7 +590,6 @@
             // navBarGroupGoodsSettings
             // 
             this.navBarGroupGoodsSettings.Caption = "Goods Settings";
-            this.navBarGroupGoodsSettings.Expanded = true;
             this.navBarGroupGoodsSettings.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.SmallIconsText;
             this.navBarGroupGoodsSettings.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemAddGoods),
@@ -607,6 +610,7 @@
             // navBarGroupProgramSettings
             // 
             this.navBarGroupProgramSettings.Caption = "Program Settings";
+            this.navBarGroupProgramSettings.Expanded = true;
             this.navBarGroupProgramSettings.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.SmallIconsText;
             this.navBarGroupProgramSettings.Hint = "Program Settings Adjusted From This Group";
             this.navBarGroupProgramSettings.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
@@ -762,6 +766,16 @@
             this.navBarItemUpdateDeleteUnit.Name = "navBarItemUpdateDeleteUnit";
             this.navBarItemUpdateDeleteUnit.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemUpdateDeleteUnit_LinkClicked);
             // 
+            // navBarGroup1
+            // 
+            this.navBarGroup1.Caption = "navBarGroup1";
+            this.navBarGroup1.Name = "navBarGroup1";
+            // 
+            // navBarGroup2
+            // 
+            this.navBarGroup2.Caption = "navBarGroup2";
+            this.navBarGroup2.Name = "navBarGroup2";
+            // 
             // FrmManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -878,6 +892,8 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItemUpdateDeleteMenuItem;
         private DevExpress.XtraNavBar.NavBarItem navBarItemAddUnit;
         private DevExpress.XtraNavBar.NavBarItem navBarItemUpdateDeleteUnit;
+        private DevExpress.XtraNavBar.NavBarGroup navBarGroup1;
+        private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
 
     }
 }

@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddClients));
             this.splitContainerControlAddClients = new DevExpress.XtraEditors.SplitContainerControl();
             this.groupControlAddClientInfo = new DevExpress.XtraEditors.GroupControl();
+            this.chkIsVip = new System.Windows.Forms.CheckBox();
             this.lblAddClientHeader = new DevExpress.XtraEditors.LabelControl();
+            this.txtEmail = new DevExpress.XtraEditors.TextEdit();
             this.txtLandLine = new DevExpress.XtraEditors.TextEdit();
             this.txtAddrArabic = new DevExpress.XtraEditors.TextEdit();
             this.txtMobile = new DevExpress.XtraEditors.TextEdit();
@@ -46,23 +47,22 @@
             this.lblAddrEnglish = new DevExpress.XtraEditors.LabelControl();
             this.lblAddrArabicAr = new DevExpress.XtraEditors.LabelControl();
             this.lblAddrArabic = new DevExpress.XtraEditors.LabelControl();
+            this.lblIsVipAr = new DevExpress.XtraEditors.LabelControl();
+            this.lblEmailAr = new DevExpress.XtraEditors.LabelControl();
             this.lblNameEnglishAr = new DevExpress.XtraEditors.LabelControl();
+            this.lblIsVipEn = new DevExpress.XtraEditors.LabelControl();
             this.lblLandLineAr = new DevExpress.XtraEditors.LabelControl();
+            this.lblEmailEn = new DevExpress.XtraEditors.LabelControl();
             this.lblNameEnglish = new DevExpress.XtraEditors.LabelControl();
             this.lblLandLine = new DevExpress.XtraEditors.LabelControl();
             this.groupControlButtons = new DevExpress.XtraEditors.GroupControl();
-            this.lblEmailEn = new DevExpress.XtraEditors.LabelControl();
-            this.lblEmailAr = new DevExpress.XtraEditors.LabelControl();
-            this.txtEmail = new DevExpress.XtraEditors.TextEdit();
-            this.lblIsVipEn = new DevExpress.XtraEditors.LabelControl();
-            this.lblIsVipAr = new DevExpress.XtraEditors.LabelControl();
-            this.chkIsVip = new System.Windows.Forms.CheckBox();
             this.btnClear = new restaurantPOS.GelButton();
             this.btnAdd = new restaurantPOS.GelButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControlAddClients)).BeginInit();
             this.splitContainerControlAddClients.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlAddClientInfo)).BeginInit();
             this.groupControlAddClientInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLandLine.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAddrArabic.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMobile.Properties)).BeginInit();
@@ -71,7 +71,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNameEnglish.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlButtons)).BeginInit();
             this.groupControlButtons.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerControlAddClients
@@ -128,6 +127,16 @@
             this.groupControlAddClientInfo.TabIndex = 47;
             this.groupControlAddClientInfo.Text = "Add Client Info";
             // 
+            // chkIsVip
+            // 
+            this.chkIsVip.AutoSize = true;
+            this.chkIsVip.Location = new System.Drawing.Point(348, 308);
+            this.chkIsVip.Name = "chkIsVip";
+            this.chkIsVip.Size = new System.Drawing.Size(80, 17);
+            this.chkIsVip.TabIndex = 59;
+            this.chkIsVip.Text = "checkBox1";
+            this.chkIsVip.UseVisualStyleBackColor = true;
+            // 
             // lblAddClientHeader
             // 
             this.lblAddClientHeader.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -136,6 +145,15 @@
             this.lblAddClientHeader.Size = new System.Drawing.Size(239, 25);
             this.lblAddClientHeader.TabIndex = 58;
             this.lblAddClientHeader.Text = "Client Information Details";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(201, 265);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Properties.Appearance.Options.UseFont = true;
+            this.txtEmail.Size = new System.Drawing.Size(383, 26);
+            this.txtEmail.TabIndex = 57;
             // 
             // txtLandLine
             // 
@@ -265,6 +283,24 @@
             this.lblAddrArabic.TabIndex = 49;
             this.lblAddrArabic.Text = "Address (Arabic)";
             // 
+            // lblIsVipAr
+            // 
+            this.lblIsVipAr.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIsVipAr.Location = new System.Drawing.Point(606, 306);
+            this.lblIsVipAr.Name = "lblIsVipAr";
+            this.lblIsVipAr.Size = new System.Drawing.Size(43, 19);
+            this.lblIsVipAr.TabIndex = 50;
+            this.lblIsVipAr.Text = "Is VIP";
+            // 
+            // lblEmailAr
+            // 
+            this.lblEmailAr.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmailAr.Location = new System.Drawing.Point(606, 268);
+            this.lblEmailAr.Name = "lblEmailAr";
+            this.lblEmailAr.Size = new System.Drawing.Size(108, 19);
+            this.lblEmailAr.TabIndex = 50;
+            this.lblEmailAr.Text = "البريد الالكترونى";
+            // 
             // lblNameEnglishAr
             // 
             this.lblNameEnglishAr.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -274,6 +310,15 @@
             this.lblNameEnglishAr.TabIndex = 51;
             this.lblNameEnglishAr.Text = "الاسم بالانجليزية";
             // 
+            // lblIsVipEn
+            // 
+            this.lblIsVipEn.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIsVipEn.Location = new System.Drawing.Point(142, 304);
+            this.lblIsVipEn.Name = "lblIsVipEn";
+            this.lblIsVipEn.Size = new System.Drawing.Size(43, 19);
+            this.lblIsVipEn.TabIndex = 50;
+            this.lblIsVipEn.Text = "Is VIP";
+            // 
             // lblLandLineAr
             // 
             this.lblLandLineAr.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -282,6 +327,15 @@
             this.lblLandLineAr.Size = new System.Drawing.Size(82, 19);
             this.lblLandLineAr.TabIndex = 50;
             this.lblLandLineAr.Text = "رقم التليفون";
+            // 
+            // lblEmailEn
+            // 
+            this.lblEmailEn.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmailEn.Location = new System.Drawing.Point(146, 268);
+            this.lblEmailEn.Name = "lblEmailEn";
+            this.lblEmailEn.Size = new System.Drawing.Size(39, 19);
+            this.lblEmailEn.TabIndex = 50;
+            this.lblEmailEn.Text = "Email";
             // 
             // lblNameEnglish
             // 
@@ -315,61 +369,6 @@
             this.groupControlButtons.TabIndex = 46;
             this.groupControlButtons.Text = "groupControl1";
             // 
-            // lblEmailEn
-            // 
-            this.lblEmailEn.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmailEn.Location = new System.Drawing.Point(146, 268);
-            this.lblEmailEn.Name = "lblEmailEn";
-            this.lblEmailEn.Size = new System.Drawing.Size(39, 19);
-            this.lblEmailEn.TabIndex = 50;
-            this.lblEmailEn.Text = "Email";
-            // 
-            // lblEmailAr
-            // 
-            this.lblEmailAr.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmailAr.Location = new System.Drawing.Point(606, 268);
-            this.lblEmailAr.Name = "lblEmailAr";
-            this.lblEmailAr.Size = new System.Drawing.Size(108, 19);
-            this.lblEmailAr.TabIndex = 50;
-            this.lblEmailAr.Text = "البريد الالكترونى";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(201, 265);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Properties.Appearance.Options.UseFont = true;
-            this.txtEmail.Size = new System.Drawing.Size(383, 26);
-            this.txtEmail.TabIndex = 57;
-            // 
-            // lblIsVipEn
-            // 
-            this.lblIsVipEn.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIsVipEn.Location = new System.Drawing.Point(142, 304);
-            this.lblIsVipEn.Name = "lblIsVipEn";
-            this.lblIsVipEn.Size = new System.Drawing.Size(43, 19);
-            this.lblIsVipEn.TabIndex = 50;
-            this.lblIsVipEn.Text = "Is VIP";
-            // 
-            // lblIsVipAr
-            // 
-            this.lblIsVipAr.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIsVipAr.Location = new System.Drawing.Point(606, 306);
-            this.lblIsVipAr.Name = "lblIsVipAr";
-            this.lblIsVipAr.Size = new System.Drawing.Size(43, 19);
-            this.lblIsVipAr.TabIndex = 50;
-            this.lblIsVipAr.Text = "Is VIP";
-            // 
-            // chkIsVip
-            // 
-            this.chkIsVip.AutoSize = true;
-            this.chkIsVip.Location = new System.Drawing.Point(348, 308);
-            this.chkIsVip.Name = "chkIsVip";
-            this.chkIsVip.Size = new System.Drawing.Size(80, 17);
-            this.chkIsVip.TabIndex = 59;
-            this.chkIsVip.Text = "checkBox1";
-            this.chkIsVip.UseVisualStyleBackColor = true;
-            // 
             // btnClear
             // 
             this.btnClear.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
@@ -398,7 +397,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(830, 700);
             this.Controls.Add(this.splitContainerControlAddClients);
@@ -413,6 +411,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControlAddClientInfo)).EndInit();
             this.groupControlAddClientInfo.ResumeLayout(false);
             this.groupControlAddClientInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLandLine.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAddrArabic.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMobile.Properties)).EndInit();
@@ -421,7 +420,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNameEnglish.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlButtons)).EndInit();
             this.groupControlButtons.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
