@@ -197,3 +197,25 @@ D:\Heba\sourceControl\restaurant\restaurant\restaurantPOS\obj\Debug\restaurantPO
 D:\Heba\sourceControl\restaurant\restaurant\restaurantPOS\obj\Debug\restaurantPOS.exe.licenses
 D:\Heba\sourceControl\restaurant\restaurant\restaurantPOS\obj\Debug\restaurantPOS.exe
 D:\Heba\sourceControl\restaurant\restaurant\restaurantPOS\obj\Debug\restaurantPOS.pdb
+D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\bin\Debug\restaurantPOS.exe
+D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\bin\Debug\restaurantPOS.pdb
+D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.csprojResolveAssemblyReference.cache
+D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.AboutForm.resources
+D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.DeliveryForm.resources
+D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Client.SearchClients.resources
+D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Client.UpdateClient.resources
+D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Goods.AddGoods.resources
+D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.FrmManage.resources
+D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.FrmLogin.resources
+D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.FrmMainForm.resources
+D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Client.AddClients.resources
+D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Units.AddUnits.resources
+D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Units.SearchUnits.resources
+D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Units.UpdateUnit.resources
+D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.usersGroupsAuth.resources
+D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.POSCategories.resources
+D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Properties.Resources.resources
+D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.SplashScreen1.resources
+D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.csproj.GenerateResource.Cache
+D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.exe.licenses
+D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.OrderForm.resources
