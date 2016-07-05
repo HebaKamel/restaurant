@@ -78,6 +78,7 @@ namespace restaurantPOS
                 //        control.Font = new Font(pfc.Families[0], 20, FontStyle.Regular);
                 //    }
                 //}
+                /////////////////////
             }
             else
             {
