@@ -170,3 +170,4 @@ D:\Kajoo\Upwork\Heba Kamel\edit versions\V3.7.0 - Heba\restaurantPOS\restaurantP
 W:\Versions\V3.7.0\restaurantPOS\restaurantPOS\bin\Debug\restaurantPOS.exe.config
 W:\Versions\V3.7.0\restaurantPOS\restaurantPOS\obj\Debug\restaurantPOS.exe
 W:\Versions\V3.7.0\restaurantPOS\restaurantPOS\obj\Debug\restaurantPOS.pdb
+D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\bin\Debug\restaurantPOS.exe.config
