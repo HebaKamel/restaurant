@@ -80,8 +80,9 @@ namespace restaurantPOS
 
         private void btnDineIn_Click(object sender, EventArgs e)
         {
-
-        }
+            var tablesObj = new FrmTables();
+            tablesObj.Show();
+            Hide();}
 
         private void btnTakeAway_Click(object sender, EventArgs e)
         {
