@@ -479,7 +479,6 @@ namespace restaurantPOS.DataAccess
                 cmd.Parameters.Add("@supplierAddressAr", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@supplierTelephoneNo", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@supplierMobileNo", SqlDbType.NVarChar);
-                cmd.Parameters.Add("@supplierEmail", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@supplierId", SqlDbType.Int).Direction = ParameterDirection.Output;
 
                 cmd.Parameters["@supplierNameEn"].Value = supplierNameEn;
@@ -488,7 +487,6 @@ namespace restaurantPOS.DataAccess
                 cmd.Parameters["@supplierAddressAr"].Value = supplierAddressAr;
                 cmd.Parameters["@supplierTelephoneNo"].Value = supplierTelephoneNo;
                 cmd.Parameters["@supplierMobileNo"].Value = supplierMobileNo;
-                cmd.Parameters["@supplierEmail"].Value = supplierEmail;
                 if (con.State != ConnectionState.Open)
                     con.Open();
                 cmd.ExecuteNonQuery();
@@ -520,7 +518,6 @@ namespace restaurantPOS.DataAccess
                 cmd.Parameters.Add("@supplierAddressAr", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@supplierTelephoneNo", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@supplierMobileNo", SqlDbType.NVarChar);
-                cmd.Parameters.Add("@supplierEmail", SqlDbType.NVarChar);
 
                 cmd.Parameters["@supplierId"].Value = supplierId;
                 cmd.Parameters["@supplierNameEn"].Value = supplierNameEn;
@@ -529,7 +526,6 @@ namespace restaurantPOS.DataAccess
                 cmd.Parameters["@supplierAddressAr"].Value = supplierAddressAr;
                 cmd.Parameters["@supplierTelephoneNo"].Value = supplierTelephoneNo;
                 cmd.Parameters["@supplierMobileNo"].Value = supplierMobileNo;
-                cmd.Parameters["@supplierEmail"].Value = supplierEmail;
                 if (con.State != ConnectionState.Open)
                     con.Open();
                 dt.Load(cmd.ExecuteReader());
@@ -572,7 +568,7 @@ namespace restaurantPOS.DataAccess
             if (supplierMobileNo == "") supplierMobileNo = null;
             if (supplierEmail == "") supplierEmail = null;
 
-            using (SqlCommand cmd = new SqlCommand("updateClient", con))
+            using (SqlCommand cmd = new SqlCommand("updateSupplier", con))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@supplierId", SqlDbType.Int);
@@ -582,7 +578,6 @@ namespace restaurantPOS.DataAccess
                 cmd.Parameters.Add("@supplierAddressAr", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@supplierTelephoneNo", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@supplierMobileNo", SqlDbType.NVarChar);
-                cmd.Parameters.Add("@supplierEmail", SqlDbType.NVarChar);
 
                 cmd.Parameters["@supplierId"].Value = supplierId;
                 cmd.Parameters["@supplierNameEn"].Value = supplierNameEn;
@@ -591,7 +586,6 @@ namespace restaurantPOS.DataAccess
                 cmd.Parameters["@supplierAddressAr"].Value = supplierAddressAr;
                 cmd.Parameters["@supplierTelephoneNo"].Value = supplierTelephoneNo;
                 cmd.Parameters["@supplierMobileNo"].Value = supplierMobileNo;
-                cmd.Parameters["@supplierEmail"].Value = supplierEmail;
                 if (con.State != ConnectionState.Open)
                     con.Open();
                 SqlParameter returnParameter = cmd.Parameters.Add("RetVal", SqlDbType.Int);
