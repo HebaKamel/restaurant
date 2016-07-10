@@ -333,6 +333,7 @@
             // 
             // tabCtrItems
             // 
+            this.tabCtrItems.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tabCtrItems.Controls.Add(this.tabStuffed);
             this.tabCtrItems.Controls.Add(this.tabPage1);
             this.tabCtrItems.Controls.Add(this.tabPasta);
@@ -350,14 +351,15 @@
             this.tabCtrItems.RightToLeftLayout = true;
             this.tabCtrItems.SelectedIndex = 0;
             this.tabCtrItems.Size = new System.Drawing.Size(536, 522);
+            this.tabCtrItems.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabCtrItems.TabIndex = 3;
             // 
             // tabStuffed
             // 
             this.tabStuffed.Controls.Add(this.flowLayoutPanelStuffed);
-            this.tabStuffed.Location = new System.Drawing.Point(4, 22);
+            this.tabStuffed.Location = new System.Drawing.Point(4, 25);
             this.tabStuffed.Name = "tabStuffed";
-            this.tabStuffed.Size = new System.Drawing.Size(528, 496);
+            this.tabStuffed.Size = new System.Drawing.Size(528, 493);
             this.tabStuffed.TabIndex = 4;
             this.tabStuffed.Text = "Stuffed";
             this.tabStuffed.UseVisualStyleBackColor = true;
@@ -368,17 +370,17 @@
             this.flowLayoutPanelStuffed.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelStuffed.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanelStuffed.Name = "flowLayoutPanelStuffed";
-            this.flowLayoutPanelStuffed.Size = new System.Drawing.Size(528, 496);
+            this.flowLayoutPanelStuffed.Size = new System.Drawing.Size(528, 493);
             this.flowLayoutPanelStuffed.TabIndex = 0;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
             this.tabPage1.Controls.Add(this.flowLayoutPanelPizza);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(528, 496);
+            this.tabPage1.Size = new System.Drawing.Size(528, 493);
             this.tabPage1.TabIndex = 9;
             this.tabPage1.Text = "Pizza";
             // 
@@ -388,16 +390,16 @@
             this.flowLayoutPanelPizza.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelPizza.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanelPizza.Name = "flowLayoutPanelPizza";
-            this.flowLayoutPanelPizza.Size = new System.Drawing.Size(522, 490);
+            this.flowLayoutPanelPizza.Size = new System.Drawing.Size(522, 487);
             this.flowLayoutPanelPizza.TabIndex = 0;
             // 
             // tabPasta
             // 
             this.tabPasta.Controls.Add(this.flowLayoutPanelPasta);
-            this.tabPasta.Location = new System.Drawing.Point(4, 22);
+            this.tabPasta.Location = new System.Drawing.Point(4, 25);
             this.tabPasta.Name = "tabPasta";
             this.tabPasta.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPasta.Size = new System.Drawing.Size(528, 496);
+            this.tabPasta.Size = new System.Drawing.Size(528, 493);
             this.tabPasta.TabIndex = 1;
             this.tabPasta.Text = "Pasta";
             this.tabPasta.UseVisualStyleBackColor = true;
@@ -408,16 +410,16 @@
             this.flowLayoutPanelPasta.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelPasta.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanelPasta.Name = "flowLayoutPanelPasta";
-            this.flowLayoutPanelPasta.Size = new System.Drawing.Size(522, 490);
+            this.flowLayoutPanelPasta.Size = new System.Drawing.Size(522, 487);
             this.flowLayoutPanelPasta.TabIndex = 1;
             // 
             // tabEstoPie
             // 
             this.tabEstoPie.Controls.Add(this.flowLayoutPanelEstoPie);
-            this.tabEstoPie.Location = new System.Drawing.Point(4, 22);
+            this.tabEstoPie.Location = new System.Drawing.Point(4, 25);
             this.tabEstoPie.Name = "tabEstoPie";
             this.tabEstoPie.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEstoPie.Size = new System.Drawing.Size(528, 496);
+            this.tabEstoPie.Size = new System.Drawing.Size(528, 493);
             this.tabEstoPie.TabIndex = 2;
             this.tabEstoPie.Text = "Esto Pie";
             this.tabEstoPie.UseVisualStyleBackColor = true;
@@ -428,15 +430,15 @@
             this.flowLayoutPanelEstoPie.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelEstoPie.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanelEstoPie.Name = "flowLayoutPanelEstoPie";
-            this.flowLayoutPanelEstoPie.Size = new System.Drawing.Size(522, 490);
+            this.flowLayoutPanelEstoPie.Size = new System.Drawing.Size(522, 487);
             this.flowLayoutPanelEstoPie.TabIndex = 0;
             // 
             // tabKalizony
             // 
             this.tabKalizony.Controls.Add(this.flowLayoutPanelKalizony);
-            this.tabKalizony.Location = new System.Drawing.Point(4, 22);
+            this.tabKalizony.Location = new System.Drawing.Point(4, 25);
             this.tabKalizony.Name = "tabKalizony";
-            this.tabKalizony.Size = new System.Drawing.Size(528, 496);
+            this.tabKalizony.Size = new System.Drawing.Size(528, 493);
             this.tabKalizony.TabIndex = 3;
             this.tabKalizony.Text = "Kalizony";
             this.tabKalizony.UseVisualStyleBackColor = true;
@@ -447,15 +449,15 @@
             this.flowLayoutPanelKalizony.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelKalizony.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanelKalizony.Name = "flowLayoutPanelKalizony";
-            this.flowLayoutPanelKalizony.Size = new System.Drawing.Size(528, 496);
+            this.flowLayoutPanelKalizony.Size = new System.Drawing.Size(528, 493);
             this.flowLayoutPanelKalizony.TabIndex = 0;
             // 
             // tabSoup
             // 
             this.tabSoup.Controls.Add(this.flowLayoutPanelSoup);
-            this.tabSoup.Location = new System.Drawing.Point(4, 22);
+            this.tabSoup.Location = new System.Drawing.Point(4, 25);
             this.tabSoup.Name = "tabSoup";
-            this.tabSoup.Size = new System.Drawing.Size(528, 496);
+            this.tabSoup.Size = new System.Drawing.Size(528, 493);
             this.tabSoup.TabIndex = 5;
             this.tabSoup.Text = "Soup";
             this.tabSoup.UseVisualStyleBackColor = true;
@@ -466,15 +468,15 @@
             this.flowLayoutPanelSoup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelSoup.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanelSoup.Name = "flowLayoutPanelSoup";
-            this.flowLayoutPanelSoup.Size = new System.Drawing.Size(528, 496);
+            this.flowLayoutPanelSoup.Size = new System.Drawing.Size(528, 493);
             this.flowLayoutPanelSoup.TabIndex = 0;
             // 
             // tabSalad
             // 
             this.tabSalad.Controls.Add(this.flowLayoutPanelSalad);
-            this.tabSalad.Location = new System.Drawing.Point(4, 22);
+            this.tabSalad.Location = new System.Drawing.Point(4, 25);
             this.tabSalad.Name = "tabSalad";
-            this.tabSalad.Size = new System.Drawing.Size(528, 496);
+            this.tabSalad.Size = new System.Drawing.Size(528, 493);
             this.tabSalad.TabIndex = 6;
             this.tabSalad.Text = "Salad";
             this.tabSalad.UseVisualStyleBackColor = true;
@@ -485,15 +487,15 @@
             this.flowLayoutPanelSalad.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelSalad.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanelSalad.Name = "flowLayoutPanelSalad";
-            this.flowLayoutPanelSalad.Size = new System.Drawing.Size(528, 496);
+            this.flowLayoutPanelSalad.Size = new System.Drawing.Size(528, 493);
             this.flowLayoutPanelSalad.TabIndex = 0;
             // 
             // tabHotDrink
             // 
             this.tabHotDrink.Controls.Add(this.flowLayoutPanelHotDrink);
-            this.tabHotDrink.Location = new System.Drawing.Point(4, 22);
+            this.tabHotDrink.Location = new System.Drawing.Point(4, 25);
             this.tabHotDrink.Name = "tabHotDrink";
-            this.tabHotDrink.Size = new System.Drawing.Size(528, 496);
+            this.tabHotDrink.Size = new System.Drawing.Size(528, 493);
             this.tabHotDrink.TabIndex = 7;
             this.tabHotDrink.Text = "Hot Drink";
             this.tabHotDrink.UseVisualStyleBackColor = true;
@@ -504,15 +506,15 @@
             this.flowLayoutPanelHotDrink.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelHotDrink.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanelHotDrink.Name = "flowLayoutPanelHotDrink";
-            this.flowLayoutPanelHotDrink.Size = new System.Drawing.Size(528, 496);
+            this.flowLayoutPanelHotDrink.Size = new System.Drawing.Size(528, 493);
             this.flowLayoutPanelHotDrink.TabIndex = 0;
             // 
             // tabSoftDrink
             // 
             this.tabSoftDrink.Controls.Add(this.flowLayoutPanelSoftDrink);
-            this.tabSoftDrink.Location = new System.Drawing.Point(4, 22);
+            this.tabSoftDrink.Location = new System.Drawing.Point(4, 25);
             this.tabSoftDrink.Name = "tabSoftDrink";
-            this.tabSoftDrink.Size = new System.Drawing.Size(528, 496);
+            this.tabSoftDrink.Size = new System.Drawing.Size(528, 493);
             this.tabSoftDrink.TabIndex = 8;
             this.tabSoftDrink.Text = "Soft Drink";
             this.tabSoftDrink.UseVisualStyleBackColor = true;
@@ -523,7 +525,7 @@
             this.flowLayoutPanelSoftDrink.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelSoftDrink.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanelSoftDrink.Name = "flowLayoutPanelSoftDrink";
-            this.flowLayoutPanelSoftDrink.Size = new System.Drawing.Size(528, 496);
+            this.flowLayoutPanelSoftDrink.Size = new System.Drawing.Size(528, 493);
             this.flowLayoutPanelSoftDrink.TabIndex = 0;
             // 
             // splitContainer1

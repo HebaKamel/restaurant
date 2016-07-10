@@ -82,7 +82,8 @@ namespace restaurantPOS
         {
             var tablesObj = new FrmTables();
             tablesObj.Show();
-            Hide();}
+            Hide();
+        }
 
         private void btnTakeAway_Click(object sender, EventArgs e)
         {
