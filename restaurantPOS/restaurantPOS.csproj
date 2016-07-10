@@ -201,6 +201,12 @@
     <Compile Include="Manage\UserSettings\usersGroupsAuth.Designer.cs">
       <DependentUpon>usersGroupsAuth.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderForm.Designer.cs">
+      <DependentUpon>OrderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="POSCategories.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,6 +263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manage\UserSettings\usersGroupsAuth.resx">
       <DependentUpon>usersGroupsAuth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderForm.resx">
+      <DependentUpon>OrderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="POSCategories.resx">
       <DependentUpon>POSCategories.cs</DependentUpon>

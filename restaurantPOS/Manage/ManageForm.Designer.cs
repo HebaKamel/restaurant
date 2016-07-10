@@ -76,9 +76,6 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.navBarControlLeft = new DevExpress.XtraNavBar.NavBarControl();
-            this.navBarGroupGoodsSettings = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarItemAddGoods = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItemUpdateDeleteGoods = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroupProgramSettings = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItemBrandName = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemBrandSlogan = new DevExpress.XtraNavBar.NavBarItem();
@@ -103,8 +100,9 @@
             this.navBarGroupUnitsSettings = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItemAddUnit = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemUpdateDeleteUnit = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarGroupGoodsSettings = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarItemAddGoods = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItemUpdateDeleteGoods = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlBottom)).BeginInit();
             this.groupControlBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlTop)).BeginInit();
@@ -203,7 +201,7 @@
             this.groupControlTopRight.AutoSize = true;
             this.groupControlTopRight.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.groupControlTopRight.Controls.Add(this.menuStripRight);
-            this.groupControlTopRight.Location = new System.Drawing.Point(600, 6);
+            this.groupControlTopRight.Location = new System.Drawing.Point(756, 4);
             this.groupControlTopRight.Name = "groupControlTopRight";
             this.groupControlTopRight.ShowCaption = false;
             this.groupControlTopRight.Size = new System.Drawing.Size(181, 24);
@@ -553,9 +551,7 @@
             this.navBarGroupClientSettings,
             this.navBarGroupMenuSettings,
             this.navBarGroupUnitsSettings,
-            this.navBarGroupGoodsSettings,
-            this.navBarGroup1,
-            this.navBarGroup2});
+            this.navBarGroupGoodsSettings});
             this.navBarControlLeft.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
             this.navBarItemBrandName,
             this.navBarItemBrandSlogan,
@@ -586,26 +582,6 @@
             this.navBarControlLeft.View = new DevExpress.XtraNavBar.ViewInfo.StandardSkinNavigationPaneViewInfoRegistrator("DevExpress Dark Style");
             this.navBarControlLeft.ActiveGroupChanged += new DevExpress.XtraNavBar.NavBarGroupEventHandler(this.navBarControlLeft_ActiveGroupChanged);
             this.navBarControlLeft.Click += new System.EventHandler(this.navBarControlLeft_Click);
-            // 
-            // navBarGroupGoodsSettings
-            // 
-            this.navBarGroupGoodsSettings.Caption = "Goods Settings";
-            this.navBarGroupGoodsSettings.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.SmallIconsText;
-            this.navBarGroupGoodsSettings.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemAddGoods),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemUpdateDeleteGoods)});
-            this.navBarGroupGoodsSettings.Name = "navBarGroupGoodsSettings";
-            // 
-            // navBarItemAddGoods
-            // 
-            this.navBarItemAddGoods.Caption = "Add Goods";
-            this.navBarItemAddGoods.Name = "navBarItemAddGoods";
-            this.navBarItemAddGoods.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemAddGoods_LinkClicked);
-            // 
-            // navBarItemUpdateDeleteGoods
-            // 
-            this.navBarItemUpdateDeleteGoods.Caption = "Update\\Delete Goods";
-            this.navBarItemUpdateDeleteGoods.Name = "navBarItemUpdateDeleteGoods";
             // 
             // navBarGroupProgramSettings
             // 
@@ -766,15 +742,25 @@
             this.navBarItemUpdateDeleteUnit.Name = "navBarItemUpdateDeleteUnit";
             this.navBarItemUpdateDeleteUnit.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemUpdateDeleteUnit_LinkClicked);
             // 
-            // navBarGroup1
+            // navBarGroupGoodsSettings
             // 
-            this.navBarGroup1.Caption = "navBarGroup1";
-            this.navBarGroup1.Name = "navBarGroup1";
+            this.navBarGroupGoodsSettings.Caption = "Goods Settings";
+            this.navBarGroupGoodsSettings.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.SmallIconsText;
+            this.navBarGroupGoodsSettings.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemAddGoods),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemUpdateDeleteGoods)});
+            this.navBarGroupGoodsSettings.Name = "navBarGroupGoodsSettings";
             // 
-            // navBarGroup2
+            // navBarItemAddGoods
             // 
-            this.navBarGroup2.Caption = "navBarGroup2";
-            this.navBarGroup2.Name = "navBarGroup2";
+            this.navBarItemAddGoods.Caption = "Add Goods";
+            this.navBarItemAddGoods.Name = "navBarItemAddGoods";
+            this.navBarItemAddGoods.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemAddGoods_LinkClicked);
+            // 
+            // navBarItemUpdateDeleteGoods
+            // 
+            this.navBarItemUpdateDeleteGoods.Caption = "Update\\Delete Goods";
+            this.navBarItemUpdateDeleteGoods.Name = "navBarItemUpdateDeleteGoods";
             // 
             // FrmManage
             // 
@@ -892,8 +878,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItemUpdateDeleteMenuItem;
         private DevExpress.XtraNavBar.NavBarItem navBarItemAddUnit;
         private DevExpress.XtraNavBar.NavBarItem navBarItemUpdateDeleteUnit;
-        private DevExpress.XtraNavBar.NavBarGroup navBarGroup1;
-        private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
 
     }
 }

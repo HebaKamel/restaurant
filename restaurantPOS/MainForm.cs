@@ -3,6 +3,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Text;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;using DevExpress.XtraEditors;
 using restaurantPOS.DataAccess;
 using restaurantPOS.FormsMessages;
@@ -58,6 +59,11 @@ namespace restaurantPOS
             checkPermissions();
 
 
+            
+        }
+
+        private void FrmMainForm_Load(object sender, EventArgs e)
+        {
             //don't allow focus
             btnAccounts.AllowFocus = false;
             btnAccounts.AllowFocus = false;
@@ -107,18 +113,14 @@ namespace restaurantPOS
                         control.Font = new Font(pfc.Families[0], 9, FontStyle.Regular);
                     }
                 }
-            }else
+            }
+            else
             {
                 if (systemLang == "En")
                     XtraMessageBox.Show(messagesEn.fontsError, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                     XtraMessageBox.Show(messagesAr.fontsError, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void FrmMainForm_Load(object sender, EventArgs e)
-        {
-        }
+            }}
 
         private void FrmMainForm_Activated(object sender, EventArgs e)
         {
@@ -142,7 +144,7 @@ namespace restaurantPOS
 
         private void timerTimeDate_Tick(object sender, EventArgs e)
         {
-           // lblDateTimeMainForm.Text = DateTime.Now.ToString("dd MMMM yyyy hh:mm:ss tt");
+            lblDateTimeMainForm.Text = DateTime.Now.ToString("dd MMMM yyyy hh:mm:ss tt");
         }
 
         private void menuStrip1_Click(object sender, EventArgs e)
@@ -299,6 +301,15 @@ namespace restaurantPOS
                 var aboutFormObj = new AboutForm();
                 aboutFormObj.Show(this);
                 //Hide();
+            }
+        }
+
+        private void addTipsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string tipsAmount = Microsoft.VisualBasic.Interaction.InputBox("Insert Amount of Tips", "Tips", "0.0");
+            if (Regex.IsMatch(tipsAmount, @"\D+"))
+            {
+                MessageBox.Show(@"Error: Must enter digits only !!",@"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 

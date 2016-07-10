@@ -10,18 +10,17 @@ using System.Windows.Forms;
 
 namespace restaurantPOS
 {
-    public partial class DeliveryForm : Form
+    public partial class OrderForm : Form
     {
-        public DeliveryForm()
+        public OrderForm()
         {
             InitializeComponent();
         }
 
-        private void gelButton1_Click(object sender, EventArgs e)
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-            var orderFormObj = new OrderForm();
-            Hide();
-            orderFormObj.Show();
+            
+
         }
     }
 }
