@@ -23,6 +23,8 @@ namespace restaurantPOS.Manage.Units
         private DataAccess.dataAccess db = new dataAccess();
         private SystemSetting.system system = new system();
         int unitId;
+        private string errMsg = ""; 
+
         public UpdateUnit(int unitId)
         {
             InitializeComponent();
@@ -60,21 +62,44 @@ namespace restaurantPOS.Manage.Units
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            int updated = db.updateUnit(txtNameEnglish.Text, txtNameArabic.Text, this.unitId);
-            if (updated == 0)
+            if (validation() == "")
+            {
+                int updated = db.updateUnit(txtNameEnglish.Text, txtNameArabic.Text, this.unitId);
+                if (updated == 0)
+                {
+                    if (Settings.Default.Language == "En")
+                        XtraMessageBox.Show(messagesEn.updatedSuccessfully, system.restName, MessageBoxButtons.OK,
+                                            MessageBoxIcon.Asterisk);
+                    else
+                        XtraMessageBox.Show(messagesEn.updatedSuccessfully, system.restName, MessageBoxButtons.OK,
+                                            MessageBoxIcon.Asterisk);
+                }
+                else
+                {
+                    if (Settings.Default.Language == "En")
+                        XtraMessageBox.Show(messagesEn.updatedError, system.restName, MessageBoxButtons.OK,
+                                            MessageBoxIcon.Asterisk);
+                    else
+                        XtraMessageBox.Show(messagesAr.updatedError, system.restName, MessageBoxButtons.OK,
+                                            MessageBoxIcon.Asterisk);
+                }
+            }
+        }
+
+
+        private string validation()
+        {
+            errMsg = "";
+            string name = "";
+            if (string.IsNullOrEmpty(txtNameEnglish.Text))
             {
                 if (Settings.Default.Language == "En")
-                    XtraMessageBox.Show(messagesEn.updatedSuccessfully, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    name = formsEn.unitNameEn;
                 else
-                    XtraMessageBox.Show(messagesEn.updatedSuccessfully, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    name = formsAr.unitNameEn;
             }
-            else
-            {
-                if (Settings.Default.Language == "En")
-                    XtraMessageBox.Show(messagesEn.updatedError, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                else
-                    XtraMessageBox.Show(messagesAr.updatedError, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            }
+
+            return errMsg;
         }
     }
 }

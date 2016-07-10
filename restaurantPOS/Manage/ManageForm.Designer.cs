@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmManage));
             this.groupControlBottom = new DevExpress.XtraEditors.GroupControl();
             this.lblDateTimeManage = new DevExpress.XtraEditors.LabelControl();
             this.lblUserNameManage = new DevExpress.XtraEditors.LabelControl();
             this.lblUserRoleMainForm = new DevExpress.XtraEditors.LabelControl();
             this.lblCopyRightsManage = new DevExpress.XtraEditors.LabelControl();
-            this.timerDateTime = new System.Windows.Forms.Timer(this.components);
+            this.timerDateTime = new System.Windows.Forms.Timer();
             this.groupControlTop = new DevExpress.XtraEditors.GroupControl();
             this.groupControlTopRight = new DevExpress.XtraEditors.GroupControl();
             this.menuStripRight = new System.Windows.Forms.MenuStrip();
@@ -538,7 +537,7 @@
             // 
             // navBarControlLeft
             // 
-            this.navBarControlLeft.ActiveGroup = this.navBarGroupProgramSettings;
+            this.navBarControlLeft.ActiveGroup = this.navBarGroupGoodsSettings;
             this.navBarControlLeft.AllowDrop = false;
             this.navBarControlLeft.BackColor = System.Drawing.Color.Transparent;
             this.navBarControlLeft.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -586,7 +585,6 @@
             // navBarGroupProgramSettings
             // 
             this.navBarGroupProgramSettings.Caption = "Program Settings";
-            this.navBarGroupProgramSettings.Expanded = true;
             this.navBarGroupProgramSettings.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.SmallIconsText;
             this.navBarGroupProgramSettings.Hint = "Program Settings Adjusted From This Group";
             this.navBarGroupProgramSettings.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
@@ -745,6 +743,7 @@
             // navBarGroupGoodsSettings
             // 
             this.navBarGroupGoodsSettings.Caption = "Goods Settings";
+            this.navBarGroupGoodsSettings.Expanded = true;
             this.navBarGroupGoodsSettings.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.SmallIconsText;
             this.navBarGroupGoodsSettings.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemAddGoods),
@@ -761,6 +760,7 @@
             // 
             this.navBarItemUpdateDeleteGoods.Caption = "Update\\Delete Goods";
             this.navBarItemUpdateDeleteGoods.Name = "navBarItemUpdateDeleteGoods";
+            this.navBarItemUpdateDeleteGoods.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemUpdateDeleteGoods_LinkClicked);
             // 
             // FrmManage
             // 

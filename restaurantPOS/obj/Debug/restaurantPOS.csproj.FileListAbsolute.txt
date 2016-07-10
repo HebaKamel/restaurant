@@ -219,3 +219,6 @@ D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\rest
 D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.csproj.GenerateResource.Cache
 D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.exe.licenses
 D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.OrderForm.resources
+D:\Heba\sourceControl\restaurant\restaurant\restaurantPOS\obj\Debug\restaurantPOS.OrderForm.resources
+D:\Heba\sourceControl\restaurant\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Goods.SearchGoods.resources
+D:\Heba\sourceControl\restaurant\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Goods.UpdateGoods.resources

@@ -144,7 +144,7 @@ namespace restaurantPOS
 
         private void timerTimeDate_Tick(object sender, EventArgs e)
         {
-            lblDateTimeMainForm.Text = DateTime.Now.ToString("dd MMMM yyyy hh:mm:ss tt");
+            //lblDateTimeMainForm.Text = DateTime.Now.ToString("dd MMMM yyyy hh:mm:ss tt");
         }
 
         private void menuStrip1_Click(object sender, EventArgs e)

@@ -163,9 +163,9 @@ namespace restaurantPOS.Manage.Units
             catch (Exception ex)
             {
                 if (Settings.Default.Language == "En")
-                    XtraMessageBox.Show(messagesEn.chooseUnitRow, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    XtraMessageBox.Show(messagesEn.chooseRow, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
-                    XtraMessageBox.Show(messagesAr.chooseUnitRow, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    XtraMessageBox.Show(messagesAr.chooseRow, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

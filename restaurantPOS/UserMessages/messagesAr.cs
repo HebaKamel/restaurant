@@ -32,6 +32,8 @@ namespace restaurantPOS.userMessages
 
         public string loginError = "خطأ, من فضلك ادخل اسم المستخدم و الرقم السرى بشكل صحيح";
 
+        public string chooseRow = " خطأ, من فضلك اختر البيان اولا أو ربما هذا البيان مرتبط بعمليات اخرى";
+
         #region authAndUsers
         public string emptyGroupName = "الرجاء ادخال اسم المجموعة";
         public string chooseGroupAuth = "الرجاء اختيار صلاحيات المجموعة";

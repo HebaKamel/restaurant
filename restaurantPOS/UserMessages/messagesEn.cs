@@ -30,6 +30,8 @@ namespace restaurantPOS.userMessages
 
         public string loginError = "Error, Please enter user name and password correctly";
 
+        public string chooseRow = "Error, Please Choose a Row First or may be this recored used in other operations";
+
         #region authAndUsers
         public string enterGroupName = "Please enter Group Name";
         public string chooseGroupAuth = "Please choose Group Auth";

@@ -64,35 +64,6 @@ namespace restaurantPOS.Manage.Client
             }
         }
 
-        private string validation()
-        {
-            errMsg = "";
-            string name = "", mobile = "";
-            if (string.IsNullOrEmpty(txtNameEnglish.Text))
-            {
-                if (Settings.Default.Language == "En")
-                    name = formsEn.clientNameEn;
-                else
-                    name = formsAr.clientNameEn;
-            }
-
-            if (string.IsNullOrEmpty(txtMobile.Text))
-            {
-                if (Settings.Default.Language == "En")
-                    mobile = formsEn.clientMobile;
-                else
-                    mobile = formsAr.clientMobile;
-            }
-            if (name != "" || mobile != "")
-            {
-                if (Settings.Default.Language == "En")
-                    errMsg = messagesEn.ErrorMessae + "\n" + name + "\n" + mobile;
-                else
-                    errMsg = messagesAr.ErrorMessae + "\n" + name + "\n" + mobile;
-            }
-            return errMsg;
-        }
-
         private void txtMobile_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -207,9 +178,9 @@ namespace restaurantPOS.Manage.Client
             catch (Exception ex)
             {
                 if (Settings.Default.Language == "En")
-                    XtraMessageBox.Show(messagesEn.chooseClientRow, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    XtraMessageBox.Show(messagesEn.chooseRow, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
-                    XtraMessageBox.Show(messagesAr.chooseClientRow, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    XtraMessageBox.Show(messagesAr.chooseRow, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

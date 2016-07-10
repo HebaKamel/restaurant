@@ -95,7 +95,7 @@ namespace restaurantPOS.Manage.Goods
                     name = formsAr.unitNameEn;
             }
 
-            if (comboUnit.SelectedIndex == -1)
+            if (comboUnit.SelectedIndex <= 0)
             {
                 if (Settings.Default.Language == "En")
                     unit = formsEn.AddUnitHeader;
@@ -110,15 +110,13 @@ namespace restaurantPOS.Manage.Goods
                 else
                     errMsg = messagesAr.ErrorMessae + "\n" + name + "\n" + unit;
             }
-
             return errMsg;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (validation() == "")
-            {
-                int goodsId = db.addGoods(txtNameEnglish.Text, txtNameArabic.Text, comboUnit.SelectedIndex);
+            {int goodsId = db.addGoods(txtNameEnglish.Text, txtNameArabic.Text, (int)comboUnit.SelectedValue);
                 if (goodsId != 0)
                     XtraMessageBox.Show(messagesEn.insertedSuccessfully, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 else
@@ -140,7 +138,10 @@ namespace restaurantPOS.Manage.Goods
                 DataTable unitsDT = db.getUnit(null, null, null);
                 if (unitsDT.Rows.Count > 0)
                 {
-                    if (Settings.Default.Language == "En")
+                    DataRow dr;
+                    dr = unitsDT.NewRow();
+                    dr.ItemArray = new object[3] { 0, "---Select---", "---اختر---" };
+                    unitsDT.Rows.InsertAt(dr, 0);if (Settings.Default.Language == "En")
                         comboUnit.DisplayMember = "unit_name_en";
                     else
                     {

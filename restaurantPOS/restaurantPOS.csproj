@@ -153,6 +153,18 @@
     <Compile Include="Manage\Goods\AddGoods.Designer.cs">
       <DependentUpon>AddGoods.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manage\Goods\SearchGoods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage\Goods\SearchGoods.Designer.cs">
+      <DependentUpon>SearchGoods.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Goods\UpdateGoods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage\Goods\UpdateGoods.Designer.cs">
+      <DependentUpon>UpdateGoods.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manage\ManageForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,6 +251,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manage\Goods\AddGoods.resx">
       <DependentUpon>AddGoods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Goods\SearchGoods.resx">
+      <DependentUpon>SearchGoods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Goods\UpdateGoods.resx">
+      <DependentUpon>UpdateGoods.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manage\ManageForm.resx">
       <DependentUpon>ManageForm.cs</DependentUpon>

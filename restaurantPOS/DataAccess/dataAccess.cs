@@ -401,7 +401,7 @@ namespace restaurantPOS.DataAccess
                 cmd.Parameters["@goodsId"].Value = goodsId;
                 cmd.Parameters["@unitId"].Value = unitId;
                 cmd.Parameters["@goodsNameEn"].Value = goodsNameEn;
-                cmd.Parameters["@goodsNameEn"].Value = goodsNameEn;
+                cmd.Parameters["@goodsNameAr"].Value = goodsNameAr;
                 if (con.State != ConnectionState.Open)
                     con.Open();
                 dt.Load(cmd.ExecuteReader());
@@ -439,13 +439,13 @@ namespace restaurantPOS.DataAccess
             if (unitId == 0) unitId = null;
             if (goodsNameEn == "") goodsNameEn = null;
             if (goodsNameAr == "") goodsNameAr = null;
-            using (SqlCommand cmd = new SqlCommand("updateUnit", con))
+            using (SqlCommand cmd = new SqlCommand("updateGoods", con))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@goodsId", SqlDbType.Int);
                 cmd.Parameters.Add("@unitId", SqlDbType.Int);
                 cmd.Parameters.Add("@goodsNameEn", SqlDbType.NVarChar);
-                cmd.Parameters.Add("@unitNameAr", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@goodsNameAr", SqlDbType.NVarChar);
                 cmd.Parameters["@goodsId"].Value = goodsId;
                 cmd.Parameters["@unitId"].Value = unitId;
                 cmd.Parameters["@goodsNameEn"].Value = goodsNameEn;

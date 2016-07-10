@@ -25,6 +25,7 @@ namespace restaurantPOS
         Manage.Units.AddUnits addUnit = new Manage.Units.AddUnits();
         Manage.Units.SearchUnits searchUnits = new Manage.Units.SearchUnits();
         Manage.Goods.AddGoods addGoods = new Manage.Goods.AddGoods();
+        Manage.Goods.SearchGoods searchGoods = new Manage.Goods.SearchGoods();
         #endregion
 
         public FrmManage()
@@ -177,6 +178,7 @@ namespace restaurantPOS
             addUnit.Close();
             addClient.Close();
             addGoods.Close();
+            searchGoods.Close();
 
             addClient = new Manage.Client.AddClients();
             addClient.Show();
@@ -190,6 +192,7 @@ namespace restaurantPOS
             searchClient.Close();
             searchUnits.Close();
             addUnit.Close();
+            addGoods.Close();searchGoods.Close();
 
             searchClient = new Manage.Client.SearchClients();
             searchClient.Show();
@@ -204,6 +207,7 @@ namespace restaurantPOS
             addClient.Close();
             addClient.Close();
             addGoods.Close();
+            searchGoods.Close();
 
             addUnit = new Manage.Units.AddUnits();
             addUnit.Show();
@@ -218,6 +222,7 @@ namespace restaurantPOS
             addClient.Close();
             addClient.Close();
             addGoods.Close();
+            searchGoods.Close();
 
             searchUnits = new Manage.Units.SearchUnits();
             searchUnits.Show();
@@ -232,11 +237,27 @@ namespace restaurantPOS
             addUnit.Close();
             addClient.Close();
             addClient.Close();
+            searchGoods.Close();
 
             addGoods = new Manage.Goods.AddGoods();
             addGoods.Show();
             addGoods.MdiParent = this;
             addGoods.Dock = DockStyle.Right;
+        }
+
+        private void navBarItemUpdateDeleteGoods_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            searchClient.Close();
+            searchUnits.Close();
+            addUnit.Close();
+            addClient.Close();
+            addClient.Close();
+            addGoods.Close();
+
+            searchGoods = new Manage.Goods.SearchGoods();
+            searchGoods.Show();
+            searchGoods.MdiParent = this;
+            searchGoods.Dock = DockStyle.Right;
         }
     }
 }

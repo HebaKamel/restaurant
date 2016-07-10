@@ -23,6 +23,8 @@ namespace restaurantPOS.Manage.Client
         private DataAccess.dataAccess db = new dataAccess();
         private SystemSetting.system system = new system();
         int clientId;
+        string errMsg = ""; 
+
         public UpdateClient(int clientId)
         {
             InitializeComponent();
@@ -76,23 +78,62 @@ namespace restaurantPOS.Manage.Client
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            int isVip = 0;
-            if (chkIsVip.Checked) isVip = 1;
-            int updated = db.updateClient(txtNameEnglish.Text, txtNameArabic.Text, txtAddrEnglish.Text, txtAddrArabic.Text, txtLandLine.Text, txtMobile.Text, txtEmail.Text, this.clientId, isVip);
-            if (updated == 0)
+            if (validation() == "")
+            {
+                int isVip = 0;
+                if (chkIsVip.Checked) isVip = 1;
+                int updated = db.updateClient(txtNameEnglish.Text, txtNameArabic.Text, txtAddrEnglish.Text,
+                                              txtAddrArabic.Text, txtLandLine.Text, txtMobile.Text, txtEmail.Text,
+                                              this.clientId, isVip);
+                if (updated == 0)
+                {
+                    if (Settings.Default.Language == "En")
+                        XtraMessageBox.Show(messagesEn.updatedSuccessfully, system.restName, MessageBoxButtons.OK,
+                                            MessageBoxIcon.Asterisk);
+                    else
+                        XtraMessageBox.Show(messagesEn.updatedSuccessfully, system.restName, MessageBoxButtons.OK,
+                                            MessageBoxIcon.Asterisk);
+                }
+                else
+                {
+                    if (Settings.Default.Language == "En")
+                        XtraMessageBox.Show(messagesEn.updatedError, system.restName, MessageBoxButtons.OK,
+                                            MessageBoxIcon.Asterisk);
+                    else
+                        XtraMessageBox.Show(messagesAr.updatedError, system.restName, MessageBoxButtons.OK,
+                                            MessageBoxIcon.Asterisk);
+                }
+            }
+        }
+
+
+        private string validation()
+        {
+            errMsg = "";
+            string name = "", mobile = "";
+            if (string.IsNullOrEmpty(txtNameEnglish.Text))
             {
                 if (Settings.Default.Language == "En")
-                    XtraMessageBox.Show(messagesEn.updatedSuccessfully, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    name = formsEn.clientNameEn;
                 else
-                    XtraMessageBox.Show(messagesEn.updatedSuccessfully, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    name = formsAr.clientNameEn;
             }
-            else
+
+            if (string.IsNullOrEmpty(txtMobile.Text))
             {
                 if (Settings.Default.Language == "En")
-                    XtraMessageBox.Show(messagesEn.updatedError, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    mobile = formsEn.clientMobile;
                 else
-                    XtraMessageBox.Show(messagesAr.updatedError, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    mobile = formsAr.clientMobile;
             }
+            if (name != "" || mobile != "")
+            {
+                if (Settings.Default.Language == "En")
+                    errMsg = messagesEn.ErrorMessae + "\n" + name + "\n" + mobile;
+                else
+                    errMsg = messagesAr.ErrorMessae + "\n" + name + "\n" + mobile;
+            }
+            return errMsg;
         }
     }
 }
