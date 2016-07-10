@@ -463,5 +463,147 @@ namespace restaurantPOS.DataAccess
             return updated;
         }
         #endregion
+
+        #region suppliers
+        public int addSupplier(string supplierNameEn, string supplierNameAr, string supplierAddressEn, string supplierAddressAr, string supplierTelephoneNo, string supplierMobileNo, string supplierEmail)
+        {
+            //transaction = con.BeginTransaction("SampleTransaction");
+            int clientId;
+            using (SqlCommand cmd = new SqlCommand("addSupplier", con))
+            {
+                //cmd.Transaction = transaction;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@supplierNameEn", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@supplierNameAr", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@supplierAddressEn", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@supplierAddressAr", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@supplierTelephoneNo", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@supplierMobileNo", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@supplierEmail", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@supplierId", SqlDbType.Int).Direction = ParameterDirection.Output;
+
+                cmd.Parameters["@supplierNameEn"].Value = supplierNameEn;
+                cmd.Parameters["@supplierNameAr"].Value = supplierNameAr;
+                cmd.Parameters["@supplierAddressEn"].Value = supplierAddressEn;
+                cmd.Parameters["@supplierAddressAr"].Value = supplierAddressAr;
+                cmd.Parameters["@supplierTelephoneNo"].Value = supplierTelephoneNo;
+                cmd.Parameters["@supplierMobileNo"].Value = supplierMobileNo;
+                cmd.Parameters["@supplierEmail"].Value = supplierEmail;
+                if (con.State != ConnectionState.Open)
+                    con.Open();
+                cmd.ExecuteNonQuery();
+                clientId = Convert.ToInt32(cmd.Parameters["@supplierId"].Value);
+                if (con.State != ConnectionState.Closed)
+                    con.Close();
+            }
+            return clientId;
+        }
+
+        public DataTable getSupplier(string supplierNameEn, string supplierNameAr, string supplierAddressEn, string supplierAddressAr, string supplierTelephoneNo, string supplierMobileNo, string supplierEmail, int? supplierId = 0)
+        {
+            if (supplierId == 0) supplierId = null;
+            if (supplierNameEn == "") supplierNameEn = null;
+            if (supplierNameAr == "") supplierNameAr = null;
+            if (supplierAddressEn == "") supplierAddressEn = null;
+            if (supplierAddressAr == "") supplierAddressAr = null;
+            if (supplierTelephoneNo == "") supplierTelephoneNo = null;
+            if (supplierMobileNo == "") supplierMobileNo = null;
+            if (supplierEmail == "") supplierEmail = null;
+            DataTable dt = new DataTable();
+            using (SqlCommand cmd = new SqlCommand("SearchSupplier", con))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@supplierId", SqlDbType.Int);
+                cmd.Parameters.Add("@supplierNameEn", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@supplierNameAr", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@supplierAddressEn", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@supplierAddressAr", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@supplierTelephoneNo", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@supplierMobileNo", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@supplierEmail", SqlDbType.NVarChar);
+
+                cmd.Parameters["@supplierId"].Value = supplierId;
+                cmd.Parameters["@supplierNameEn"].Value = supplierNameEn;
+                cmd.Parameters["@supplierNameAr"].Value = supplierNameAr;
+                cmd.Parameters["@supplierAddressEn"].Value = supplierAddressEn;
+                cmd.Parameters["@supplierAddressAr"].Value = supplierAddressAr;
+                cmd.Parameters["@supplierTelephoneNo"].Value = supplierTelephoneNo;
+                cmd.Parameters["@supplierMobileNo"].Value = supplierMobileNo;
+                cmd.Parameters["@supplierEmail"].Value = supplierEmail;
+                if (con.State != ConnectionState.Open)
+                    con.Open();
+                dt.Load(cmd.ExecuteReader());
+                if (con.State != ConnectionState.Closed)
+                    con.Close();
+            }
+            return dt;
+        }
+
+        public int deleteSupplier(int supplierId)
+        {
+            int deleted = 0;
+            using (SqlCommand cmd = new SqlCommand("deleteSupplier", con))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@supplierId", SqlDbType.Int);
+                cmd.Parameters["@supplierId"].Value = supplierId;
+                if (con.State != ConnectionState.Open)
+                    con.Open();
+                SqlParameter returnParameter = cmd.Parameters.Add("RetVal", SqlDbType.Int);
+                returnParameter.Direction = ParameterDirection.ReturnValue;
+                cmd.ExecuteNonQuery();
+                if (returnParameter.Value != null)
+                    deleted = (int)returnParameter.Value;
+                if (con.State != ConnectionState.Closed)
+                    con.Close();
+            }
+            return deleted;
+        }
+
+        public int updateSupplier(string supplierNameEn, string supplierNameAr, string supplierAddressEn, string supplierAddressAr, string supplierTelephoneNo, string supplierMobileNo, string supplierEmail, int? supplierId = 0)
+        {
+            int updated = 0;
+            if (supplierId == 0) supplierId = null;
+            if (supplierNameEn == "") supplierNameEn = null;
+            if (supplierNameAr == "") supplierNameAr = null;
+            if (supplierAddressEn == "") supplierAddressEn = null;
+            if (supplierAddressAr == "") supplierAddressAr = null;
+            if (supplierTelephoneNo == "") supplierTelephoneNo = null;
+            if (supplierMobileNo == "") supplierMobileNo = null;
+            if (supplierEmail == "") supplierEmail = null;
+
+            using (SqlCommand cmd = new SqlCommand("updateClient", con))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@supplierId", SqlDbType.Int);
+                cmd.Parameters.Add("@supplierNameEn", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@supplierNameAr", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@supplierAddressEn", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@supplierAddressAr", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@supplierTelephoneNo", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@supplierMobileNo", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@supplierEmail", SqlDbType.NVarChar);
+
+                cmd.Parameters["@supplierId"].Value = supplierId;
+                cmd.Parameters["@supplierNameEn"].Value = supplierNameEn;
+                cmd.Parameters["@supplierNameAr"].Value = supplierNameAr;
+                cmd.Parameters["@supplierAddressEn"].Value = supplierAddressEn;
+                cmd.Parameters["@supplierAddressAr"].Value = supplierAddressAr;
+                cmd.Parameters["@supplierTelephoneNo"].Value = supplierTelephoneNo;
+                cmd.Parameters["@supplierMobileNo"].Value = supplierMobileNo;
+                cmd.Parameters["@supplierEmail"].Value = supplierEmail;
+                if (con.State != ConnectionState.Open)
+                    con.Open();
+                SqlParameter returnParameter = cmd.Parameters.Add("RetVal", SqlDbType.Int);
+                returnParameter.Direction = ParameterDirection.ReturnValue;
+                cmd.ExecuteReader();
+                if (returnParameter.Value != null)
+                    updated = (int)returnParameter.Value;
+                if (con.State != ConnectionState.Closed)
+                    con.Close();
+            }
+            return updated;
+        }
+        #endregion
     }
 }
