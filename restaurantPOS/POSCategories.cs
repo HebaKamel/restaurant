@@ -73,7 +73,9 @@ namespace restaurantPOS
 
         private void btnDelivery_Click(object sender, EventArgs e)
         {
-
+            var delFormObj = new DeliveryForm();
+            Hide();
+            delFormObj.Show();
         }
 
         private void btnDineIn_Click(object sender, EventArgs e)

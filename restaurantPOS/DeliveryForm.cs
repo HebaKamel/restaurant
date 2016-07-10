@@ -16,5 +16,12 @@ namespace restaurantPOS
         {
             InitializeComponent();
         }
+
+        private void gelButton1_Click(object sender, EventArgs e)
+        {
+            var orderFormObj = new OrderForm();
+            Hide();
+            orderFormObj.Show();
+        }
     }
 }

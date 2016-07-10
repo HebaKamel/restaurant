@@ -34,24 +34,25 @@
             this.txtClientName = new DevExpress.XtraEditors.TextEdit();
             this.txtMobileNumber = new DevExpress.XtraEditors.TextEdit();
             this.groupBoxAddress = new System.Windows.Forms.GroupBox();
-            this.lblApartmentNumber = new DevExpress.XtraEditors.LabelControl();
-            this.lblStreetAddress = new DevExpress.XtraEditors.LabelControl();
-            this.lblHouseNumber = new DevExpress.XtraEditors.LabelControl();
-            this.lblFloorNumber = new DevExpress.XtraEditors.LabelControl();
-            this.lblRemarkableSign = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.lblRemarkableSign = new DevExpress.XtraEditors.LabelControl();
+            this.lblFloorNumber = new DevExpress.XtraEditors.LabelControl();
+            this.lblHouseNumber = new DevExpress.XtraEditors.LabelControl();
+            this.lblStreetAddress = new DevExpress.XtraEditors.LabelControl();
+            this.lblApartmentNumber = new DevExpress.XtraEditors.LabelControl();
+            this.gelButton1 = new restaurantPOS.GelButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtClientName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMobileNumber.Properties)).BeginInit();
             this.groupBoxAddress.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMobileNumber
@@ -104,45 +105,33 @@
             this.groupBoxAddress.TabStop = false;
             this.groupBoxAddress.Text = "Address";
             // 
-            // lblApartmentNumber
+            // textEdit5
             // 
-            this.lblApartmentNumber.Location = new System.Drawing.Point(19, 54);
-            this.lblApartmentNumber.Name = "lblApartmentNumber";
-            this.lblApartmentNumber.Size = new System.Drawing.Size(62, 13);
-            this.lblApartmentNumber.TabIndex = 0;
-            this.lblApartmentNumber.Text = "Apartment #";
+            this.textEdit5.Location = new System.Drawing.Point(185, 85);
+            this.textEdit5.Name = "textEdit5";
+            this.textEdit5.Size = new System.Drawing.Size(200, 20);
+            this.textEdit5.TabIndex = 9;
             // 
-            // lblStreetAddress
+            // textEdit4
             // 
-            this.lblStreetAddress.Location = new System.Drawing.Point(21, 124);
-            this.lblStreetAddress.Name = "lblStreetAddress";
-            this.lblStreetAddress.Size = new System.Drawing.Size(72, 13);
-            this.lblStreetAddress.TabIndex = 1;
-            this.lblStreetAddress.Text = "Street Address";
+            this.textEdit4.Location = new System.Drawing.Point(185, 50);
+            this.textEdit4.Name = "textEdit4";
+            this.textEdit4.Size = new System.Drawing.Size(200, 20);
+            this.textEdit4.TabIndex = 8;
             // 
-            // lblHouseNumber
+            // textEdit3
             // 
-            this.lblHouseNumber.Location = new System.Drawing.Point(19, 19);
-            this.lblHouseNumber.Name = "lblHouseNumber";
-            this.lblHouseNumber.Size = new System.Drawing.Size(41, 13);
-            this.lblHouseNumber.TabIndex = 2;
-            this.lblHouseNumber.Text = "House #";
+            this.textEdit3.Location = new System.Drawing.Point(185, 15);
+            this.textEdit3.Name = "textEdit3";
+            this.textEdit3.Size = new System.Drawing.Size(200, 20);
+            this.textEdit3.TabIndex = 7;
             // 
-            // lblFloorNumber
+            // textEdit2
             // 
-            this.lblFloorNumber.Location = new System.Drawing.Point(19, 89);
-            this.lblFloorNumber.Name = "lblFloorNumber";
-            this.lblFloorNumber.Size = new System.Drawing.Size(35, 13);
-            this.lblFloorNumber.TabIndex = 3;
-            this.lblFloorNumber.Text = "Floor #";
-            // 
-            // lblRemarkableSign
-            // 
-            this.lblRemarkableSign.Location = new System.Drawing.Point(21, 159);
-            this.lblRemarkableSign.Name = "lblRemarkableSign";
-            this.lblRemarkableSign.Size = new System.Drawing.Size(79, 13);
-            this.lblRemarkableSign.TabIndex = 4;
-            this.lblRemarkableSign.Text = "Remarkable Sign";
+            this.textEdit2.Location = new System.Drawing.Point(185, 155);
+            this.textEdit2.Name = "textEdit2";
+            this.textEdit2.Size = new System.Drawing.Size(592, 20);
+            this.textEdit2.TabIndex = 6;
             // 
             // textEdit1
             // 
@@ -152,33 +141,57 @@
             this.textEdit1.Size = new System.Drawing.Size(592, 20);
             this.textEdit1.TabIndex = 5;
             // 
-            // textEdit2
+            // lblRemarkableSign
             // 
-            this.textEdit2.Location = new System.Drawing.Point(185, 155);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(592, 20);
-            this.textEdit2.TabIndex = 6;
+            this.lblRemarkableSign.Location = new System.Drawing.Point(21, 159);
+            this.lblRemarkableSign.Name = "lblRemarkableSign";
+            this.lblRemarkableSign.Size = new System.Drawing.Size(79, 13);
+            this.lblRemarkableSign.TabIndex = 4;
+            this.lblRemarkableSign.Text = "Remarkable Sign";
             // 
-            // textEdit3
+            // lblFloorNumber
             // 
-            this.textEdit3.Location = new System.Drawing.Point(185, 15);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(200, 20);
-            this.textEdit3.TabIndex = 7;
+            this.lblFloorNumber.Location = new System.Drawing.Point(19, 89);
+            this.lblFloorNumber.Name = "lblFloorNumber";
+            this.lblFloorNumber.Size = new System.Drawing.Size(35, 13);
+            this.lblFloorNumber.TabIndex = 3;
+            this.lblFloorNumber.Text = "Floor #";
             // 
-            // textEdit4
+            // lblHouseNumber
             // 
-            this.textEdit4.Location = new System.Drawing.Point(185, 50);
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Size = new System.Drawing.Size(200, 20);
-            this.textEdit4.TabIndex = 8;
+            this.lblHouseNumber.Location = new System.Drawing.Point(19, 19);
+            this.lblHouseNumber.Name = "lblHouseNumber";
+            this.lblHouseNumber.Size = new System.Drawing.Size(41, 13);
+            this.lblHouseNumber.TabIndex = 2;
+            this.lblHouseNumber.Text = "House #";
             // 
-            // textEdit5
+            // lblStreetAddress
             // 
-            this.textEdit5.Location = new System.Drawing.Point(185, 85);
-            this.textEdit5.Name = "textEdit5";
-            this.textEdit5.Size = new System.Drawing.Size(200, 20);
-            this.textEdit5.TabIndex = 9;
+            this.lblStreetAddress.Location = new System.Drawing.Point(21, 124);
+            this.lblStreetAddress.Name = "lblStreetAddress";
+            this.lblStreetAddress.Size = new System.Drawing.Size(72, 13);
+            this.lblStreetAddress.TabIndex = 1;
+            this.lblStreetAddress.Text = "Street Address";
+            // 
+            // lblApartmentNumber
+            // 
+            this.lblApartmentNumber.Location = new System.Drawing.Point(19, 54);
+            this.lblApartmentNumber.Name = "lblApartmentNumber";
+            this.lblApartmentNumber.Size = new System.Drawing.Size(62, 13);
+            this.lblApartmentNumber.TabIndex = 0;
+            this.lblApartmentNumber.Text = "Apartment #";
+            // 
+            // gelButton1
+            // 
+            this.gelButton1.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
+            this.gelButton1.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
+            this.gelButton1.Location = new System.Drawing.Point(803, 321);
+            this.gelButton1.Name = "gelButton1";
+            this.gelButton1.Size = new System.Drawing.Size(75, 23);
+            this.gelButton1.TabIndex = 6;
+            this.gelButton1.Text = "Order";
+            this.gelButton1.UseVisualStyleBackColor = true;
+            this.gelButton1.Click += new System.EventHandler(this.gelButton1_Click);
             // 
             // DeliveryForm
             // 
@@ -187,6 +200,7 @@
             this.BackgroundImage = global::restaurantPOS.Properties.Resources.Untitled_11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(984, 661);
+            this.Controls.Add(this.gelButton1);
             this.Controls.Add(this.groupBoxAddress);
             this.Controls.Add(this.txtMobileNumber);
             this.Controls.Add(this.txtClientName);
@@ -203,11 +217,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMobileNumber.Properties)).EndInit();
             this.groupBoxAddress.ResumeLayout(false);
             this.groupBoxAddress.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,5 +244,6 @@
         private DevExpress.XtraEditors.LabelControl lblHouseNumber;
         private DevExpress.XtraEditors.LabelControl lblStreetAddress;
         private DevExpress.XtraEditors.LabelControl lblApartmentNumber;
+        private GelButton gelButton1;
     }
 }
