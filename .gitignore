@@ -47,3 +47,11 @@ Temporary Items
 .apdisk
 *.cache
 *.resources
+*.dat
+*.suo
+*.exe
+*.pdb
+*.sst
+*.crc
+*.old
+_ReSharper.restaurantPOS/PersistentCaches/LOG
