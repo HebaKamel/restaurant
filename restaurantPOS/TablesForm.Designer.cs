@@ -36,17 +36,17 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnMainForm = new restaurantPOS.GelButton();
-            this.btnPickUp = new restaurantPOS.GelButton();
-            this.btnTakeAway = new restaurantPOS.GelButton();
-            this.btnDineIn = new restaurantPOS.GelButton();
-            this.btnDelivery = new restaurantPOS.GelButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lblCopyRightsOrderForm = new DevExpress.XtraEditors.LabelControl();
             this.lblDateTimeOrderForm = new DevExpress.XtraEditors.LabelControl();
             this.lblUserRoleOrderForm = new DevExpress.XtraEditors.LabelControl();
             this.lblUserNameOrderForm = new DevExpress.XtraEditors.LabelControl();
             this.flowLayoutPanelTables = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnMainForm = new restaurantPOS.GelButton();
+            this.btnPickUp = new restaurantPOS.GelButton();
+            this.btnTakeAway = new restaurantPOS.GelButton();
+            this.btnDineIn = new restaurantPOS.GelButton();
+            this.btnDelivery = new restaurantPOS.GelButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -146,62 +146,6 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // btnMainForm
-            // 
-            this.btnMainForm.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
-            this.btnMainForm.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
-            this.btnMainForm.Location = new System.Drawing.Point(837, 15);
-            this.btnMainForm.Name = "btnMainForm";
-            this.btnMainForm.Size = new System.Drawing.Size(114, 33);
-            this.btnMainForm.TabIndex = 4;
-            this.btnMainForm.Text = "Home";
-            this.btnMainForm.UseVisualStyleBackColor = true;
-            // 
-            // btnPickUp
-            // 
-            this.btnPickUp.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
-            this.btnPickUp.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
-            this.btnPickUp.Location = new System.Drawing.Point(641, 15);
-            this.btnPickUp.Name = "btnPickUp";
-            this.btnPickUp.Size = new System.Drawing.Size(114, 33);
-            this.btnPickUp.TabIndex = 3;
-            this.btnPickUp.Text = "Pick Up";
-            this.btnPickUp.UseVisualStyleBackColor = true;
-            // 
-            // btnTakeAway
-            // 
-            this.btnTakeAway.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
-            this.btnTakeAway.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
-            this.btnTakeAway.Location = new System.Drawing.Point(445, 15);
-            this.btnTakeAway.Name = "btnTakeAway";
-            this.btnTakeAway.Size = new System.Drawing.Size(114, 33);
-            this.btnTakeAway.TabIndex = 2;
-            this.btnTakeAway.Text = "Take Away";
-            this.btnTakeAway.UseVisualStyleBackColor = true;
-            // 
-            // btnDineIn
-            // 
-            this.btnDineIn.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
-            this.btnDineIn.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
-            this.btnDineIn.Location = new System.Drawing.Point(249, 15);
-            this.btnDineIn.Name = "btnDineIn";
-            this.btnDineIn.Size = new System.Drawing.Size(114, 33);
-            this.btnDineIn.TabIndex = 1;
-            this.btnDineIn.Text = "Dine In";
-            this.btnDineIn.UseVisualStyleBackColor = true;
-            // 
-            // btnDelivery
-            // 
-            this.btnDelivery.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
-            this.btnDelivery.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
-            this.btnDelivery.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelivery.Location = new System.Drawing.Point(53, 15);
-            this.btnDelivery.Name = "btnDelivery";
-            this.btnDelivery.Size = new System.Drawing.Size(114, 33);
-            this.btnDelivery.TabIndex = 0;
-            this.btnDelivery.Text = "Delivery";
-            this.btnDelivery.UseVisualStyleBackColor = true;
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.lblCopyRightsOrderForm);
@@ -263,10 +207,68 @@
             this.flowLayoutPanelTables.Size = new System.Drawing.Size(978, 522);
             this.flowLayoutPanelTables.TabIndex = 6;
             // 
+            // btnMainForm
+            // 
+            this.btnMainForm.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
+            this.btnMainForm.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
+            this.btnMainForm.Location = new System.Drawing.Point(837, 15);
+            this.btnMainForm.Name = "btnMainForm";
+            this.btnMainForm.Size = new System.Drawing.Size(114, 33);
+            this.btnMainForm.TabIndex = 4;
+            this.btnMainForm.Text = "Home";
+            this.btnMainForm.UseVisualStyleBackColor = true;
+            // 
+            // btnPickUp
+            // 
+            this.btnPickUp.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
+            this.btnPickUp.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
+            this.btnPickUp.Location = new System.Drawing.Point(641, 15);
+            this.btnPickUp.Name = "btnPickUp";
+            this.btnPickUp.Size = new System.Drawing.Size(114, 33);
+            this.btnPickUp.TabIndex = 3;
+            this.btnPickUp.Text = "Pick Up";
+            this.btnPickUp.UseVisualStyleBackColor = true;
+            // 
+            // btnTakeAway
+            // 
+            this.btnTakeAway.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
+            this.btnTakeAway.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
+            this.btnTakeAway.Location = new System.Drawing.Point(445, 15);
+            this.btnTakeAway.Name = "btnTakeAway";
+            this.btnTakeAway.Size = new System.Drawing.Size(114, 33);
+            this.btnTakeAway.TabIndex = 2;
+            this.btnTakeAway.Text = "Take Away";
+            this.btnTakeAway.UseVisualStyleBackColor = true;
+            // 
+            // btnDineIn
+            // 
+            this.btnDineIn.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
+            this.btnDineIn.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
+            this.btnDineIn.Location = new System.Drawing.Point(249, 15);
+            this.btnDineIn.Name = "btnDineIn";
+            this.btnDineIn.Size = new System.Drawing.Size(114, 33);
+            this.btnDineIn.TabIndex = 1;
+            this.btnDineIn.Text = "Dine In";
+            this.btnDineIn.UseVisualStyleBackColor = true;
+            // 
+            // btnDelivery
+            // 
+            this.btnDelivery.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
+            this.btnDelivery.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
+            this.btnDelivery.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelivery.Location = new System.Drawing.Point(53, 15);
+            this.btnDelivery.Name = "btnDelivery";
+            this.btnDelivery.Size = new System.Drawing.Size(114, 33);
+            this.btnDelivery.TabIndex = 0;
+            this.btnDelivery.Text = "Delivery";
+            this.btnDelivery.UseVisualStyleBackColor = true;
+            // 
             // FrmTables
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::restaurantPOS.Properties.Resources.Untitled_11;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(984, 661);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -275,6 +277,7 @@
             this.Name = "FrmTables";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tables";
+            this.Load += new System.EventHandler(this.FrmTables_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();

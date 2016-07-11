@@ -16,5 +16,10 @@ namespace restaurantPOS
         {
             InitializeComponent();
         }
+
+        private void FrmTables_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
