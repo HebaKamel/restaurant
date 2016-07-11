@@ -45,5 +45,9 @@ namespace restaurantPOS.FormsMessages
         #region goods
         public string AddGoodHeader = "بيانات البضاعة";
         #endregion
+
+        #region supplier
+        public string AddSupplierHeader = "بيانات المورد";
+        #endregion
     }
 }

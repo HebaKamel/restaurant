@@ -465,7 +465,7 @@ namespace restaurantPOS.DataAccess
         #endregion
 
         #region suppliers
-        public int addSupplier(string supplierNameEn, string supplierNameAr, string supplierAddressEn, string supplierAddressAr, string supplierTelephoneNo, string supplierMobileNo, string supplierEmail)
+        public int addSupplier(string supplierNameEn, string supplierNameAr, string supplierAddressEn, string supplierAddressAr, string supplierTelephoneNo, string supplierMobileNo)
         {
             //transaction = con.BeginTransaction("SampleTransaction");
             int clientId;
@@ -497,7 +497,7 @@ namespace restaurantPOS.DataAccess
             return clientId;
         }
 
-        public DataTable getSupplier(string supplierNameEn, string supplierNameAr, string supplierAddressEn, string supplierAddressAr, string supplierTelephoneNo, string supplierMobileNo, string supplierEmail, int? supplierId = 0)
+        public DataTable getSupplier(string supplierNameEn, string supplierNameAr, string supplierAddressEn, string supplierAddressAr, string supplierTelephoneNo, string supplierMobileNo, int? supplierId = 0)
         {
             if (supplierId == 0) supplierId = null;
             if (supplierNameEn == "") supplierNameEn = null;
@@ -506,7 +506,6 @@ namespace restaurantPOS.DataAccess
             if (supplierAddressAr == "") supplierAddressAr = null;
             if (supplierTelephoneNo == "") supplierTelephoneNo = null;
             if (supplierMobileNo == "") supplierMobileNo = null;
-            if (supplierEmail == "") supplierEmail = null;
             DataTable dt = new DataTable();
             using (SqlCommand cmd = new SqlCommand("SearchSupplier", con))
             {
@@ -556,7 +555,7 @@ namespace restaurantPOS.DataAccess
             return deleted;
         }
 
-        public int updateSupplier(string supplierNameEn, string supplierNameAr, string supplierAddressEn, string supplierAddressAr, string supplierTelephoneNo, string supplierMobileNo, string supplierEmail, int? supplierId = 0)
+        public int updateSupplier(string supplierNameEn, string supplierNameAr, string supplierAddressEn, string supplierAddressAr, string supplierTelephoneNo, string supplierMobileNo, int? supplierId = 0)
         {
             int updated = 0;
             if (supplierId == 0) supplierId = null;
@@ -566,8 +565,6 @@ namespace restaurantPOS.DataAccess
             if (supplierAddressAr == "") supplierAddressAr = null;
             if (supplierTelephoneNo == "") supplierTelephoneNo = null;
             if (supplierMobileNo == "") supplierMobileNo = null;
-            if (supplierEmail == "") supplierEmail = null;
-
             using (SqlCommand cmd = new SqlCommand("updateSupplier", con))
             {
                 cmd.CommandType = CommandType.StoredProcedure;

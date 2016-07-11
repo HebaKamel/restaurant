@@ -26,6 +26,8 @@ namespace restaurantPOS
         Manage.Units.SearchUnits searchUnits = new Manage.Units.SearchUnits();
         Manage.Goods.AddGoods addGoods = new Manage.Goods.AddGoods();
         Manage.Goods.SearchGoods searchGoods = new Manage.Goods.SearchGoods();
+        Manage.Supplier.AddSupplier addSupplier = new Manage.Supplier.AddSupplier();
+        Manage.Supplier.SearchSupplier searchSupplier = new Manage.Supplier.SearchSupplier();
         #endregion
 
         public FrmManage()
@@ -258,6 +260,36 @@ namespace restaurantPOS
             searchGoods.Show();
             searchGoods.MdiParent = this;
             searchGoods.Dock = DockStyle.Right;
+        }
+        private void navBarItemAddSupplier_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            searchClient.Close();
+            searchUnits.Close();
+            addUnit.Close();
+            addClient.Close();
+            addClient.Close();
+            addGoods.Close();
+            searchSupplier.Close();
+
+            addSupplier = new Manage.Supplier.AddSupplier();
+            addSupplier.Show();
+            addSupplier.MdiParent = this;
+            addSupplier.Dock = DockStyle.Right;
+        }
+
+        private void navBarItemSearchSupplier_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            searchClient.Close();
+            searchUnits.Close();
+            addUnit.Close();
+            addClient.Close();
+            addClient.Close();
+            addGoods.Close();
+            addSupplier.Close();
+            searchSupplier = new Manage.Supplier.SearchSupplier();
+            searchSupplier.Show();
+            searchSupplier.MdiParent = this;
+            searchSupplier.Dock = DockStyle.Right;
         }
     }
 }
