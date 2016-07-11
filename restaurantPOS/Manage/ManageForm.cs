@@ -28,6 +28,7 @@ namespace restaurantPOS
         Manage.Goods.SearchGoods searchGoods = new Manage.Goods.SearchGoods();
         Manage.Supplier.AddSupplier addSupplier = new Manage.Supplier.AddSupplier();
         Manage.Supplier.SearchSupplier searchSupplier = new Manage.Supplier.SearchSupplier();
+        Manage.Tables.AddTablesStatus addTablesStatus = new Manage.Tables.AddTablesStatus();
         #endregion
 
         public FrmManage()
@@ -41,8 +42,8 @@ namespace restaurantPOS
             var pfc = new PrivateFontCollection();
             const string fontNamerechargebd = "recharge bd.ttf";
             const string fontNameblue = "blue.ttf";
-            if (File.Exists(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), fontNamerechargebd)) && File.Exists(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), fontNameblue)))
-            {
+            //if (File.Exists(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), fontNamerechargebd)) && File.Exists(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), fontNameblue)))
+            //{
 
                 //pfc.AddFontFile(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), fontNameblue));
                 //menuStripLeft.Font = new Font(pfc.Families[0], 9, FontStyle.Regular);
@@ -50,45 +51,45 @@ namespace restaurantPOS
                 //lblUserNameManage.Font = new Font(pfc.Families[0], 10, FontStyle.Regular);
                 //lblDateTimeManage.Font = new Font(pfc.Families[0], 10, FontStyle.Regular);
                 //lblCopyRightsManage.Font = new Font(pfc.Families[0], 8, FontStyle.Regular);
-                foreach (Control control in Controls)
-                {
-                    if (control.Name.ToLower().Contains("menu"))
-                    {
-                        pfc.AddFontFile(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), fontNameblue));
-                        control.Font = new Font(pfc.Families[0], 9, FontStyle.Regular);
-                    }
-                    if (control.Name.ToLower().Contains("groupControlBottom"))
-                    {
-                        foreach (Control grpControl in control.Controls)
-                        {
-                            if (grpControl.Name.ToLower().Contains("role"))
-                            {
-                                pfc.AddFontFile(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), fontNameblue));
-                                grpControl.Font = new Font(pfc.Families[0], 8, FontStyle.Regular);
-                            }
-                            pfc.AddFontFile(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), fontNameblue));
-                            grpControl.Font = new Font(pfc.Families[0], 9, FontStyle.Regular);
-                        }
+                //foreach (Control control in Controls)
+                //{
+                //    if (control.Name.ToLower().Contains("menu"))
+                //    {
+                //        pfc.AddFontFile(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), fontNameblue));
+                //        control.Font = new Font(pfc.Families[0], 9, FontStyle.Regular);
+                //    }
+                //    if (control.Name.ToLower().Contains("groupControlBottom"))
+                //    {
+                //        foreach (Control grpControl in control.Controls)
+                //        {
+                //            if (grpControl.Name.ToLower().Contains("role"))
+                //            {
+                //                pfc.AddFontFile(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), fontNameblue));
+                //                grpControl.Font = new Font(pfc.Families[0], 8, FontStyle.Regular);
+                //            }
+                //            pfc.AddFontFile(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), fontNameblue));
+                //            grpControl.Font = new Font(pfc.Families[0], 9, FontStyle.Regular);
+                //        }
 
-                    }
-                }
-            }
-            else
-                XtraMessageBox.Show(messagesEn.fontsError, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //    }
+                //}
+            //}
+            //else
+            //    XtraMessageBox.Show(messagesEn.fontsError, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            #region customize nav bar fonts
-            foreach (DevExpress.XtraNavBar.NavBarGroup group in navBarControlLeft.Groups)
-            {
-                pfc.AddFontFile(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), fontNameblue));
-                group.Appearance.Font = new Font(pfc.Families[0], 9, FontStyle.Regular);
+            //#region customize nav bar fonts
+            //foreach (DevExpress.XtraNavBar.NavBarGroup group in navBarControlLeft.Groups)
+            //{
+            //    pfc.AddFontFile(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), fontNameblue));
+            //    group.Appearance.Font = new Font(pfc.Families[0], 9, FontStyle.Regular);
                 
-            }
+            //}
 
-            foreach (DevExpress.XtraNavBar.NavBarItem item in navBarControlLeft.Items)
-            {
-                item.Appearance.Font = new Font(pfc.Families[0], 9, FontStyle.Regular);
-            }
-            #endregion
+            //foreach (DevExpress.XtraNavBar.NavBarItem item in navBarControlLeft.Items)
+            //{
+            //    item.Appearance.Font = new Font(pfc.Families[0], 9, FontStyle.Regular);
+            //}
+            //#endregion
         }
 
         private class MyRenderer : ToolStripProfessionalRenderer
@@ -286,10 +287,26 @@ namespace restaurantPOS
             addClient.Close();
             addGoods.Close();
             addSupplier.Close();
+
             searchSupplier = new Manage.Supplier.SearchSupplier();
             searchSupplier.Show();
             searchSupplier.MdiParent = this;
             searchSupplier.Dock = DockStyle.Right;
         }
-    }
+
+        private void navBarItemTableStatus_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            searchClient.Close();
+            searchUnits.Close();
+            addUnit.Close();
+            addClient.Close();
+            addClient.Close();
+            addGoods.Close();
+            addSupplier.Close();
+
+            addTablesStatus = new Manage.Tables.AddTablesStatus();
+            addTablesStatus.Show();
+            addTablesStatus.MdiParent = this;
+            addTablesStatus.Dock = DockStyle.Right;
+        }}
 }

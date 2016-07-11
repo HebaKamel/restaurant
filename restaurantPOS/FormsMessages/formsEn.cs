@@ -50,5 +50,11 @@ namespace restaurantPOS.FormsMessages
         #region supplier
         public string AddSupplierHeader = "Supplier Informaion Details";
         #endregion
+
+        #region status
+        public string status = "Table colors";
+        public string statusNameEn = "status Name (English)";
+        public string statusColor = "status Color";
+        #endregion
     }
 }

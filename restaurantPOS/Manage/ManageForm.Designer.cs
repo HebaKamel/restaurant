@@ -76,9 +76,7 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.navBarControlLeft = new DevExpress.XtraNavBar.NavBarControl();
-            this.navBarGroupItems = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarItemAddItem = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItemSearchItem = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarGroupTableColor = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarGroupProgramSettings = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItemProgram = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroupUserSettings = new DevExpress.XtraNavBar.NavBarGroup();
@@ -100,12 +98,16 @@
             this.navBarItemAddSupplier = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemSearchSupplier = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroupTableSetting = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarGroupTableColor = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarGroupCategory = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItemAddCategory = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemSearchCategory = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarGroupItems = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarItemAddItem = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItemSearchItem = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemAddMenuItem = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemUpdateDeleteMenuItem = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItemAddStatus = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItemTableStatus = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlBottom)).BeginInit();
             this.groupControlBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlTop)).BeginInit();
@@ -541,7 +543,7 @@
             // 
             // navBarControlLeft
             // 
-            this.navBarControlLeft.ActiveGroup = this.navBarGroupUserSettings;
+            this.navBarControlLeft.ActiveGroup = this.navBarGroupTableColor;
             this.navBarControlLeft.AllowDrop = false;
             this.navBarControlLeft.BackColor = System.Drawing.Color.Transparent;
             this.navBarControlLeft.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -578,7 +580,8 @@
             this.navBarItemAddCategory,
             this.navBarItemSearchCategory,
             this.navBarItemAddItem,
-            this.navBarItemSearchItem});
+            this.navBarItemSearchItem,
+            this.navBarItemTableStatus});
             this.navBarControlLeft.Location = new System.Drawing.Point(0, 31);
             this.navBarControlLeft.Name = "navBarControlLeft";
             this.navBarControlLeft.OptionsNavPane.ExpandedWidth = 174;
@@ -589,23 +592,13 @@
             this.navBarControlLeft.ActiveGroupChanged += new DevExpress.XtraNavBar.NavBarGroupEventHandler(this.navBarControlLeft_ActiveGroupChanged);
             this.navBarControlLeft.Click += new System.EventHandler(this.navBarControlLeft_Click);
             // 
-            // navBarGroupItems
+            // navBarGroupTableColor
             // 
-            this.navBarGroupItems.Caption = "Items Setting";
-            this.navBarGroupItems.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemAddItem),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemSearchItem)});
-            this.navBarGroupItems.Name = "navBarGroupItems";
-            // 
-            // navBarItemAddItem
-            // 
-            this.navBarItemAddItem.Caption = "Add Item";
-            this.navBarItemAddItem.Name = "navBarItemAddItem";
-            // 
-            // navBarItemSearchItem
-            // 
-            this.navBarItemSearchItem.Caption = "Search Item";
-            this.navBarItemSearchItem.Name = "navBarItemSearchItem";
+            this.navBarGroupTableColor.Caption = "Table Color";
+            this.navBarGroupTableColor.Expanded = true;
+            this.navBarGroupTableColor.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemTableStatus)});
+            this.navBarGroupTableColor.Name = "navBarGroupTableColor";
             // 
             // navBarGroupProgramSettings
             // 
@@ -625,7 +618,6 @@
             // navBarGroupUserSettings
             // 
             this.navBarGroupUserSettings.Caption = "User Settings";
-            this.navBarGroupUserSettings.Expanded = true;
             this.navBarGroupUserSettings.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.SmallIconsText;
             this.navBarGroupUserSettings.Hint = "User Settings Adjusted From This Group";
             this.navBarGroupUserSettings.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
@@ -751,11 +743,6 @@
             this.navBarGroupTableSetting.Caption = "Table Setting";
             this.navBarGroupTableSetting.Name = "navBarGroupTableSetting";
             // 
-            // navBarGroupTableColor
-            // 
-            this.navBarGroupTableColor.Caption = "Table Color";
-            this.navBarGroupTableColor.Name = "navBarGroupTableColor";
-            // 
             // navBarGroupCategory
             // 
             this.navBarGroupCategory.Caption = "Categories Setting";
@@ -774,6 +761,24 @@
             this.navBarItemSearchCategory.Caption = "Search Category";
             this.navBarItemSearchCategory.Name = "navBarItemSearchCategory";
             // 
+            // navBarGroupItems
+            // 
+            this.navBarGroupItems.Caption = "Items Setting";
+            this.navBarGroupItems.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemAddItem),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemSearchItem)});
+            this.navBarGroupItems.Name = "navBarGroupItems";
+            // 
+            // navBarItemAddItem
+            // 
+            this.navBarItemAddItem.Caption = "Add Item";
+            this.navBarItemAddItem.Name = "navBarItemAddItem";
+            // 
+            // navBarItemSearchItem
+            // 
+            this.navBarItemSearchItem.Caption = "Search Item";
+            this.navBarItemSearchItem.Name = "navBarItemSearchItem";
+            // 
             // navBarItemAddMenuItem
             // 
             this.navBarItemAddMenuItem.Caption = "Add Menu Item";
@@ -783,6 +788,17 @@
             // 
             this.navBarItemUpdateDeleteMenuItem.Caption = "Update\\Delete Menu Item";
             this.navBarItemUpdateDeleteMenuItem.Name = "navBarItemUpdateDeleteMenuItem";
+            // 
+            // navBarItemAddStatus
+            // 
+            this.navBarItemAddStatus.Caption = "Add Status";
+            this.navBarItemAddStatus.Name = "navBarItemAddStatus";
+            // 
+            // navBarItemTableStatus
+            // 
+            this.navBarItemTableStatus.Caption = "Add Status";
+            this.navBarItemTableStatus.Name = "navBarItemTableStatus";
+            this.navBarItemTableStatus.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemTableStatus_LinkClicked);
             // 
             // FrmManage
             // 
@@ -903,6 +919,8 @@
         private DevExpress.XtraNavBar.NavBarGroup navBarGroupItems;
         private DevExpress.XtraNavBar.NavBarItem navBarItemAddItem;
         private DevExpress.XtraNavBar.NavBarItem navBarItemSearchItem;
+        private DevExpress.XtraNavBar.NavBarItem navBarItemAddStatus;
+        private DevExpress.XtraNavBar.NavBarItem navBarItemTableStatus;
 
     }
 }

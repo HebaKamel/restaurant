@@ -49,5 +49,11 @@ namespace restaurantPOS.FormsMessages
         #region supplier
         public string AddSupplierHeader = "بيانات المورد";
         #endregion
+
+        #region status
+        public string status = "ألوان ";
+        public string statusNameEn = "اسم الحالة بالانجليزية";
+        public string statusColor = "اللون";
+        #endregion
     }
 }

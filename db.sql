@@ -152,17 +152,20 @@ ALTER table items add constraint fk_items_category_id FOREIGN KEY (category_id) 
 ALTER Table clients Add	Is_VIP bit
 ALTER table clients add client_email nvarchar(255)
 ------------11-07-2016----kajoo----------
+CREATE table dineIn_tables_status(
+table_status_id int primary key identity(1,1),
+table_status_en nvarchar(255),
+table_status_ar nvarchar(255),
+table_color nvarchar(255)
+);
 CREATE table dineIn_tables
 (
 dineIn_table_id int primary key identity(1,1),
-dineIn_table_name nvarchar(255),
+dineIn_table_name_en nvarchar(255),
+dineIn_table_name_ar nvarchar(255),
 dineIn_table_isVip bit,
-dineIn_table_chair_number int
+dineIn_table_chair_number int,
+table_status_id int,
+constraint fk_dineIn_table_table_status_id Foreign key (table_status_id) references dineIn_tables_status(table_status_id)
 );
-CREATE table dineIn_tables_status(
-table_status_id int primary key identity(1,1),
-table_status nvarchar(255),
-table_color nvarchar(255),
-dineIn_table_id int,
-constraint fk_dineIn_tables_status_dineIn_table_id Foreign key (dineIn_table_id) references dineIn_tables(dineIn_table_id)
-);
+------------11-07-2016----kajoo----------

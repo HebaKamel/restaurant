@@ -14,9 +14,9 @@ using restaurantPOS.DataAccess;
 using restaurantPOS.Properties;
 using restaurantPOS.SystemSetting;
 
-namespace restaurantPOS.Manage.Units
+namespace restaurantPOS.Manage.Tables
 {
-    public partial class AddUnits : Form
+    public partial class AddTablesStatus : Form
     {
         private FormsMessages.formsAr formsAr = new FormsMessages.formsAr();
         private FormsMessages.formsEn formsEn = new FormsMessages.formsEn();
@@ -26,12 +26,12 @@ namespace restaurantPOS.Manage.Units
         private SystemSetting.system system = new system();
         string errMsg = "";
 
-        public AddUnits()
+        public AddTablesStatus()
         {
             InitializeComponent();
         }
 
-        private void AddUnits_Load(object sender, EventArgs e)
+        private void AddTablesStatus_Load(object sender, EventArgs e)
         {
             setLanguage();
             //use custom font
@@ -64,59 +64,53 @@ namespace restaurantPOS.Manage.Units
         private void setLanguage(){
             if (Settings.Default.Language == "En")
             {
-                lblAddUnitHeader.Text = formsEn.AddUnitHeader;
+                lblAddHeader.Text = formsEn.status;
                 btnAdd.Text = formsEn.btnAdd;
                 btnClear.Text = formsEn.btnClear;
                 lblNameArabicAr.Visible = false;
                 lblNameEnglishAr.Visible = false;
+                lblColorAr.Visible = false;
             }
             else
             {
-                lblAddUnitHeader.Text = formsAr.AddUnitHeader;
+                lblAddHeader.Text = formsAr.status;
                 btnAdd.Text = formsAr.btnAdd;
                 btnClear.Text = formsAr.btnClear;
                 lblNameArabic.Visible = false;
                 lblNameEnglish.Visible = false;
+                lblColorEn.Visible = false;
             }
         }
 
         private string validation()
         {
-            errMsg = "";
-            string nameEn = "", nameAr = "";
-            if (string.IsNullOrEmpty(txtNameEnglish.Text))
+            errMsg = messagesEn.ErrorMessae;
+            string name = "", color = "";
+            if (string.IsNullOrEmpty(txtStatusEnglish.Text))
             {
                 if (Settings.Default.Language == "En")
-                    nameEn = formsEn.unitNameEn;
+                    name = formsEn.statusNameEn;
                 else
-                    nameEn = formsAr.unitNameEn;
+                    name = formsAr.statusNameEn;
+                errMsg += "\n" + name;
             }
-
-            if (string.IsNullOrEmpty(txtNameArabic.Text))
+            if (statusColorPick.EditValue.ToString().ToLower().Contains("empty"))
             {
                 if (Settings.Default.Language == "En")
-                    nameAr = formsEn.unitNameAr;
+                    color = formsEn.statusColor;
                 else
-                    nameAr = formsAr.unitNameAr;
+                    color = formsAr.statusColor;
+                errMsg += "\n" + color;
             }
-
-            if (nameEn != "" || nameAr != "")
-            {
-                if (Settings.Default.Language == "En")
-                    errMsg = messagesEn.ErrorMessae + "\n" + nameEn + "\n" + nameAr;
-                else
-                    errMsg = messagesAr.ErrorMessae + "\n" + nameEn + "\n" + nameAr;
-            }
-
             return errMsg;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (validation() == "")
+            if (validation() == messagesEn.ErrorMessae)
             {
-                int unitId = db.addUnit(txtNameEnglish.Text, txtNameArabic.Text);
-                if (unitId != 0)
+                int statusId = db.addStatus(txtStatusEnglish.Text, txtStatusArabic.Text,statusColorPick.Color.ToArgb().ToString());
+                if (statusId != 0)
                     XtraMessageBox.Show(messagesEn.insertedSuccessfully, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 else
                     XtraMessageBox.Show(messagesEn.insertedError, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -127,7 +121,7 @@ namespace restaurantPOS.Manage.Units
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            
         }
+
     }
 }
