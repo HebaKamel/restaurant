@@ -162,7 +162,7 @@ dineIn_table_chair_number int
 CREATE table dineIn_tables_status(
 table_status_id int primary key identity(1,1),
 table_status nvarchar(255),
-table_color nvarchar(255)
+table_color nvarchar(255),
 dineIn_table_id int,
-constraint 
+constraint fk_dineIn_tables_status_dineIn_table_id Foreign key (dineIn_table_id) references dineIn_tables(dineIn_table_id)
 );
