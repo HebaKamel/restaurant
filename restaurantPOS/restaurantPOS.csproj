@@ -189,6 +189,48 @@
     <Compile Include="Manage\Client\AddClients.Designer.cs">
       <DependentUpon>AddClients.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manage\ProgramSetting\ProgSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage\ProgramSetting\ProgSetting.Designer.cs">
+      <DependentUpon>ProgSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Supplier\AddSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage\Supplier\AddSupplier.Designer.cs">
+      <DependentUpon>AddSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Supplier\SearchSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage\Supplier\SearchSupplier.Designer.cs">
+      <DependentUpon>SearchSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Supplier\UpdateSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage\Supplier\UpdateSupplier.Designer.cs">
+      <DependentUpon>UpdateSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Tables\AddTablesStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage\Tables\AddTablesStatus.Designer.cs">
+      <DependentUpon>AddTablesStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Tables\SearchStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage\Tables\SearchStatus.Designer.cs">
+      <DependentUpon>SearchStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Tables\UpdateStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage\Tables\UpdateStatus.Designer.cs">
+      <DependentUpon>UpdateStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manage\Units\AddUnits.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +317,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manage\Client\AddClients.resx">
       <DependentUpon>AddClients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ProgramSetting\ProgSetting.resx">
+      <DependentUpon>ProgSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Supplier\AddSupplier.resx">
+      <DependentUpon>AddSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Supplier\SearchSupplier.resx">
+      <DependentUpon>SearchSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Supplier\UpdateSupplier.resx">
+      <DependentUpon>UpdateSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Tables\AddTablesStatus.resx">
+      <DependentUpon>AddTablesStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Tables\SearchStatus.resx">
+      <DependentUpon>SearchStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Tables\UpdateStatus.resx">
+      <DependentUpon>UpdateStatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manage\Units\AddUnits.resx">
       <DependentUpon>AddUnits.cs</DependentUpon>
