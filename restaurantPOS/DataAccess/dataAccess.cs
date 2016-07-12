@@ -697,5 +697,71 @@ namespace restaurantPOS.DataAccess
         //    return updated;
         //}
         #endregion
+
+        #region ProgSetting
+        public DataTable getProg()
+        {
+            DataTable dt = new DataTable();
+            using (SqlCommand cmd = new SqlCommand("SearchProg", con))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                if (con.State != ConnectionState.Open)
+                    con.Open();
+                dt.Load(cmd.ExecuteReader());
+                if (con.State != ConnectionState.Closed)
+                    con.Close();
+            }
+            return dt;
+        }
+
+        public int updateProg(string nameEn, string nameAr, string addressEn, string addressAr, string telephoneNo, string mobileNo, string website, string resetFooter, string logoPath)
+        {
+            int updated = 0;
+            if (nameEn == "") nameEn = null;
+            if (nameAr == "") nameAr = null;
+            if (addressEn == "") addressEn = null;
+            if (addressAr == "") addressAr = null;
+            if (telephoneNo == "") telephoneNo = null;
+            if (mobileNo == "") mobileNo = null;
+            if (website == "") website = null;
+            if (resetFooter == "") resetFooter = null;
+            if (logoPath == "") logoPath = null;
+
+            using (SqlCommand cmd = new SqlCommand("updateProg", con))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@nameEn", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@nameAr", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@addressEn", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@addressAr", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@telephoneNo", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@mobileNo", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@website", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@resetFooter", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@logoPath", SqlDbType.NVarChar);
+
+                cmd.Parameters["@nameEn"].Value = nameEn;
+                cmd.Parameters["@nameAr"].Value = nameAr;
+                cmd.Parameters["@addressEn"].Value = addressEn;
+                cmd.Parameters["@addressAr"].Value = addressAr;
+                cmd.Parameters["@telephoneNo"].Value = telephoneNo;
+                cmd.Parameters["@mobileNo"].Value = mobileNo;
+                cmd.Parameters["@website"].Value = website;
+                cmd.Parameters["@resetFooter"].Value = resetFooter;
+                cmd.Parameters["@logoPath"].Value = logoPath;
+
+                if (con.State != ConnectionState.Open)
+                    con.Open();
+                SqlParameter returnParameter = cmd.Parameters.Add("RetVal", SqlDbType.Int);
+                returnParameter.Direction = ParameterDirection.ReturnValue;
+                cmd.ExecuteReader();
+                if (returnParameter.Value != null)
+                    updated = (int)returnParameter.Value;
+                if (con.State != ConnectionState.Closed)
+                    con.Close();
+            }
+            return updated;
+        }
+        #endregion
     }
 }
