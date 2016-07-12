@@ -29,6 +29,7 @@ namespace restaurantPOS
         Manage.Supplier.AddSupplier addSupplier = new Manage.Supplier.AddSupplier();
         Manage.Supplier.SearchSupplier searchSupplier = new Manage.Supplier.SearchSupplier();
         Manage.Tables.AddTablesStatus addTablesStatus = new Manage.Tables.AddTablesStatus();
+        Manage.ProgramSetting.ProgSetting progSetting = new Manage.ProgramSetting.ProgSetting();
         #endregion
 
         public FrmManage()
@@ -308,5 +309,22 @@ namespace restaurantPOS
             addTablesStatus.Show();
             addTablesStatus.MdiParent = this;
             addTablesStatus.Dock = DockStyle.Right;
-        }}
+        }
+
+        private void navBarItemProgram_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            searchClient.Close();
+            searchUnits.Close();
+            addUnit.Close();
+            addClient.Close();
+            addClient.Close();
+            addGoods.Close();
+            addSupplier.Close();
+
+            progSetting = new Manage.ProgramSetting.ProgSetting();
+            progSetting.Show();
+            progSetting.MdiParent = this;
+            progSetting.Dock = DockStyle.Right;
+        }
+    }
 }

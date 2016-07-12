@@ -55,5 +55,9 @@ namespace restaurantPOS.FormsMessages
         public string statusNameEn = "اسم الحالة بالانجليزية";
         public string statusColor = "اللون";
         #endregion
+
+        #region progSetting
+        public string progHeader = "البيانات الاساسية للبرنامج ";
+        #endregion
     }
 }
