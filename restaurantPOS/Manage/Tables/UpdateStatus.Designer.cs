@@ -35,10 +35,10 @@
             this.lblNameEnglishAr = new DevExpress.XtraEditors.LabelControl();
             this.lblNameEnglish = new DevExpress.XtraEditors.LabelControl();
             this.lblHeader = new System.Windows.Forms.Label();
-            this.btnUpdate = new restaurantPOS.GelButton();
             this.statusColorPick = new DevExpress.XtraEditors.ColorPickEdit();
             this.lblColorAr = new DevExpress.XtraEditors.LabelControl();
             this.lblColorEn = new DevExpress.XtraEditors.LabelControl();
+            this.btnUpdate = new restaurantPOS.GelButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtNameArabic.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNameEnglish.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusColorPick.Properties)).BeginInit();
@@ -107,18 +107,6 @@
             this.lblHeader.TabIndex = 76;
             this.lblHeader.Text = "label1";
             // 
-            // btnUpdate
-            // 
-            this.btnUpdate.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
-            this.btnUpdate.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
-            this.btnUpdate.Location = new System.Drawing.Point(264, 204);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(155, 28);
-            this.btnUpdate.TabIndex = 77;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
             // statusColorPick
             // 
             this.statusColorPick.EditValue = System.Drawing.Color.Empty;
@@ -147,6 +135,18 @@
             this.lblColorEn.TabIndex = 79;
             this.lblColorEn.Text = "Color";
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
+            this.btnUpdate.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
+            this.btnUpdate.Location = new System.Drawing.Point(264, 204);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(155, 28);
+            this.btnUpdate.TabIndex = 77;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
             // UpdateStatus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -163,6 +163,7 @@
             this.Controls.Add(this.txtNameEnglish);
             this.Controls.Add(this.lblNameEnglishAr);
             this.Controls.Add(this.lblNameEnglish);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "UpdateStatus";

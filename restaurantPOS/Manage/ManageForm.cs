@@ -6,6 +6,7 @@ using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using restaurantPOS.Manage;
+using restaurantPOS.Manage.Tables;
 using restaurantPOS.Properties;
 using restaurantPOS.SystemSetting;
 using restaurantPOS.userMessages;
@@ -30,6 +31,7 @@ namespace restaurantPOS
         Manage.Supplier.SearchSupplier searchSupplier = new Manage.Supplier.SearchSupplier();
         Manage.Tables.AddTablesStatus addTablesStatus = new Manage.Tables.AddTablesStatus();
         Manage.ProgramSetting.ProgSetting progSetting = new Manage.ProgramSetting.ProgSetting();
+        Manage.Tables.UpdateStatus updateTableStatus = new UpdateStatus(-1);
         #endregion
 
         public FrmManage()
@@ -228,12 +230,11 @@ namespace restaurantPOS
             addGoods.Close();
             searchGoods.Close();
 
-            searchUnits = new Manage.Units.SearchUnits();
-            searchUnits.Show();
-            searchUnits.MdiParent = this;
-            searchUnits.Dock = DockStyle.Right;
+            updateTableStatus = new Manage.Tables.UpdateStatus(-1);
+            updateTableStatus.Show();
+            updateTableStatus.MdiParent = this;
+            updateTableStatus.Dock = DockStyle.Right;
         }
-
         private void navBarItemAddGoods_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             searchClient.Close();
@@ -310,6 +311,23 @@ namespace restaurantPOS
             addTablesStatus.MdiParent = this;
             addTablesStatus.Dock = DockStyle.Right;
         }
+        
+        private void navBarItemUpdateDeleteStatus_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            searchClient.Close();
+            searchUnits.Close();
+            addUnit.Close();
+            addClient.Close();
+            addClient.Close();
+            addGoods.Close();
+            addSupplier.Close();
+
+
+            updateTableStatus = new UpdateStatus(-1);
+            progSetting.Show();
+            progSetting.MdiParent = this;
+            progSetting.Dock = DockStyle.Right;
+        }
 
         private void navBarItemProgram_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
@@ -326,5 +344,7 @@ namespace restaurantPOS
             progSetting.MdiParent = this;
             progSetting.Dock = DockStyle.Right;
         }
+
+        
     }
 }

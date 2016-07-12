@@ -34,7 +34,7 @@ namespace restaurantPOS.Manage.Tables
         private void UpdateStatus_Load(object sender, EventArgs e)
         {
             setLanguage();
-            DataTable clientDT = db.getUnit(null, null, this.unitId);
+            DataTable clientDT = db.getStatus(null, null, null ,this.unitId);
             if (clientDT.Rows.Count > 0)
             {
                 txtNameEnglish.Text = clientDT.Rows[0]["unit_name_en"].ToString();
@@ -62,7 +62,7 @@ namespace restaurantPOS.Manage.Tables
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (validation() == "")
+            if (validation() == messagesEn.ErrorMessae)
             {
                 MessageBox.Show(statusColorPick.SelectedText);
                 int updated = db.UpdateStatus(txtNameEnglish.Text, txtNameArabic.Text, statusColorPick.SelectedText,this.unitId);
