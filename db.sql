@@ -168,4 +168,6 @@ dineIn_table_chair_number int,
 table_status_id int,
 constraint fk_dineIn_table_table_status_id Foreign key (table_status_id) references dineIn_tables_status(table_status_id)
 );
-------------11-07-2016----kajoo----------
+------------12-07-2016----Heba----------
+insert into prog_setting VALUES ('Estoda Cheese King', 'Estoda Cheese King', 'address En', 'address Ar', '020202020', '01011510522' ,'www.estoda.com' 
+,'Estoda Cheese King Estoda Cheese King Estoda Cheese King Estoda Cheese King Estoda Cheese King Estoda Cheese King Estoda Cheese King' ,'');

@@ -34,6 +34,7 @@ namespace restaurantPOS.Manage.ProgramSetting
         private void ProgSetting_Load(object sender, EventArgs e)
         {
             setLanguage();
+            loadData();
             //use custom font
             var pfc = new PrivateFontCollection();
             const string fontNameRechargebd = "recharge bd.ttf";
@@ -163,7 +164,6 @@ namespace restaurantPOS.Manage.ProgramSetting
                 txtFooter.Text = dt.Rows[0]["reset_footer"].ToString();
             }
         }
-
         private void btnUploadLogo_Click(object sender, EventArgs e)
         {
             OpenFileDialog dlg = new OpenFileDialog();
