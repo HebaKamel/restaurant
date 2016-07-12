@@ -225,3 +225,10 @@ D:\Heba\sourceControl\restaurant\restaurant\restaurantPOS\obj\Debug\restaurantPO
 D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Goods.SearchGoods.resources
 D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Goods.UpdateGoods.resources
 D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.FrmTables.resources
+D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.ProgramSetting.ProgSetting.resources
+D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Supplier.AddSupplier.resources
+D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Supplier.SearchSupplier.resources
+D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Supplier.UpdateSupplier.resources
+D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Tables.AddTablesStatus.resources
+D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Tables.UpdateStatus.resources
+D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Tables.SearchStatus.resources

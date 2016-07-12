@@ -97,7 +97,7 @@
             // statusColorPick
             // 
             this.statusColorPick.EditValue = System.Drawing.Color.Empty;
-            this.statusColorPick.Location = new System.Drawing.Point(256, 165);
+            this.statusColorPick.Location = new System.Drawing.Point(259, 164);
             this.statusColorPick.Name = "statusColorPick";
             this.statusColorPick.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -125,7 +125,7 @@
             // lblColorAr
             // 
             this.lblColorAr.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColorAr.Location = new System.Drawing.Point(610, 166);
+            this.lblColorAr.Location = new System.Drawing.Point(636, 165);
             this.lblColorAr.Name = "lblColorAr";
             this.lblColorAr.Size = new System.Drawing.Size(33, 19);
             this.lblColorAr.TabIndex = 47;
@@ -143,7 +143,7 @@
             // lblColorEn
             // 
             this.lblColorEn.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColorEn.Location = new System.Drawing.Point(82, 166);
+            this.lblColorEn.Location = new System.Drawing.Point(108, 165);
             this.lblColorEn.Name = "lblColorEn";
             this.lblColorEn.Size = new System.Drawing.Size(38, 19);
             this.lblColorEn.TabIndex = 47;
