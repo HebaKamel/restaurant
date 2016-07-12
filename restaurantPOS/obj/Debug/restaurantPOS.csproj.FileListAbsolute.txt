@@ -232,3 +232,38 @@ D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\rest
 D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Tables.AddTablesStatus.resources
 D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Tables.UpdateStatus.resources
 D:\Kajoo\Upwork\Heba Kamel\edit versions\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Tables.SearchStatus.resources
+D:\Heba\sourceControl\restaurant\restaurantPOS\bin\Debug\restaurantPOS.exe.config
+D:\Heba\sourceControl\restaurant\restaurantPOS\obj\Debug\restaurantPOS.exe
+D:\Heba\sourceControl\restaurant\restaurantPOS\obj\Debug\restaurantPOS.pdb
+D:\Heba\sourceControl\restaurant\restaurantPOS\bin\Debug\restaurantPOS.exe
+D:\Heba\sourceControl\restaurant\restaurantPOS\bin\Debug\restaurantPOS.pdb
+D:\Heba\sourceControl\restaurant\restaurantPOS\obj\Debug\restaurantPOS.csprojResolveAssemblyReference.cache
+D:\Heba\sourceControl\restaurant\restaurantPOS\obj\Debug\restaurantPOS.AboutForm.resources
+D:\Heba\sourceControl\restaurant\restaurantPOS\obj\Debug\restaurantPOS.DeliveryForm.resources
+D:\Heba\sourceControl\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Client.SearchClients.resources
+D:\Heba\sourceControl\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Client.UpdateClient.resources
+D:\Heba\sourceControl\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Goods.AddGoods.resources
+D:\Heba\sourceControl\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Goods.SearchGoods.resources
+D:\Heba\sourceControl\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Goods.UpdateGoods.resources
+D:\Heba\sourceControl\restaurant\restaurantPOS\obj\Debug\restaurantPOS.FrmManage.resources
+D:\Heba\sourceControl\restaurant\restaurantPOS\obj\Debug\restaurantPOS.FrmLogin.resources
+D:\Heba\sourceControl\restaurant\restaurantPOS\obj\Debug\restaurantPOS.FrmMainForm.resources
+D:\Heba\sourceControl\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Client.AddClients.resources
+D:\Heba\sourceControl\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.ProgramSetting.ProgSetting.resources
+D:\Heba\sourceControl\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Supplier.AddSupplier.resources
+D:\Heba\sourceControl\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Supplier.SearchSupplier.resources
+D:\Heba\sourceControl\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Supplier.UpdateSupplier.resources
+D:\Heba\sourceControl\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Tables.AddTablesStatus.resources
+D:\Heba\sourceControl\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Tables.SearchStatus.resources
+D:\Heba\sourceControl\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Tables.UpdateStatus.resources
+D:\Heba\sourceControl\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Units.AddUnits.resources
+D:\Heba\sourceControl\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Units.SearchUnits.resources
+D:\Heba\sourceControl\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.Units.UpdateUnit.resources
+D:\Heba\sourceControl\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Manage.usersGroupsAuth.resources
+D:\Heba\sourceControl\restaurant\restaurantPOS\obj\Debug\restaurantPOS.OrderForm.resources
+D:\Heba\sourceControl\restaurant\restaurantPOS\obj\Debug\restaurantPOS.POSCategories.resources
+D:\Heba\sourceControl\restaurant\restaurantPOS\obj\Debug\restaurantPOS.Properties.Resources.resources
+D:\Heba\sourceControl\restaurant\restaurantPOS\obj\Debug\restaurantPOS.SplashScreen1.resources
+D:\Heba\sourceControl\restaurant\restaurantPOS\obj\Debug\restaurantPOS.FrmTables.resources
+D:\Heba\sourceControl\restaurant\restaurantPOS\obj\Debug\restaurantPOS.csproj.GenerateResource.Cache
+D:\Heba\sourceControl\restaurant\restaurantPOS\obj\Debug\restaurantPOS.exe.licenses

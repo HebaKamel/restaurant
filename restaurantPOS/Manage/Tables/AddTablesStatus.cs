@@ -109,7 +109,7 @@ namespace restaurantPOS.Manage.Tables
         {
             if (validation() == messagesEn.ErrorMessae)
             {
-                int statusId = db.addStatus(txtStatusEnglish.Text, txtStatusArabic.Text,statusColorPick.Color.ToArgb().ToString());
+                int statusId = db.addStatus(txtStatusEnglish.Text, txtStatusArabic.Text, statusColorPick.Color.ToArgb().ToString());
                 if (statusId != 0)
                     XtraMessageBox.Show(messagesEn.insertedSuccessfully, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 else

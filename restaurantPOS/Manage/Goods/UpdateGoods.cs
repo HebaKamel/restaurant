@@ -88,6 +88,8 @@ namespace restaurantPOS.Manage.Goods
                                             MessageBoxIcon.Asterisk);
                 }
             }
+            else
+                XtraMessageBox.Show(errMsg, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void fillComboBox()

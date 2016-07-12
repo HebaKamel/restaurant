@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchStatus));
             this.groupControlButtons = new DevExpress.XtraEditors.GroupControl();
+            this.btnDelete = new restaurantPOS.GelButton();
+            this.btnUpdate = new restaurantPOS.GelButton();
+            this.btnClearClient = new restaurantPOS.GelButton();
+            this.btnSearch = new restaurantPOS.GelButton();
             this.groupControlAddClientInfo = new DevExpress.XtraEditors.GroupControl();
             this.statusColorPick = new DevExpress.XtraEditors.ColorPickEdit();
             this.lblColorAr = new DevExpress.XtraEditors.LabelControl();
@@ -42,11 +46,7 @@
             this.lblNameEnglishAr = new DevExpress.XtraEditors.LabelControl();
             this.lblNameEnglish = new DevExpress.XtraEditors.LabelControl();
             this.splitContainerControlAddClients = new DevExpress.XtraEditors.SplitContainerControl();
-            this.UnitsGrid = new System.Windows.Forms.DataGridView();
-            this.btnDelete = new restaurantPOS.GelButton();
-            this.btnUpdate = new restaurantPOS.GelButton();
-            this.btnClearClient = new restaurantPOS.GelButton();
-            this.btnSearch = new restaurantPOS.GelButton();
+            this.DataGrid = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlButtons)).BeginInit();
             this.groupControlButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlAddClientInfo)).BeginInit();
@@ -56,7 +56,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNameEnglish.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControlAddClients)).BeginInit();
             this.splitContainerControlAddClients.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UnitsGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControlButtons
@@ -74,6 +74,54 @@
             this.groupControlButtons.Size = new System.Drawing.Size(830, 42);
             this.groupControlButtons.TabIndex = 46;
             this.groupControlButtons.Text = "groupControl1";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
+            this.btnDelete.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
+            this.btnDelete.Location = new System.Drawing.Point(3, 6);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(155, 28);
+            this.btnDelete.TabIndex = 1;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
+            this.btnUpdate.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
+            this.btnUpdate.Location = new System.Drawing.Point(231, 6);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(155, 28);
+            this.btnUpdate.TabIndex = 2;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnClearClient
+            // 
+            this.btnClearClient.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
+            this.btnClearClient.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
+            this.btnClearClient.Location = new System.Drawing.Point(406, 6);
+            this.btnClearClient.Name = "btnClearClient";
+            this.btnClearClient.Size = new System.Drawing.Size(155, 28);
+            this.btnClearClient.TabIndex = 0;
+            this.btnClearClient.Text = "Clear";
+            this.btnClearClient.UseVisualStyleBackColor = true;
+            this.btnClearClient.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
+            this.btnSearch.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
+            this.btnSearch.Location = new System.Drawing.Point(634, 6);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(155, 28);
+            this.btnSearch.TabIndex = 0;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // groupControlAddClientInfo
             // 
@@ -199,71 +247,23 @@
             this.splitContainerControlAddClients.Panel1.Controls.Add(this.groupControlAddClientInfo);
             this.splitContainerControlAddClients.Panel1.Controls.Add(this.groupControlButtons);
             this.splitContainerControlAddClients.Panel1.Text = "Panel1";
-            this.splitContainerControlAddClients.Panel2.Controls.Add(this.UnitsGrid);
+            this.splitContainerControlAddClients.Panel2.Controls.Add(this.DataGrid);
             this.splitContainerControlAddClients.Panel2.Text = "Panel2";
             this.splitContainerControlAddClients.Size = new System.Drawing.Size(830, 700);
             this.splitContainerControlAddClients.SplitterPosition = 305;
             this.splitContainerControlAddClients.TabIndex = 1;
             this.splitContainerControlAddClients.Text = "splitContainerControlAddClients";
             // 
-            // UnitsGrid
+            // DataGrid
             // 
-            this.UnitsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.UnitsGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.UnitsGrid.Location = new System.Drawing.Point(3, 1);
-            this.UnitsGrid.MultiSelect = false;
-            this.UnitsGrid.Name = "UnitsGrid";
-            this.UnitsGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.UnitsGrid.Size = new System.Drawing.Size(824, 245);
-            this.UnitsGrid.TabIndex = 0;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
-            this.btnDelete.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
-            this.btnDelete.Location = new System.Drawing.Point(3, 6);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(155, 28);
-            this.btnDelete.TabIndex = 1;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
-            this.btnUpdate.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
-            this.btnUpdate.Location = new System.Drawing.Point(231, 6);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(155, 28);
-            this.btnUpdate.TabIndex = 2;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnClearClient
-            // 
-            this.btnClearClient.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
-            this.btnClearClient.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
-            this.btnClearClient.Location = new System.Drawing.Point(406, 6);
-            this.btnClearClient.Name = "btnClearClient";
-            this.btnClearClient.Size = new System.Drawing.Size(155, 28);
-            this.btnClearClient.TabIndex = 0;
-            this.btnClearClient.Text = "Clear";
-            this.btnClearClient.UseVisualStyleBackColor = true;
-            this.btnClearClient.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
-            this.btnSearch.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
-            this.btnSearch.Location = new System.Drawing.Point(634, 6);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(155, 28);
-            this.btnSearch.TabIndex = 0;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.DataGrid.Location = new System.Drawing.Point(3, 1);
+            this.DataGrid.MultiSelect = false;
+            this.DataGrid.Name = "DataGrid";
+            this.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DataGrid.Size = new System.Drawing.Size(824, 245);
+            this.DataGrid.TabIndex = 0;
             // 
             // SearchStatus
             // 
@@ -289,7 +289,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNameEnglish.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControlAddClients)).EndInit();
             this.splitContainerControlAddClients.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.UnitsGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -310,7 +310,7 @@
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControlAddClients;
         private GelButton btnDelete;
         private GelButton btnUpdate;
-        private System.Windows.Forms.DataGridView UnitsGrid;
+        private System.Windows.Forms.DataGridView DataGrid;
         private DevExpress.XtraEditors.ColorPickEdit statusColorPick;
         private DevExpress.XtraEditors.LabelControl lblColorAr;
         private DevExpress.XtraEditors.LabelControl lblColorEn;

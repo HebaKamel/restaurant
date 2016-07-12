@@ -115,20 +115,20 @@ namespace restaurantPOS.Manage.Tables
         private void loadGrid()
         {
             DataTable unitsDT = db.getStatus(txtNameEnglish.Text, txtNameArabic.Text, statusColorPick.SelectedText, null);
-            UnitsGrid.DataSource = unitsDT;
-            UnitsGrid.Columns[0].Visible = false;
+            DataGrid.DataSource = unitsDT;
+            DataGrid.Columns[0].Visible = false;
             if (Settings.Default.Language == "En")
             {
-                UnitsGrid.Columns[1].HeaderText = formsEn.unitNameEn;
-                UnitsGrid.Columns[2].HeaderText = formsEn.unitNameAr;
-                UnitsGrid.Columns[3].HeaderText = formsEn.statusColor;
+                DataGrid.Columns[1].HeaderText = formsEn.unitNameEn;
+                DataGrid.Columns[2].HeaderText = formsEn.unitNameAr;
+                DataGrid.Columns[3].HeaderText = formsEn.statusColor;
             }
             else
             {
-                UnitsGrid.Columns[1].HeaderText = formsAr.unitNameEn;
-                UnitsGrid.Columns[2].HeaderText = formsAr.unitNameAr;
-                UnitsGrid.Columns[3].HeaderText = formsAr.statusColor;
-                UnitsGrid.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+                DataGrid.Columns[1].HeaderText = formsAr.unitNameEn;
+                DataGrid.Columns[2].HeaderText = formsAr.unitNameAr;
+                DataGrid.Columns[3].HeaderText = formsAr.statusColor;
+                DataGrid.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             }
         }
 
@@ -143,8 +143,8 @@ namespace restaurantPOS.Manage.Tables
                     dialogResult = XtraMessageBox.Show(messagesAr.deleteConfirm, system.restName, MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    int rowId = Convert.ToInt32(UnitsGrid.CurrentCell.RowIndex);
-                    int unitId = Convert.ToInt32(UnitsGrid.Rows[rowId].Cells[0].Value);
+                    int rowId = Convert.ToInt32(DataGrid.CurrentCell.RowIndex);
+                    int unitId = Convert.ToInt32(DataGrid.Rows[rowId].Cells[0].Value);
                     int deleted = db.deleteUnit(unitId);
                     if (deleted == 1)
                     {
@@ -152,7 +152,7 @@ namespace restaurantPOS.Manage.Tables
                             XtraMessageBox.Show(messagesEn.deletedSuccessfully, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         else
                             XtraMessageBox.Show(messagesAr.deletedSuccessfully, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                        UnitsGrid.Rows.RemoveAt(rowId);
+                        DataGrid.Rows.RemoveAt(rowId);
                     }
                     else
                     {
@@ -174,9 +174,8 @@ namespace restaurantPOS.Manage.Tables
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            int rowId = Convert.ToInt32(UnitsGrid.CurrentCell.RowIndex);
-            int unitId = Convert.ToInt32(UnitsGrid.Rows[rowId].Cells[0].Value);
-            UpdateStatus UpdateStatus = new UpdateStatus(unitId);
+            int rowId = Convert.ToInt32(DataGrid.CurrentCell.RowIndex);
+            UpdateStatus UpdateStatus = new UpdateStatus(Convert.ToInt32(DataGrid.Rows[rowId].Cells[0].Value), DataGrid.Rows[rowId].Cells[1].Value.ToString(), DataGrid.Rows[rowId].Cells[2].Value.ToString(), DataGrid.Rows[rowId].Cells[3].Value.ToString());
             UpdateStatus.ShowDialog();
             loadGrid();
         }

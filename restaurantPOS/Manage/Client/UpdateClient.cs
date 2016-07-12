@@ -73,7 +73,8 @@ namespace restaurantPOS.Manage.Client
                 lblLandLine.Visible = false;
                 lblMobile.Visible = false;
                 lblIsVipEn.Visible = false;
-                lblEmailEn.Visible = false;}
+                lblEmailEn.Visible = false;
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -104,6 +105,8 @@ namespace restaurantPOS.Manage.Client
                                             MessageBoxIcon.Asterisk);
                 }
             }
+            else
+                XtraMessageBox.Show(errMsg, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
 

@@ -1,5 +1,4 @@
-﻿namespace restaurantPOS.Manage.ProgramSetting
-{
+﻿namespace restaurantPOS.Manage.ProgramSetting{
     partial class ProgSetting
     {
         /// <summary>

@@ -84,6 +84,8 @@ namespace restaurantPOS.Manage.Units
                                             MessageBoxIcon.Asterisk);
                 }
             }
+            else
+                XtraMessageBox.Show(errMsg, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
 

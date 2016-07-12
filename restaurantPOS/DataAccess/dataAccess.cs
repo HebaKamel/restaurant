@@ -261,13 +261,11 @@ namespace restaurantPOS.DataAccess
         #endregion
 
         #region units
-        public int addUnit(string unitNameEn, string unitNameAr)
-        {
+        public int addUnit(string unitNameEn, string unitNameAr){
             //transaction = con.BeginTransaction("SampleTransaction");
             int unitId;
             using (SqlCommand cmd = new SqlCommand("addUnit", con))
-            {
-                //cmd.Transaction = transaction;
+            {//cmd.Transaction = transaction;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@unitNameEn", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@unitNameAr", SqlDbType.NVarChar);
@@ -624,23 +622,23 @@ namespace restaurantPOS.DataAccess
             return statusId;
         }
 
-        public DataTable getStatus(string unitNameEn, string unitNameAr, string statusColor, int? unitId = 0)
+        public DataTable getStatus(string statusNameEn, string statusNameAr, string statusColor, int? statusId = 0)
         {
-            if (unitId == 0) unitId = null;
-            if (unitNameEn == "") unitNameEn = null;
-            if (unitNameAr == "") unitNameAr = null;
+            if (statusId == 0) statusId = null;
+            if (statusNameEn == "") statusNameEn = null;
+            if (statusNameAr == "") statusNameAr = null;
             if (statusColor == "") statusColor = null;
             DataTable dt = new DataTable();
             using (SqlCommand cmd = new SqlCommand("SearchStatus", con))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@unitId", SqlDbType.Int);
-                cmd.Parameters.Add("@unitNameEn", SqlDbType.NVarChar);
-                cmd.Parameters.Add("@unitNameAr", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@statusId", SqlDbType.Int);
+                cmd.Parameters.Add("@statusNameEn", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@statusNameAr", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@statusColor", SqlDbType.NVarChar);
-                cmd.Parameters["@unitId"].Value = unitId;
-                cmd.Parameters["@unitNameEn"].Value = unitNameEn;
-                cmd.Parameters["@unitNameAr"].Value = unitNameAr;
+                cmd.Parameters["@statusId"].Value = statusId;
+                cmd.Parameters["@statusNameEn"].Value = statusNameEn;
+                cmd.Parameters["@statusNameAr"].Value = statusNameAr;
                 cmd.Parameters["@statusColor"].Value = statusColor;
                 if (con.State != ConnectionState.Open)
                     con.Open();
@@ -651,14 +649,14 @@ namespace restaurantPOS.DataAccess
             return dt;
         }
 
-        public int DeleteStatus(int unitId)
+        public int DeleteStatus(int statusId)
         {
             int deleted = 0;
             using (SqlCommand cmd = new SqlCommand("deleteStatus", con))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@statusId", SqlDbType.Int);
-                cmd.Parameters["@statusId"].Value = unitId;
+                cmd.Parameters["@statusId"].Value = statusId;
                 if (con.State != ConnectionState.Open)
                     con.Open();
                 SqlParameter returnParameter = cmd.Parameters.Add("RetVal", SqlDbType.Int);
@@ -672,22 +670,22 @@ namespace restaurantPOS.DataAccess
             return deleted;
         }
 
-        public int UpdateStatus(string unitNameEn, string unitNameAr, string statusColor, int? unitId = 0)
+        public int UpdateStatus(string statusNameEn, string statusNameAr, string statusColor, int? statusId = 0)
         {
             int updated = 0;
-            if (unitId == 0) unitId = null;
-            if (unitNameEn == "") unitNameEn = null;
-            if (unitNameAr == "") unitNameAr = null;
+            if (statusId == 0) statusId = null;
+            if (statusNameEn == "") statusNameEn = null;
+            if (statusNameAr == "") statusNameAr = null;
             using (SqlCommand cmd = new SqlCommand("updateStatus", con))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@unitId", SqlDbType.Int);
-                cmd.Parameters.Add("@unitNameEn", SqlDbType.NVarChar);
-                cmd.Parameters.Add("@unitNameAr", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@statusId", SqlDbType.Int);
+                cmd.Parameters.Add("@statusNameEn", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@statusNameAr", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@statusColor", SqlDbType.NVarChar);
-                cmd.Parameters["@unitId"].Value = unitId;
-                cmd.Parameters["@unitNameEn"].Value = unitNameEn;
-                cmd.Parameters["@unitNameAr"].Value = unitNameAr;
+                cmd.Parameters["@statusId"].Value = statusId;
+                cmd.Parameters["@statusNameEn"].Value = statusNameEn;
+                cmd.Parameters["@statusNameAr"].Value = statusNameAr;
                 cmd.Parameters["@statusColor"].Value = statusColor;
                 if (con.State != ConnectionState.Open)
                     con.Open();

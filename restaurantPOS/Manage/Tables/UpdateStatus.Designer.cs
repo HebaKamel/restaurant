@@ -163,7 +163,7 @@
             this.Controls.Add(this.txtNameEnglish);
             this.Controls.Add(this.lblNameEnglishAr);
             this.Controls.Add(this.lblNameEnglish);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "UpdateStatus";

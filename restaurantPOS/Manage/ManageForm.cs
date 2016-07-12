@@ -31,7 +31,7 @@ namespace restaurantPOS
         Manage.Supplier.SearchSupplier searchSupplier = new Manage.Supplier.SearchSupplier();
         Manage.Tables.AddTablesStatus addTablesStatus = new Manage.Tables.AddTablesStatus();
         Manage.ProgramSetting.ProgSetting progSetting = new Manage.ProgramSetting.ProgSetting();
-        Manage.Tables.UpdateStatus updateTableStatus = new UpdateStatus(-1);
+        Manage.Tables.SearchStatus searchStatus = new SearchStatus();
         #endregion
 
         public FrmManage()
@@ -230,10 +230,10 @@ namespace restaurantPOS
             addGoods.Close();
             searchGoods.Close();
 
-            updateTableStatus = new Manage.Tables.UpdateStatus(-1);
-            updateTableStatus.Show();
-            updateTableStatus.MdiParent = this;
-            updateTableStatus.Dock = DockStyle.Right;
+            searchUnits = new Manage.Units.SearchUnits();
+            searchUnits.Show();
+            searchUnits.MdiParent = this;
+            searchUnits.Dock = DockStyle.Right;
         }
         private void navBarItemAddGoods_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
@@ -323,10 +323,10 @@ namespace restaurantPOS
             addSupplier.Close();
 
 
-            updateTableStatus = new UpdateStatus(-1);
-            progSetting.Show();
-            progSetting.MdiParent = this;
-            progSetting.Dock = DockStyle.Right;
+            searchStatus = new SearchStatus();
+            searchStatus.Show();
+            searchStatus.MdiParent = this;
+            searchStatus.Dock = DockStyle.Right;
         }
 
         private void navBarItemProgram_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)

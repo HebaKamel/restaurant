@@ -75,6 +75,9 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.navBarControlLeft = new DevExpress.XtraNavBar.NavBarControl();
+            this.navBarGroupTableColor = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarItemTableStatus = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItemUpdateDeleteStatus = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroupProgramSettings = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItemProgram = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroupUserSettings = new DevExpress.XtraNavBar.NavBarGroup();
@@ -96,8 +99,6 @@
             this.navBarItemAddSupplier = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemSearchSupplier = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroupTableSetting = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarGroupTableColor = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarItemTableStatus = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroupCategory = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItemAddCategory = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemSearchCategory = new DevExpress.XtraNavBar.NavBarItem();
@@ -107,7 +108,6 @@
             this.navBarItemAddMenuItem = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemUpdateDeleteMenuItem = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemAddStatus = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItemUpdateDeleteStatus = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlBottom)).BeginInit();
             this.groupControlBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlTop)).BeginInit();
@@ -543,7 +543,7 @@
             // 
             // navBarControlLeft
             // 
-            this.navBarControlLeft.ActiveGroup = this.navBarGroupUnitsSettings;
+            this.navBarControlLeft.ActiveGroup = this.navBarGroupTableColor;
             this.navBarControlLeft.AllowDrop = false;
             this.navBarControlLeft.BackColor = System.Drawing.Color.Transparent;
             this.navBarControlLeft.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -592,6 +592,27 @@
             this.navBarControlLeft.View = new DevExpress.XtraNavBar.ViewInfo.StandardSkinNavigationPaneViewInfoRegistrator("DevExpress Dark Style");
             this.navBarControlLeft.ActiveGroupChanged += new DevExpress.XtraNavBar.NavBarGroupEventHandler(this.navBarControlLeft_ActiveGroupChanged);
             this.navBarControlLeft.Click += new System.EventHandler(this.navBarControlLeft_Click);
+            // 
+            // navBarGroupTableColor
+            // 
+            this.navBarGroupTableColor.Caption = "Table Color";
+            this.navBarGroupTableColor.Expanded = true;
+            this.navBarGroupTableColor.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemTableStatus),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemUpdateDeleteStatus)});
+            this.navBarGroupTableColor.Name = "navBarGroupTableColor";
+            // 
+            // navBarItemTableStatus
+            // 
+            this.navBarItemTableStatus.Caption = "Add Status";
+            this.navBarItemTableStatus.Name = "navBarItemTableStatus";
+            this.navBarItemTableStatus.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemTableStatus_LinkClicked);
+            // 
+            // navBarItemUpdateDeleteStatus
+            // 
+            this.navBarItemUpdateDeleteStatus.Caption = "Update\\Delete Status";
+            this.navBarItemUpdateDeleteStatus.Name = "navBarItemUpdateDeleteStatus";
+            this.navBarItemUpdateDeleteStatus.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemUpdateDeleteStatus_LinkClicked);
             // 
             // navBarGroupProgramSettings
             // 
@@ -737,21 +758,6 @@
             this.navBarGroupTableSetting.Caption = "Table Setting";
             this.navBarGroupTableSetting.Name = "navBarGroupTableSetting";
             // 
-            // navBarGroupTableColor
-            // 
-            this.navBarGroupTableColor.Caption = "Table Color";
-            this.navBarGroupTableColor.Expanded = true;
-            this.navBarGroupTableColor.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemTableStatus),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemUpdateDeleteStatus)});
-            this.navBarGroupTableColor.Name = "navBarGroupTableColor";
-            // 
-            // navBarItemTableStatus
-            // 
-            this.navBarItemTableStatus.Caption = "Add Status";
-            this.navBarItemTableStatus.Name = "navBarItemTableStatus";
-            this.navBarItemTableStatus.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemTableStatus_LinkClicked);
-            // 
             // navBarGroupCategory
             // 
             this.navBarGroupCategory.Caption = "Categories Setting";
@@ -802,12 +808,6 @@
             // 
             this.navBarItemAddStatus.Caption = "Add Status";
             this.navBarItemAddStatus.Name = "navBarItemAddStatus";
-            // 
-            // navBarItemUpdateDeleteStatus
-            // 
-            this.navBarItemUpdateDeleteStatus.Caption = "Update\\Delete Status";
-            this.navBarItemUpdateDeleteStatus.Name = "navBarItemUpdateDeleteStatus";
-            this.navBarItemUpdateDeleteStatus.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemUpdateDeleteStatus_LinkClicked);
             // 
             // FrmManage
             // 

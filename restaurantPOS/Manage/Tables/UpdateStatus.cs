@@ -22,30 +22,30 @@ namespace restaurantPOS.Manage.Tables
         private userMessages.messagesEn messagesEn = new userMessages.messagesEn();
         private DataAccess.dataAccess db = new dataAccess();
         private SystemSetting.system system = new system();
-        int unitId;
+        int statusId;
+        private string statusNameEn, statusNameAr, statusColor;
         private string errMsg = "";
 
-        public UpdateStatus(int unitId)
+        public UpdateStatus(int statusId, string statusNameEn, string statusNameAr, string statusColor)
         {
             InitializeComponent();
-            this.unitId = unitId;
+            this.statusId = statusId;
+            this.statusNameEn = statusNameEn;
+            this.statusNameAr = statusNameAr;
+            this.statusColor = statusColor;
         }
 
         private void UpdateStatus_Load(object sender, EventArgs e)
         {
             setLanguage();
-            DataTable clientDT = db.getStatus(null, null, null ,this.unitId);
-            if (clientDT.Rows.Count > 0)
-            {
-                txtNameEnglish.Text = clientDT.Rows[0]["unit_name_en"].ToString();
-                txtNameArabic.Text = clientDT.Rows[0]["unit_name_ar"].ToString();
-            }
+            txtNameEnglish.Text = statusNameEn;
+            txtNameArabic.Text = statusNameAr;
+            //statusColor;
         }
 
         private void setLanguage()
         {
-            if (Settings.Default.Language == "En")
-            {
+            if (Settings.Default.Language == "En"){
                 lblHeader.Text = formsEn.AddUnitHeader;
                 btnUpdate.Text = formsEn.btnUpdate;
                 lblNameArabicAr.Visible = false;
@@ -64,8 +64,8 @@ namespace restaurantPOS.Manage.Tables
         {
             if (validation() == messagesEn.ErrorMessae)
             {
-                MessageBox.Show(statusColorPick.SelectedText);
-                int updated = db.UpdateStatus(txtNameEnglish.Text, txtNameArabic.Text, statusColorPick.SelectedText,this.unitId);
+                MessageBox.Show("color--->" + statusColorPick.EditValue.ToString());
+                int updated = db.UpdateStatus(txtNameEnglish.Text, txtNameArabic.Text, statusColorPick.EditValue.ToString(), this.statusId);
                 if (updated == 0)
                 {
                     if (Settings.Default.Language == "En")
@@ -78,15 +78,14 @@ namespace restaurantPOS.Manage.Tables
                 else
                 {
                     if (Settings.Default.Language == "En")
-                        XtraMessageBox.Show(messagesEn.updatedError, system.restName, MessageBoxButtons.OK,
-                                            MessageBoxIcon.Asterisk);
+                        XtraMessageBox.Show(messagesEn.updatedError, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     else
-                        XtraMessageBox.Show(messagesAr.updatedError, system.restName, MessageBoxButtons.OK,
-                                            MessageBoxIcon.Asterisk);
+                        XtraMessageBox.Show(messagesAr.updatedError, system.restName, MessageBoxButtons.OK,  MessageBoxIcon.Asterisk);
                 }
             }
+            else
+                XtraMessageBox.Show(errMsg, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-
 
         private string validation()
         {

@@ -10,11 +10,11 @@ GO
 -- Create date: <30-06-2016>
 -- Description:	<Description,,>
 -- =============================================
-CREATE Procedure [dbo].[SearchStatus]
+ALTER Procedure [dbo].[SearchStatus]
 (
-	@unitId INT = NULL,
-	@unitNameEn nvarchar(255) = NULL,
-	@unitNameAr nvarchar(255) = NULL,
+	@statusId INT = NULL,
+	@statusNameEn nvarchar(255) = NULL,
+	@statusNameAr nvarchar(255) = NULL,
 	@statusColor nvarchar (255) = Null
 )
 As
@@ -22,9 +22,9 @@ BEGIN
 
 SELECT * FROM dineIn_tables_status
 	WHERE 1=1 
-	AND (@unitId IS NULL OR table_status_id = @unitId)
-	AND (@unitNameEn IS NULL OR [table_status_en] LIKE '%'+@unitNameEn+'%')
-	AND (@unitNameAr IS NULL OR [table_status_ar] LIKE '%'+@unitNameAr+'%')
+	AND (@statusId IS NULL OR table_status_id = @statusId)
+	AND (@statusNameEn IS NULL OR [table_status_en] LIKE '%'+@statusNameEn+'%')
+	AND (@statusNameAr IS NULL OR [table_status_ar] LIKE '%'+@statusNameAr+'%')
 	AND (@statusColor IS NULL OR [table_color] LIKE '%'+@statusColor+'%')
 	ORDER BY [table_status_id] DESC
 END
