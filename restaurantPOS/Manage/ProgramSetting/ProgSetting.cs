@@ -24,8 +24,8 @@ namespace restaurantPOS.Manage.ProgramSetting
         private userMessages.messagesEn messagesEn = new userMessages.messagesEn();
         private DataAccess.dataAccess db = new dataAccess();
         private SystemSetting.system system = new system();
-        string errMsg = "";
-
+        string errMsg = "", fileName;
+        
         public ProgSetting()
         {
             InitializeComponent();
@@ -35,6 +35,9 @@ namespace restaurantPOS.Manage.ProgramSetting
         {
             setLanguage();
             loadData();
+            this.panel1.AutoScroll = true;
+            this.logoPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize; 
+            //logoPicture.SizeMode = PictureBoxSizeMode.AutoSize;
             //use custom font
             var pfc = new PrivateFontCollection();
             const string fontNameRechargebd = "recharge bd.ttf";
@@ -128,9 +131,12 @@ namespace restaurantPOS.Manage.ProgramSetting
         private void btnAdd_Click(object sender, EventArgs e)
         {
             //save image in path..
+            Image bitmap = Image.FromFile(fileName);
+            bitmap.Save(@"D:\Heba\sourceControl\restaurant\restaurantPOS\Images\logo.bmp");  
+
             int id = db.updateProg(txtNameEnglish.Text, txtNameArabic.Text, txtAddrEnglish.Text,
-                                      txtAddrArabic.Text, txtLandLine.Text, txtMobile.Text, txtWebsite.Text, txtFooter.Text, "");
-            if (id != 0)
+                                      txtAddrArabic.Text, txtLandLine.Text, txtMobile.Text, txtWebsite.Text, txtFooter.Text, "logo.bmp");
+            if (id >= 0)
                 XtraMessageBox.Show(messagesEn.insertedSuccessfully, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             else
                 XtraMessageBox.Show(messagesEn.insertedError, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -173,10 +179,7 @@ namespace restaurantPOS.Manage.ProgramSetting
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
-                //string fileName;
-                //fileName = dlg.FileName;
-                //MessageBox.Show(fileName);
-
+                fileName = dlg.FileName;
                 logoPicture.Image = new Bitmap(dlg.FileName);
             }
         }

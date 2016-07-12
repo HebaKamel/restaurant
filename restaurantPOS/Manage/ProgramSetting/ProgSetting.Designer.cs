@@ -29,8 +29,10 @@
         {
             this.splitContainerControlAddClients = new DevExpress.XtraEditors.SplitContainerControl();
             this.groupControlAddClientInfo = new DevExpress.XtraEditors.GroupControl();
+            this.btnUploadLogo = new System.Windows.Forms.Button();
             this.lblAddClientHeader = new DevExpress.XtraEditors.LabelControl();
             this.txtWebsite = new DevExpress.XtraEditors.TextEdit();
+            this.txtMobile = new DevExpress.XtraEditors.TextEdit();
             this.txtLandLine = new DevExpress.XtraEditors.TextEdit();
             this.txtAddrArabic = new DevExpress.XtraEditors.TextEdit();
             this.txtAddrEnglish = new DevExpress.XtraEditors.TextEdit();
@@ -42,39 +44,36 @@
             this.lblAddrEnglishAr = new DevExpress.XtraEditors.LabelControl();
             this.lblAddrEnglish = new DevExpress.XtraEditors.LabelControl();
             this.lblAddrArabicAr = new DevExpress.XtraEditors.LabelControl();
+            this.lblLogoAr = new DevExpress.XtraEditors.LabelControl();
+            this.lblFooterAr = new DevExpress.XtraEditors.LabelControl();
             this.lblAddrArabic = new DevExpress.XtraEditors.LabelControl();
             this.lblWebsiteAr = new DevExpress.XtraEditors.LabelControl();
+            this.lblMobileAr = new DevExpress.XtraEditors.LabelControl();
+            this.lblLogoEn = new DevExpress.XtraEditors.LabelControl();
+            this.lblFooterEn = new DevExpress.XtraEditors.LabelControl();
             this.lblLandLineAr = new DevExpress.XtraEditors.LabelControl();
             this.lblWebsiteEn = new DevExpress.XtraEditors.LabelControl();
+            this.lblMobile = new DevExpress.XtraEditors.LabelControl();
             this.lblNameEnglish = new DevExpress.XtraEditors.LabelControl();
             this.lblLandLine = new DevExpress.XtraEditors.LabelControl();
-            this.groupControlButtons = new DevExpress.XtraEditors.GroupControl();
-            this.lblMobile = new DevExpress.XtraEditors.LabelControl();
-            this.lblMobileAr = new DevExpress.XtraEditors.LabelControl();
-            this.txtMobile = new DevExpress.XtraEditors.TextEdit();
-            this.lblFooterEn = new DevExpress.XtraEditors.LabelControl();
-            this.lblFooterAr = new DevExpress.XtraEditors.LabelControl();
             this.txtFooter = new DevExpress.XtraEditors.MemoEdit();
-            this.lblLogoEn = new DevExpress.XtraEditors.LabelControl();
-            this.lblLogoAr = new DevExpress.XtraEditors.LabelControl();
-            this.btnUploadLogo = new System.Windows.Forms.Button();
-            this.logoPicture = new DevExpress.XtraEditors.PictureEdit();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.logoPicture = new System.Windows.Forms.PictureBox();
             this.btnAdd = new restaurantPOS.GelButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControlAddClients)).BeginInit();
             this.splitContainerControlAddClients.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlAddClientInfo)).BeginInit();
             this.groupControlAddClientInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtWebsite.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMobile.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLandLine.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAddrArabic.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAddrEnglish.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNameArabic.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNameEnglish.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControlButtons)).BeginInit();
-            this.groupControlButtons.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMobile.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFooter.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logoPicture.Properties)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerControlAddClients
@@ -86,7 +85,6 @@
             this.splitContainerControlAddClients.Location = new System.Drawing.Point(0, 0);
             this.splitContainerControlAddClients.Name = "splitContainerControlAddClients";
             this.splitContainerControlAddClients.Panel1.Controls.Add(this.groupControlAddClientInfo);
-            this.splitContainerControlAddClients.Panel1.Controls.Add(this.groupControlButtons);
             this.splitContainerControlAddClients.Panel1.Text = "Panel1";
             this.splitContainerControlAddClients.Panel2.Text = "Panel2";
             this.splitContainerControlAddClients.Size = new System.Drawing.Size(830, 700);
@@ -99,7 +97,8 @@
             this.groupControlAddClientInfo.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.groupControlAddClientInfo.Appearance.Options.UseBackColor = true;
             this.groupControlAddClientInfo.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.groupControlAddClientInfo.Controls.Add(this.logoPicture);
+            this.groupControlAddClientInfo.Controls.Add(this.btnAdd);
+            this.groupControlAddClientInfo.Controls.Add(this.panel1);
             this.groupControlAddClientInfo.Controls.Add(this.btnUploadLogo);
             this.groupControlAddClientInfo.Controls.Add(this.lblAddClientHeader);
             this.groupControlAddClientInfo.Controls.Add(this.txtWebsite);
@@ -131,9 +130,19 @@
             this.groupControlAddClientInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControlAddClientInfo.Location = new System.Drawing.Point(0, 0);
             this.groupControlAddClientInfo.Name = "groupControlAddClientInfo";
-            this.groupControlAddClientInfo.Size = new System.Drawing.Size(830, 623);
+            this.groupControlAddClientInfo.Size = new System.Drawing.Size(830, 686);
             this.groupControlAddClientInfo.TabIndex = 47;
             this.groupControlAddClientInfo.Text = "Add Client Info";
+            // 
+            // btnUploadLogo
+            // 
+            this.btnUploadLogo.Location = new System.Drawing.Point(201, 381);
+            this.btnUploadLogo.Name = "btnUploadLogo";
+            this.btnUploadLogo.Size = new System.Drawing.Size(382, 23);
+            this.btnUploadLogo.TabIndex = 59;
+            this.btnUploadLogo.Text = "button1";
+            this.btnUploadLogo.UseVisualStyleBackColor = true;
+            this.btnUploadLogo.Click += new System.EventHandler(this.btnUploadLogo_Click);
             // 
             // lblAddClientHeader
             // 
@@ -152,6 +161,16 @@
             this.txtWebsite.Properties.Appearance.Options.UseFont = true;
             this.txtWebsite.Size = new System.Drawing.Size(383, 26);
             this.txtWebsite.TabIndex = 57;
+            // 
+            // txtMobile
+            // 
+            this.txtMobile.Location = new System.Drawing.Point(201, 220);
+            this.txtMobile.Name = "txtMobile";
+            this.txtMobile.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMobile.Properties.Appearance.Options.UseFont = true;
+            this.txtMobile.Size = new System.Drawing.Size(383, 26);
+            this.txtMobile.TabIndex = 57;
+            this.txtMobile.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMobile_KeyPress);
             // 
             // txtLandLine
             // 
@@ -253,6 +272,24 @@
             this.lblAddrArabicAr.TabIndex = 49;
             this.lblAddrArabicAr.Text = "العنوان بالعربية";
             // 
+            // lblLogoAr
+            // 
+            this.lblLogoAr.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogoAr.Location = new System.Drawing.Point(606, 381);
+            this.lblLogoAr.Name = "lblLogoAr";
+            this.lblLogoAr.Size = new System.Drawing.Size(35, 19);
+            this.lblLogoAr.TabIndex = 50;
+            this.lblLogoAr.Text = "Logo";
+            // 
+            // lblFooterAr
+            // 
+            this.lblFooterAr.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFooterAr.Location = new System.Drawing.Point(606, 290);
+            this.lblFooterAr.Name = "lblFooterAr";
+            this.lblFooterAr.Size = new System.Drawing.Size(85, 19);
+            this.lblFooterAr.TabIndex = 50;
+            this.lblFooterAr.Text = "Reset footer";
+            // 
             // lblAddrArabic
             // 
             this.lblAddrArabic.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -270,6 +307,33 @@
             this.lblWebsiteAr.Size = new System.Drawing.Size(42, 19);
             this.lblWebsiteAr.TabIndex = 50;
             this.lblWebsiteAr.Text = "الموقع";
+            // 
+            // lblMobileAr
+            // 
+            this.lblMobileAr.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMobileAr.Location = new System.Drawing.Point(606, 223);
+            this.lblMobileAr.Name = "lblMobileAr";
+            this.lblMobileAr.Size = new System.Drawing.Size(80, 19);
+            this.lblMobileAr.TabIndex = 50;
+            this.lblMobileAr.Text = "رقم الموبايل";
+            // 
+            // lblLogoEn
+            // 
+            this.lblLogoEn.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogoEn.Location = new System.Drawing.Point(104, 381);
+            this.lblLogoEn.Name = "lblLogoEn";
+            this.lblLogoEn.Size = new System.Drawing.Size(35, 19);
+            this.lblLogoEn.TabIndex = 50;
+            this.lblLogoEn.Text = "Logo";
+            // 
+            // lblFooterEn
+            // 
+            this.lblFooterEn.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFooterEn.Location = new System.Drawing.Point(104, 290);
+            this.lblFooterEn.Name = "lblFooterEn";
+            this.lblFooterEn.Size = new System.Drawing.Size(81, 19);
+            this.lblFooterEn.TabIndex = 50;
+            this.lblFooterEn.Text = "reset footer";
             // 
             // lblLandLineAr
             // 
@@ -289,6 +353,15 @@
             this.lblWebsiteEn.TabIndex = 50;
             this.lblWebsiteEn.Text = "website";
             // 
+            // lblMobile
+            // 
+            this.lblMobile.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMobile.Location = new System.Drawing.Point(114, 223);
+            this.lblMobile.Name = "lblMobile";
+            this.lblMobile.Size = new System.Drawing.Size(71, 19);
+            this.lblMobile.TabIndex = 50;
+            this.lblMobile.Text = "Mobile No";
+            // 
             // lblNameEnglish
             // 
             this.lblNameEnglish.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -307,68 +380,9 @@
             this.lblLandLine.TabIndex = 50;
             this.lblLandLine.Text = "Land Line Telephone";
             // 
-            // groupControlButtons
-            // 
-            this.groupControlButtons.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.groupControlButtons.Appearance.Options.UseBackColor = true;
-            this.groupControlButtons.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.groupControlButtons.Controls.Add(this.btnAdd);
-            this.groupControlButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupControlButtons.Location = new System.Drawing.Point(0, 623);
-            this.groupControlButtons.Name = "groupControlButtons";
-            this.groupControlButtons.Size = new System.Drawing.Size(830, 63);
-            this.groupControlButtons.TabIndex = 46;
-            this.groupControlButtons.Text = "groupControl1";
-            // 
-            // lblMobile
-            // 
-            this.lblMobile.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMobile.Location = new System.Drawing.Point(114, 223);
-            this.lblMobile.Name = "lblMobile";
-            this.lblMobile.Size = new System.Drawing.Size(71, 19);
-            this.lblMobile.TabIndex = 50;
-            this.lblMobile.Text = "Mobile No";
-            // 
-            // lblMobileAr
-            // 
-            this.lblMobileAr.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMobileAr.Location = new System.Drawing.Point(606, 223);
-            this.lblMobileAr.Name = "lblMobileAr";
-            this.lblMobileAr.Size = new System.Drawing.Size(80, 19);
-            this.lblMobileAr.TabIndex = 50;
-            this.lblMobileAr.Text = "رقم الموبايل";
-            // 
-            // txtMobile
-            // 
-            this.txtMobile.Location = new System.Drawing.Point(201, 220);
-            this.txtMobile.Name = "txtMobile";
-            this.txtMobile.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMobile.Properties.Appearance.Options.UseFont = true;
-            this.txtMobile.Size = new System.Drawing.Size(383, 26);
-            this.txtMobile.TabIndex = 57;
-            this.txtMobile.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMobile_KeyPress);
-            // 
-            // lblFooterEn
-            // 
-            this.lblFooterEn.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFooterEn.Location = new System.Drawing.Point(104, 296);
-            this.lblFooterEn.Name = "lblFooterEn";
-            this.lblFooterEn.Size = new System.Drawing.Size(81, 19);
-            this.lblFooterEn.TabIndex = 50;
-            this.lblFooterEn.Text = "reset footer";
-            // 
-            // lblFooterAr
-            // 
-            this.lblFooterAr.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFooterAr.Location = new System.Drawing.Point(606, 296);
-            this.lblFooterAr.Name = "lblFooterAr";
-            this.lblFooterAr.Size = new System.Drawing.Size(85, 19);
-            this.lblFooterAr.TabIndex = 50;
-            this.lblFooterAr.Text = "Reset footer";
-            // 
             // txtFooter
             // 
-            this.txtFooter.Location = new System.Drawing.Point(201, 293);
+            this.txtFooter.Location = new System.Drawing.Point(201, 287);
             this.txtFooter.Name = "txtFooter";
             this.txtFooter.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFooter.Properties.Appearance.Options.UseFont = true;
@@ -376,46 +390,27 @@
             this.txtFooter.TabIndex = 57;
             this.txtFooter.UseOptimizedRendering = true;
             // 
-            // lblLogoEn
+            // panel1
             // 
-            this.lblLogoEn.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogoEn.Location = new System.Drawing.Point(104, 387);
-            this.lblLogoEn.Name = "lblLogoEn";
-            this.lblLogoEn.Size = new System.Drawing.Size(35, 19);
-            this.lblLogoEn.TabIndex = 50;
-            this.lblLogoEn.Text = "Logo";
-            // 
-            // lblLogoAr
-            // 
-            this.lblLogoAr.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogoAr.Location = new System.Drawing.Point(606, 387);
-            this.lblLogoAr.Name = "lblLogoAr";
-            this.lblLogoAr.Size = new System.Drawing.Size(35, 19);
-            this.lblLogoAr.TabIndex = 50;
-            this.lblLogoAr.Text = "Logo";
-            // 
-            // btnUploadLogo
-            // 
-            this.btnUploadLogo.Location = new System.Drawing.Point(201, 387);
-            this.btnUploadLogo.Name = "btnUploadLogo";
-            this.btnUploadLogo.Size = new System.Drawing.Size(382, 23);
-            this.btnUploadLogo.TabIndex = 59;
-            this.btnUploadLogo.Text = "button1";
-            this.btnUploadLogo.UseVisualStyleBackColor = true;
-            this.btnUploadLogo.Click += new System.EventHandler(this.btnUploadLogo_Click);
+            this.panel1.Controls.Add(this.logoPicture);
+            this.panel1.Location = new System.Drawing.Point(201, 416);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(383, 201);
+            this.panel1.TabIndex = 61;
             // 
             // logoPicture
             // 
-            this.logoPicture.Location = new System.Drawing.Point(201, 416);
+            this.logoPicture.Location = new System.Drawing.Point(8, 0);
             this.logoPicture.Name = "logoPicture";
-            this.logoPicture.Size = new System.Drawing.Size(383, 201);
-            this.logoPicture.TabIndex = 60;
+            this.logoPicture.Size = new System.Drawing.Size(368, 201);
+            this.logoPicture.TabIndex = 0;
+            this.logoPicture.TabStop = false;
             // 
             // btnAdd
             // 
             this.btnAdd.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
             this.btnAdd.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
-            this.btnAdd.Location = new System.Drawing.Point(308, 18);
+            this.btnAdd.Location = new System.Drawing.Point(610, 463);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(155, 28);
             this.btnAdd.TabIndex = 0;
@@ -442,16 +437,15 @@
             this.groupControlAddClientInfo.ResumeLayout(false);
             this.groupControlAddClientInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtWebsite.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMobile.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLandLine.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAddrArabic.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAddrEnglish.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNameArabic.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNameEnglish.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControlButtons)).EndInit();
-            this.groupControlButtons.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtMobile.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFooter.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logoPicture.Properties)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.logoPicture)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -471,7 +465,6 @@
         private DevExpress.XtraEditors.LabelControl lblAddrArabic;
         private DevExpress.XtraEditors.LabelControl lblNameEnglish;
         private DevExpress.XtraEditors.LabelControl lblLandLine;
-        private DevExpress.XtraEditors.GroupControl groupControlButtons;
         private GelButton btnAdd;
         private DevExpress.XtraEditors.LabelControl lblNameEnglishAr;
         private DevExpress.XtraEditors.LabelControl lblNameArabicAr;
@@ -490,7 +483,8 @@
         private DevExpress.XtraEditors.LabelControl lblLogoEn;
         private DevExpress.XtraEditors.MemoEdit txtFooter;
         private System.Windows.Forms.Button btnUploadLogo;
-        private DevExpress.XtraEditors.PictureEdit logoPicture;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox logoPicture;
 
 
     }

@@ -94,7 +94,7 @@ namespace restaurantPOS.Manage.Client
 
         private string validation()
         {
-            errMsg = "";
+            errMsg = messagesEn.ErrorMessae;
             string name = "", mobile = "";
             if (string.IsNullOrEmpty(txtNameEnglish.Text))
             {
@@ -102,6 +102,7 @@ namespace restaurantPOS.Manage.Client
                     name = formsEn.clientNameEn;
                 else
                     name = formsAr.clientNameEn;
+                errMsg += "\n" + name;
             }
 
             if (string.IsNullOrEmpty(txtMobile.Text))
@@ -110,16 +111,11 @@ namespace restaurantPOS.Manage.Client
                     mobile = formsEn.clientMobile;
                 else
                     mobile = formsAr.clientMobile;
-            }
-            if (name != "" || mobile != "")
-            {
-                if (Settings.Default.Language == "En")
-                    errMsg = messagesEn.ErrorMessae + "\n" + name + "\n" + mobile;
-                else
-                    errMsg = messagesAr.ErrorMessae + "\n" + name + "\n" + mobile;
+                errMsg += "\n" + mobile;
             }
             return errMsg;
         }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (validation() == "")

@@ -11,7 +11,7 @@ GO
 -- Description:	<Description,,>
 
 -- =============================================
-CREATE Procedure [dbo].[updateProg]
+alter Procedure [dbo].[updateProg]
 (
 	@nameEn nvarchar(255) = NULL,
 	@nameAr nvarchar(255) = NULL,
@@ -27,7 +27,7 @@ As
 Begin
 UPDATE prog_setting SET name_en = @nameEn, name_ar = @nameAr, 
 				   address_en = @addressEn, address_ar = @addressAr,
-				   telephone_no = @telephoneNo, mobile_no = @mobileNo , website = @website, reset_footer = @resetFooter, logo = @logoPath
+				   telephone_no = @telephoneNo, mobile_no = @mobileNo , website = @website, reset_footer = @resetFooter, logo_path = @logoPath
 	WHERE id = 1
 --DECLARE @Returns BIT 
 --IF @@ERROR = 0

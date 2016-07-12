@@ -82,7 +82,7 @@ namespace restaurantPOS.Manage.Units
 
         private string validation()
         {
-            errMsg = "";
+            errMsg = messagesEn.ErrorMessae;
             string nameEn = "", nameAr = "";
             if (string.IsNullOrEmpty(txtNameEnglish.Text))
             {
@@ -90,6 +90,7 @@ namespace restaurantPOS.Manage.Units
                     nameEn = formsEn.unitNameEn;
                 else
                     nameEn = formsAr.unitNameEn;
+                errMsg += "\n" + nameEn;
             }
 
             if (string.IsNullOrEmpty(txtNameArabic.Text))
@@ -98,14 +99,7 @@ namespace restaurantPOS.Manage.Units
                     nameAr = formsEn.unitNameAr;
                 else
                     nameAr = formsAr.unitNameAr;
-            }
-
-            if (nameEn != "" || nameAr != "")
-            {
-                if (Settings.Default.Language == "En")
-                    errMsg = messagesEn.ErrorMessae + "\n" + nameEn + "\n" + nameAr;
-                else
-                    errMsg = messagesAr.ErrorMessae + "\n" + nameEn + "\n" + nameAr;
+                errMsg += "\n" + nameAr;
             }
 
             return errMsg;

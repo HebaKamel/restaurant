@@ -85,7 +85,7 @@ namespace restaurantPOS.Manage.Goods
 
         private string validation()
         {
-            errMsg = "";
+            errMsg = messagesEn.ErrorMessae;
             string name = "", unit = "";
             if (string.IsNullOrEmpty(txtNameEnglish.Text))
             {
@@ -93,6 +93,8 @@ namespace restaurantPOS.Manage.Goods
                     name = formsEn.unitNameEn;
                 else
                     name = formsAr.unitNameEn;
+
+                errMsg += "\n" + name;
             }
 
             if (comboUnit.SelectedIndex <= 0)
@@ -101,15 +103,9 @@ namespace restaurantPOS.Manage.Goods
                     unit = formsEn.AddUnitHeader;
                 else
                     unit = formsAr.AddUnitHeader;
+                errMsg += "\n" + unit;
             }
 
-            if (name != "" || unit != "")
-            {
-                if (Settings.Default.Language == "En")
-                    errMsg = messagesEn.ErrorMessae + "\n" + name + "\n" + unit;
-                else
-                    errMsg = messagesAr.ErrorMessae + "\n" + name + "\n" + unit;
-            }
             return errMsg;
         }
 

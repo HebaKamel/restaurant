@@ -40,7 +40,8 @@ CREATE table prog_setting(
 	telephone_no nvarchar(20),
 	mobile_no nvarchar(20),
 	website nvarchar(255),
-	reset_footer ntext
+	reset_footer ntext,
+	logo_path nvarchar(255)
 );
 
 CREATE table clients(

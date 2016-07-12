@@ -91,14 +91,24 @@ namespace restaurantPOS.Manage.Units
 
         private string validation()
         {
-            errMsg = "";
-            string name = "";
+            errMsg = messagesEn.ErrorMessae;
+            string nameEn = "", nameAr = "";
             if (string.IsNullOrEmpty(txtNameEnglish.Text))
             {
                 if (Settings.Default.Language == "En")
-                    name = formsEn.unitNameEn;
+                    nameEn = formsEn.unitNameEn;
                 else
-                    name = formsAr.unitNameEn;
+                    nameEn = formsAr.unitNameEn;
+                errMsg += "\n" + nameEn;
+            }
+
+            if (string.IsNullOrEmpty(txtNameArabic.Text))
+            {
+                if (Settings.Default.Language == "En")
+                    nameAr = formsEn.unitNameAr;
+                else
+                    nameAr = formsAr.unitNameAr;
+                errMsg += "\n" + nameAr;
             }
 
             return errMsg;
