@@ -23,6 +23,8 @@ namespace restaurantPOS.FormsMessages
         public string btnDelete = "حذف";
         public string btnClear = "مسح";
         public string btnUpdate = "تعديل";
+        public string btnUpload = "رفع الصورة";
+
 
         #region clients
         public string AddClientHeader = "بيانات العميل";

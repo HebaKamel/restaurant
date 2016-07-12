@@ -23,6 +23,7 @@ namespace restaurantPOS.FormsMessages
         public string btnDelete = "Delete";
         public string btnClear = "Clear";
         public string btnUpdate = "Update";
+        public string btnUpload = "Upload Photo";
         //
 
         #region clients

@@ -61,34 +61,37 @@ namespace restaurantPOS.Manage.ProgramSetting
             }
         }
 
-        private void setLanguage(){
+        private void setLanguage()
+        {
             if (Settings.Default.Language == "En")
             {
                 lblAddClientHeader.Text = formsEn.AddClientHeader;
                 btnAdd.Text = formsEn.btnAdd;
-                btnClear.Text = formsEn.btnClear;
+                btnUploadLogo.Text = formsEn.btnUpload;
                 lblNameArabicAr.Visible = false;
                 lblNameEnglishAr.Visible = false;
                 lblAddrArabicAr.Visible = false;
                 lblAddrEnglishAr.Visible = false;
                 lblLandLineAr.Visible = false;
                 lblMobileAr.Visible = false;
-                lblIsVipAr.Visible = false;
-                lblEmailAr.Visible = false;
+                lblWebsiteAr.Visible = false;
+                lblFooterAr.Visible = false;
+                lblLogoAr.Visible = false;
             }
             else
             {
                 lblAddClientHeader.Text = formsAr.AddClientHeader;
                 btnAdd.Text = formsAr.btnAdd;
-                btnClear.Text = formsAr.btnClear;
+                btnUploadLogo.Text = formsEn.btnUpload;
                 lblNameArabic.Visible = false;
                 lblNameEnglish.Visible = false;
                 lblAddrArabic.Visible = false;
                 lblAddrEnglish.Visible = false;
                 lblLandLine.Visible = false;
                 lblMobile.Visible = false;
-                lblIsVipEn.Visible = false;
-                lblEmailEn.Visible = false;
+                lblWebsiteEn.Visible = false;
+                lblFooterEn.Visible = false;
+                lblLogoEn.Visible = false;
             }
         }
 
@@ -120,21 +123,16 @@ namespace restaurantPOS.Manage.ProgramSetting
             }
             return errMsg;
         }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (validation() == "")
-            {
-                int isVip = 0;
-                if (chkIsVip.Checked) isVip = 1;
-                int clientId = db.addClient(txtNameEnglish.Text, txtNameArabic.Text, txtAddrEnglish.Text,
-                                          txtAddrArabic.Text, txtLandLine.Text, txtMobile.Text, isVip, txtEmail.Text);
-                if (clientId != 0)
-                    XtraMessageBox.Show(messagesEn.insertedSuccessfully, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                else
-                    XtraMessageBox.Show(messagesEn.insertedError, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //save image in path..
+            int id = db.updateProg(txtNameEnglish.Text, txtNameArabic.Text, txtAddrEnglish.Text,
+                                      txtAddrArabic.Text, txtLandLine.Text, txtMobile.Text, txtWebsite.Text, txtFooter.Text, "");
+            if (id != 0)
+                XtraMessageBox.Show(messagesEn.insertedSuccessfully, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             else
-                XtraMessageBox.Show(errMsg, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show(messagesEn.insertedError, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void txtMobile_KeyPress(object sender, KeyPressEventArgs e)
@@ -149,9 +147,38 @@ namespace restaurantPOS.Manage.ProgramSetting
                 e.Handled = true;
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+        private void loadData()
         {
-            
+            DataTable dt = new DataTable();
+            dt = db.getProg();
+            if(dt.Rows.Count == 1)
+            {
+                txtNameEnglish.Text = dt.Rows[0]["name_en"].ToString();
+                txtNameArabic.Text = dt.Rows[0]["name_ar"].ToString();
+                txtAddrEnglish.Text = dt.Rows[0]["address_en"].ToString();
+                txtAddrArabic.Text = dt.Rows[0]["address_ar"].ToString();
+                txtLandLine.Text = dt.Rows[0]["telephone_no"].ToString();
+                txtMobile.Text = dt.Rows[0]["mobile_no"].ToString();
+                txtWebsite.Text = dt.Rows[0]["website"].ToString();
+                txtFooter.Text = dt.Rows[0]["reset_footer"].ToString();
+            }
+        }
+
+        private void btnUploadLogo_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "JPeg Image|*.jpg|Bitmap Image|*.bmp|Gif Image|*.gif";
+            dlg.Title = "Save an Image File";
+            //dlg.ShowDialog();
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                //string fileName;
+                //fileName = dlg.FileName;
+                //MessageBox.Show(fileName);
+
+                logoPicture.Image = new Bitmap(dlg.FileName);
+            }
         }
     }
 }
