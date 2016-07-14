@@ -28,12 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchStatus));
             this.groupControlButtons = new DevExpress.XtraEditors.GroupControl();
-            this.btnDelete = new restaurantPOS.GelButton();
-            this.btnUpdate = new restaurantPOS.GelButton();
-            this.btnClearClient = new restaurantPOS.GelButton();
-            this.btnSearch = new restaurantPOS.GelButton();
             this.groupControlAddClientInfo = new DevExpress.XtraEditors.GroupControl();
             this.statusColorPick = new DevExpress.XtraEditors.ColorPickEdit();
             this.lblColorAr = new DevExpress.XtraEditors.LabelControl();
@@ -47,6 +42,10 @@
             this.lblNameEnglish = new DevExpress.XtraEditors.LabelControl();
             this.splitContainerControlAddClients = new DevExpress.XtraEditors.SplitContainerControl();
             this.DataGrid = new System.Windows.Forms.DataGridView();
+            this.btnDelete = new restaurantPOS.GelButton();
+            this.btnUpdate = new restaurantPOS.GelButton();
+            this.btnClearClient = new restaurantPOS.GelButton();
+            this.btnSearch = new restaurantPOS.GelButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlButtons)).BeginInit();
             this.groupControlButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlAddClientInfo)).BeginInit();
@@ -69,59 +68,11 @@
             this.groupControlButtons.Controls.Add(this.btnClearClient);
             this.groupControlButtons.Controls.Add(this.btnSearch);
             this.groupControlButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupControlButtons.Location = new System.Drawing.Point(0, 263);
+            this.groupControlButtons.Location = new System.Drawing.Point(0, 225);
             this.groupControlButtons.Name = "groupControlButtons";
-            this.groupControlButtons.Size = new System.Drawing.Size(830, 42);
+            this.groupControlButtons.Size = new System.Drawing.Size(800, 40);
             this.groupControlButtons.TabIndex = 46;
             this.groupControlButtons.Text = "groupControl1";
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
-            this.btnDelete.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
-            this.btnDelete.Location = new System.Drawing.Point(3, 6);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(155, 28);
-            this.btnDelete.TabIndex = 1;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
-            this.btnUpdate.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
-            this.btnUpdate.Location = new System.Drawing.Point(231, 6);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(155, 28);
-            this.btnUpdate.TabIndex = 2;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnClearClient
-            // 
-            this.btnClearClient.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
-            this.btnClearClient.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
-            this.btnClearClient.Location = new System.Drawing.Point(406, 6);
-            this.btnClearClient.Name = "btnClearClient";
-            this.btnClearClient.Size = new System.Drawing.Size(155, 28);
-            this.btnClearClient.TabIndex = 0;
-            this.btnClearClient.Text = "Clear";
-            this.btnClearClient.UseVisualStyleBackColor = true;
-            this.btnClearClient.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
-            this.btnSearch.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
-            this.btnSearch.Location = new System.Drawing.Point(634, 6);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(155, 28);
-            this.btnSearch.TabIndex = 0;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // groupControlAddClientInfo
             // 
@@ -141,24 +92,27 @@
             this.groupControlAddClientInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControlAddClientInfo.Location = new System.Drawing.Point(0, 0);
             this.groupControlAddClientInfo.Name = "groupControlAddClientInfo";
-            this.groupControlAddClientInfo.Size = new System.Drawing.Size(830, 263);
+            this.groupControlAddClientInfo.Size = new System.Drawing.Size(800, 225);
             this.groupControlAddClientInfo.TabIndex = 47;
             this.groupControlAddClientInfo.Text = "Add Client Info";
             // 
             // statusColorPick
             // 
             this.statusColorPick.EditValue = System.Drawing.Color.Empty;
-            this.statusColorPick.Location = new System.Drawing.Point(260, 161);
+            this.statusColorPick.Location = new System.Drawing.Point(270, 184);
             this.statusColorPick.Name = "statusColorPick";
+            this.statusColorPick.Properties.Appearance.BackColor = System.Drawing.Color.Gainsboro;
+            this.statusColorPick.Properties.Appearance.Options.UseBackColor = true;
             this.statusColorPick.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.statusColorPick.Size = new System.Drawing.Size(264, 20);
             this.statusColorPick.TabIndex = 83;
+            this.statusColorPick.TextChanged += new System.EventHandler(this.statusColorPick_TextChanged);
             // 
             // lblColorAr
             // 
             this.lblColorAr.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColorAr.Location = new System.Drawing.Point(637, 162);
+            this.lblColorAr.Location = new System.Drawing.Point(684, 182);
             this.lblColorAr.Name = "lblColorAr";
             this.lblColorAr.Size = new System.Drawing.Size(33, 19);
             this.lblColorAr.TabIndex = 81;
@@ -167,7 +121,7 @@
             // lblColorEn
             // 
             this.lblColorEn.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColorEn.Location = new System.Drawing.Point(109, 162);
+            this.lblColorEn.Location = new System.Drawing.Point(65, 182);
             this.lblColorEn.Name = "lblColorEn";
             this.lblColorEn.Size = new System.Drawing.Size(38, 19);
             this.lblColorEn.TabIndex = 82;
@@ -176,7 +130,7 @@
             // lblSearchUnitHeader
             // 
             this.lblSearchUnitHeader.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearchUnitHeader.Location = new System.Drawing.Point(281, 12);
+            this.lblSearchUnitHeader.Location = new System.Drawing.Point(267, 12);
             this.lblSearchUnitHeader.Name = "lblSearchUnitHeader";
             this.lblSearchUnitHeader.Size = new System.Drawing.Size(58, 25);
             this.lblSearchUnitHeader.TabIndex = 58;
@@ -184,17 +138,18 @@
             // 
             // txtNameArabic
             // 
-            this.txtNameArabic.Location = new System.Drawing.Point(201, 129);
+            this.txtNameArabic.Location = new System.Drawing.Point(212, 122);
             this.txtNameArabic.Name = "txtNameArabic";
             this.txtNameArabic.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNameArabic.Properties.Appearance.Options.UseFont = true;
             this.txtNameArabic.Size = new System.Drawing.Size(383, 26);
             this.txtNameArabic.TabIndex = 54;
+            this.txtNameArabic.TextChanged += new System.EventHandler(this.txtNameArabic_TextChanged);
             // 
             // lblNameArabicAr
             // 
             this.lblNameArabicAr.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameArabicAr.Location = new System.Drawing.Point(610, 136);
+            this.lblNameArabicAr.Location = new System.Drawing.Point(658, 123);
             this.lblNameArabicAr.Name = "lblNameArabicAr";
             this.lblNameArabicAr.Size = new System.Drawing.Size(94, 19);
             this.lblNameArabicAr.TabIndex = 47;
@@ -203,7 +158,7 @@
             // lblNameArabic
             // 
             this.lblNameArabic.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameArabic.Location = new System.Drawing.Point(82, 132);
+            this.lblNameArabic.Location = new System.Drawing.Point(39, 123);
             this.lblNameArabic.Name = "lblNameArabic";
             this.lblNameArabic.Size = new System.Drawing.Size(103, 19);
             this.lblNameArabic.TabIndex = 47;
@@ -211,17 +166,18 @@
             // 
             // txtNameEnglish
             // 
-            this.txtNameEnglish.Location = new System.Drawing.Point(201, 100);
+            this.txtNameEnglish.Location = new System.Drawing.Point(212, 63);
             this.txtNameEnglish.Name = "txtNameEnglish";
             this.txtNameEnglish.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNameEnglish.Properties.Appearance.Options.UseFont = true;
             this.txtNameEnglish.Size = new System.Drawing.Size(383, 26);
             this.txtNameEnglish.TabIndex = 53;
+            this.txtNameEnglish.TextChanged += new System.EventHandler(this.txtNameEnglish_TextChanged);
             // 
             // lblNameEnglishAr
             // 
             this.lblNameEnglishAr.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameEnglishAr.Location = new System.Drawing.Point(610, 107);
+            this.lblNameEnglishAr.Location = new System.Drawing.Point(658, 64);
             this.lblNameEnglishAr.Name = "lblNameEnglishAr";
             this.lblNameEnglishAr.Size = new System.Drawing.Size(112, 19);
             this.lblNameEnglishAr.TabIndex = 51;
@@ -230,7 +186,7 @@
             // lblNameEnglish
             // 
             this.lblNameEnglish.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameEnglish.Location = new System.Drawing.Point(76, 103);
+            this.lblNameEnglish.Location = new System.Drawing.Point(33, 64);
             this.lblNameEnglish.Name = "lblNameEnglish";
             this.lblNameEnglish.Size = new System.Drawing.Size(109, 19);
             this.lblNameEnglish.TabIndex = 51;
@@ -249,29 +205,81 @@
             this.splitContainerControlAddClients.Panel1.Text = "Panel1";
             this.splitContainerControlAddClients.Panel2.Controls.Add(this.DataGrid);
             this.splitContainerControlAddClients.Panel2.Text = "Panel2";
-            this.splitContainerControlAddClients.Size = new System.Drawing.Size(830, 700);
-            this.splitContainerControlAddClients.SplitterPosition = 305;
+            this.splitContainerControlAddClients.Size = new System.Drawing.Size(800, 700);
+            this.splitContainerControlAddClients.SplitterPosition = 265;
             this.splitContainerControlAddClients.TabIndex = 1;
             this.splitContainerControlAddClients.Text = "splitContainerControlAddClients";
             // 
             // DataGrid
             // 
+            this.DataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DataGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DataGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.DataGrid.Location = new System.Drawing.Point(3, 1);
+            this.DataGrid.Location = new System.Drawing.Point(0, 0);
             this.DataGrid.MultiSelect = false;
             this.DataGrid.Name = "DataGrid";
             this.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGrid.Size = new System.Drawing.Size(824, 245);
+            this.DataGrid.Size = new System.Drawing.Size(800, 430);
             this.DataGrid.TabIndex = 0;
+            this.DataGrid.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGrid_CellValueChanged);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
+            this.btnDelete.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
+            this.btnDelete.Location = new System.Drawing.Point(422, 6);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(155, 28);
+            this.btnDelete.TabIndex = 1;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
+            this.btnUpdate.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
+            this.btnUpdate.Location = new System.Drawing.Point(224, 6);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(155, 28);
+            this.btnUpdate.TabIndex = 2;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnClearClient
+            // 
+            this.btnClearClient.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
+            this.btnClearClient.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
+            this.btnClearClient.Location = new System.Drawing.Point(620, 6);
+            this.btnClearClient.Name = "btnClearClient";
+            this.btnClearClient.Size = new System.Drawing.Size(155, 28);
+            this.btnClearClient.TabIndex = 0;
+            this.btnClearClient.Text = "Clear";
+            this.btnClearClient.UseVisualStyleBackColor = true;
+            this.btnClearClient.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
+            this.btnSearch.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
+            this.btnSearch.Location = new System.Drawing.Point(26, 6);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(155, 28);
+            this.btnSearch.TabIndex = 0;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // SearchStatus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::restaurantPOS.Properties.Resources.Untitled_11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(830, 700);
+            this.ClientSize = new System.Drawing.Size(800, 700);
             this.Controls.Add(this.splitContainerControlAddClients);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

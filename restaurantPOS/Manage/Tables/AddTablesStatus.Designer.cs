@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddTablesStatus));
             this.splitContainerControlAddClients = new DevExpress.XtraEditors.SplitContainerControl();
             this.groupControlAddClientInfo = new DevExpress.XtraEditors.GroupControl();
             this.statusColorPick = new DevExpress.XtraEditors.ColorPickEdit();
@@ -67,8 +66,8 @@
             this.splitContainerControlAddClients.Panel1.Controls.Add(this.groupControlButtons);
             this.splitContainerControlAddClients.Panel1.Text = "Panel1";
             this.splitContainerControlAddClients.Panel2.Text = "Panel2";
-            this.splitContainerControlAddClients.Size = new System.Drawing.Size(830, 700);
-            this.splitContainerControlAddClients.SplitterPosition = 332;
+            this.splitContainerControlAddClients.Size = new System.Drawing.Size(800, 700);
+            this.splitContainerControlAddClients.SplitterPosition = 267;
             this.splitContainerControlAddClients.TabIndex = 1;
             this.splitContainerControlAddClients.Text = "splitContainerControlAddClients";
             // 
@@ -90,15 +89,17 @@
             this.groupControlAddClientInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControlAddClientInfo.Location = new System.Drawing.Point(0, 0);
             this.groupControlAddClientInfo.Name = "groupControlAddClientInfo";
-            this.groupControlAddClientInfo.Size = new System.Drawing.Size(830, 269);
+            this.groupControlAddClientInfo.Size = new System.Drawing.Size(800, 226);
             this.groupControlAddClientInfo.TabIndex = 47;
             this.groupControlAddClientInfo.Text = "Add Client Info";
             // 
             // statusColorPick
             // 
-            this.statusColorPick.EditValue = System.Drawing.Color.Empty;
-            this.statusColorPick.Location = new System.Drawing.Point(259, 164);
+            this.statusColorPick.EditValue = System.Drawing.Color.White;
+            this.statusColorPick.Location = new System.Drawing.Point(251, 186);
             this.statusColorPick.Name = "statusColorPick";
+            this.statusColorPick.Properties.Appearance.BackColor = System.Drawing.Color.Gainsboro;
+            this.statusColorPick.Properties.Appearance.Options.UseBackColor = true;
             this.statusColorPick.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.statusColorPick.Size = new System.Drawing.Size(264, 20);
@@ -115,7 +116,7 @@
             // 
             // txtStatusArabic
             // 
-            this.txtStatusArabic.Location = new System.Drawing.Point(201, 129);
+            this.txtStatusArabic.Location = new System.Drawing.Point(192, 122);
             this.txtStatusArabic.Name = "txtStatusArabic";
             this.txtStatusArabic.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStatusArabic.Properties.Appearance.Options.UseFont = true;
@@ -125,7 +126,7 @@
             // lblColorAr
             // 
             this.lblColorAr.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColorAr.Location = new System.Drawing.Point(636, 165);
+            this.lblColorAr.Location = new System.Drawing.Point(678, 186);
             this.lblColorAr.Name = "lblColorAr";
             this.lblColorAr.Size = new System.Drawing.Size(33, 19);
             this.lblColorAr.TabIndex = 47;
@@ -134,7 +135,7 @@
             // lblNameArabicAr
             // 
             this.lblNameArabicAr.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameArabicAr.Location = new System.Drawing.Point(610, 136);
+            this.lblNameArabicAr.Location = new System.Drawing.Point(619, 126);
             this.lblNameArabicAr.Name = "lblNameArabicAr";
             this.lblNameArabicAr.Size = new System.Drawing.Size(92, 19);
             this.lblNameArabicAr.TabIndex = 47;
@@ -143,7 +144,7 @@
             // lblColorEn
             // 
             this.lblColorEn.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColorEn.Location = new System.Drawing.Point(108, 165);
+            this.lblColorEn.Location = new System.Drawing.Point(67, 187);
             this.lblColorEn.Name = "lblColorEn";
             this.lblColorEn.Size = new System.Drawing.Size(38, 19);
             this.lblColorEn.TabIndex = 47;
@@ -152,7 +153,7 @@
             // lblNameArabic
             // 
             this.lblNameArabic.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameArabic.Location = new System.Drawing.Point(82, 132);
+            this.lblNameArabic.Location = new System.Drawing.Point(67, 126);
             this.lblNameArabic.Name = "lblNameArabic";
             this.lblNameArabic.Size = new System.Drawing.Size(105, 19);
             this.lblNameArabic.TabIndex = 47;
@@ -160,7 +161,7 @@
             // 
             // txtStatusEnglish
             // 
-            this.txtStatusEnglish.Location = new System.Drawing.Point(201, 100);
+            this.txtStatusEnglish.Location = new System.Drawing.Point(192, 62);
             this.txtStatusEnglish.Name = "txtStatusEnglish";
             this.txtStatusEnglish.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStatusEnglish.Properties.Appearance.Options.UseFont = true;
@@ -170,7 +171,7 @@
             // lblNameEnglishAr
             // 
             this.lblNameEnglishAr.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameEnglishAr.Location = new System.Drawing.Point(610, 107);
+            this.lblNameEnglishAr.Location = new System.Drawing.Point(601, 66);
             this.lblNameEnglishAr.Name = "lblNameEnglishAr";
             this.lblNameEnglishAr.Size = new System.Drawing.Size(110, 19);
             this.lblNameEnglishAr.TabIndex = 51;
@@ -179,7 +180,7 @@
             // lblNameEnglish
             // 
             this.lblNameEnglish.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameEnglish.Location = new System.Drawing.Point(76, 103);
+            this.lblNameEnglish.Location = new System.Drawing.Point(67, 66);
             this.lblNameEnglish.Name = "lblNameEnglish";
             this.lblNameEnglish.Size = new System.Drawing.Size(111, 19);
             this.lblNameEnglish.TabIndex = 51;
@@ -193,9 +194,9 @@
             this.groupControlButtons.Controls.Add(this.btnClear);
             this.groupControlButtons.Controls.Add(this.btnAdd);
             this.groupControlButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupControlButtons.Location = new System.Drawing.Point(0, 269);
+            this.groupControlButtons.Location = new System.Drawing.Point(0, 226);
             this.groupControlButtons.Name = "groupControlButtons";
-            this.groupControlButtons.Size = new System.Drawing.Size(830, 63);
+            this.groupControlButtons.Size = new System.Drawing.Size(800, 41);
             this.groupControlButtons.TabIndex = 46;
             this.groupControlButtons.Text = "groupControl1";
             // 
@@ -203,7 +204,7 @@
             // 
             this.btnClear.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
             this.btnClear.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
-            this.btnClear.Location = new System.Drawing.Point(201, 19);
+            this.btnClear.Location = new System.Drawing.Point(420, 6);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(155, 28);
             this.btnClear.TabIndex = 0;
@@ -215,7 +216,7 @@
             // 
             this.btnAdd.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
             this.btnAdd.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
-            this.btnAdd.Location = new System.Drawing.Point(429, 19);
+            this.btnAdd.Location = new System.Drawing.Point(192, 6);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(155, 28);
             this.btnAdd.TabIndex = 0;
@@ -227,9 +228,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::restaurantPOS.Properties.Resources.Untitled_11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(830, 700);
+            this.ClientSize = new System.Drawing.Size(800, 700);
             this.Controls.Add(this.splitContainerControlAddClients);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

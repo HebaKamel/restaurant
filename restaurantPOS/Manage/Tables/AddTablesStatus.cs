@@ -61,7 +61,8 @@ namespace restaurantPOS.Manage.Tables
             }
         }
 
-        private void setLanguage(){
+        private void setLanguage()
+        {
             if (Settings.Default.Language == "En")
             {
                 lblAddHeader.Text = formsEn.status;
@@ -82,7 +83,7 @@ namespace restaurantPOS.Manage.Tables
             }
         }
 
-        private string validation()
+        private string Validation()
         {
             errMsg = messagesEn.ErrorMessae;
             string name = "", color = "";
@@ -94,7 +95,15 @@ namespace restaurantPOS.Manage.Tables
                     name = formsAr.statusNameEn;
                 errMsg += "\n" + name;
             }
-            if (statusColorPick.Color.ToArgb().ToString().ToLower().Contains("empty"))
+            if (string.IsNullOrEmpty(txtStatusArabic.Text))
+            {
+                if (Settings.Default.Language == "En")
+                    name = formsEn.statusNameAr;
+                else
+                    name = formsAr.statusNameAr;
+                errMsg += "\n" + name;
+            }
+            if (statusColorPick.Color.ToArgb() == 0)
             {
                 if (Settings.Default.Language == "En")
                     color = formsEn.statusColor;
@@ -107,7 +116,7 @@ namespace restaurantPOS.Manage.Tables
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (validation() == messagesEn.ErrorMessae)
+            if (Validation() == messagesEn.ErrorMessae)
             {
                 int statusId = db.addStatus(txtStatusEnglish.Text, txtStatusArabic.Text, statusColorPick.Color.ToArgb().ToString());
                 if (statusId != 0)
@@ -121,6 +130,9 @@ namespace restaurantPOS.Manage.Tables
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            txtStatusArabic.Text = "";
+            txtStatusEnglish.Text = "";
+            statusColorPick.Color = Color.Empty;
         }
 
     }

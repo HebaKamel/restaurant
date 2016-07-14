@@ -33,6 +33,7 @@ namespace restaurantPOS.Manage.Tables
             this.statusNameEn = statusNameEn;
             this.statusNameAr = statusNameAr;
             this.statusColor = statusColor;
+            //statusColorPick
             statusColorPick.EditValue = Color.FromArgb(Convert.ToInt32(statusColor));
         }
 
@@ -64,9 +65,9 @@ namespace restaurantPOS.Manage.Tables
         private void btnUpdate_Click(object sender, EventArgs e)
         {
 
-            if (validation() == messagesEn.ErrorMessae)
+            if (Validation() == messagesEn.ErrorMessae)
             {
-                MessageBox.Show("color--->" + statusColorPick.Color.ToArgb());
+                //MessageBox.Show("color--->" + statusColorPick.Color.ToArgb());
                 int updated = db.UpdateStatus(txtNameEnglish.Text, txtNameArabic.Text, statusColorPick.Color.ToArgb().ToString(), this.statusId);
                 if (updated == 0)
                 {
@@ -90,7 +91,7 @@ namespace restaurantPOS.Manage.Tables
                 XtraMessageBox.Show(errMsg, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private string validation()
+        private string Validation()
         {
             errMsg = messagesEn.ErrorMessae;
             string name = "", color = "";
@@ -100,6 +101,14 @@ namespace restaurantPOS.Manage.Tables
                     name = formsEn.statusNameEn;
                 else
                     name = formsAr.statusNameEn;
+                errMsg += "\n" + name;
+            }
+            if (string.IsNullOrEmpty(txtNameArabic.Text))
+            {
+                if (Settings.Default.Language == "En")
+                    name = formsEn.statusNameAr;
+                else
+                    name = formsAr.statusNameAr;
                 errMsg += "\n" + name;
             }
             if (statusColorPick.Color.ToArgb()== 0)

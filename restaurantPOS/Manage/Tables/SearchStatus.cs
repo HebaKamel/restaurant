@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Text;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -29,11 +30,10 @@ namespace restaurantPOS.Manage.Tables
         public SearchStatus()
         {
             InitializeComponent();
-
         }
 
 
-        private void setLanguage()
+        private void SetLanguage()
         {
             if (Settings.Default.Language == "En")
             {
@@ -44,6 +44,7 @@ namespace restaurantPOS.Manage.Tables
                 btnUpdate.Text = formsEn.btnUpdate;
                 lblNameArabicAr.Visible = false;
                 lblNameEnglishAr.Visible = false;
+                lblColorAr.Visible = false;
             }
             else
             {
@@ -54,32 +55,22 @@ namespace restaurantPOS.Manage.Tables
                 btnUpdate.Text = formsAr.btnUpdate;
                 lblNameArabic.Visible = false;
                 lblNameEnglish.Visible = false;
+                lblColorEn.Visible = false;
             }
-        }
-
-        private string validation()
-        {
-            errMsg = "";
-            string name = "";
-            if (string.IsNullOrEmpty(txtNameEnglish.Text))
-            {
-                if (Settings.Default.Language == "En")
-                    name = formsEn.unitNameEn;
-                else
-                    name = formsAr.unitNameEn;
-            }
-            return errMsg;
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
             //clear all controls
-            loadGrid();
+            txtNameEnglish.Text = "";
+            txtNameArabic.Text = "";
+            statusColorPick.Color = Color.Empty;
+            LoadGrid();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            loadGrid();
+            LoadGrid();
         }
 
         private void SearchStatus_Load(object sender, EventArgs e)
@@ -108,13 +99,14 @@ namespace restaurantPOS.Manage.Tables
                 //btnDelete.Font = new Font(pfc.Families[0], 15, FontStyle.Regular);
                 //btnUpdate.Font = new Font(pfc.Families[0], 15, FontStyle.Regular);
             }
-            setLanguage();
-            loadGrid();
+            SetLanguage();
+            LoadGrid();
         }
 
-        private void loadGrid()
+        private void LoadGrid()
         {
-            DataTable unitsDT = db.getStatus(txtNameEnglish.Text, txtNameArabic.Text, statusColorPick.Color.ToArgb().ToString(), null);
+            string statusColorSelected = statusColorPick.Color.ToArgb() == 0 ? null : statusColorPick.Color.ToArgb().ToString(CultureInfo.InvariantCulture);
+            DataTable unitsDT = db.getStatus(txtNameEnglish.Text, txtNameArabic.Text, statusColorSelected, null);
             DataGrid.DataSource = unitsDT;
             DataGrid.Columns[0].Visible = false;
             if (Settings.Default.Language == "En")
@@ -128,7 +120,7 @@ namespace restaurantPOS.Manage.Tables
                 DataGrid.Columns[1].HeaderText = formsAr.unitNameEn;
                 DataGrid.Columns[2].HeaderText = formsAr.unitNameAr;
                 DataGrid.Columns[3].HeaderText = formsAr.statusColor;
-                DataGrid.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+                DataGrid.RightToLeft = RightToLeft.Yes;
             }
         }
 
@@ -179,9 +171,40 @@ namespace restaurantPOS.Manage.Tables
                 return;
             }
             int rowId = Convert.ToInt32(DataGrid.CurrentCell.RowIndex);
-            UpdateStatus UpdateStatus = new UpdateStatus(Convert.ToInt32(DataGrid.Rows[rowId].Cells[0].Value), DataGrid.Rows[rowId].Cells[1].Value.ToString(), DataGrid.Rows[rowId].Cells[2].Value.ToString(), DataGrid.Rows[rowId].Cells[3].Value.ToString());
-            UpdateStatus.ShowDialog();
-            loadGrid();
+            var updateStatus = new UpdateStatus(Convert.ToInt32(DataGrid.Rows[rowId].Cells[0].Value), DataGrid.Rows[rowId].Cells[1].Value.ToString(), DataGrid.Rows[rowId].Cells[2].Value.ToString(), DataGrid.Rows[rowId].Cells[3].Value.ToString());
+            updateStatus.ShowDialog();
+            LoadGrid();
+        }
+
+        private void txtNameEnglish_TextChanged(object sender, EventArgs e)
+        {
+            LoadGrid();
+        }
+
+        private void txtNameArabic_TextChanged(object sender, EventArgs e)
+        {
+            LoadGrid();
+        }
+
+        private void statusColorPick_TextChanged(object sender, EventArgs e)
+        {
+            LoadGrid();
+        }
+
+        private void DataGrid_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            //foreach (DataGridViewRow row in DataGrid.Rows)
+            //{
+            //    var clr = Color.FromArgb(Convert.ToInt32(row.Cells[3].Value.ToString()));
+            //    if (clr.A == 0) continue;
+            //    row.Cells[3].Style.BackColor = clr;
+            //    row.Cells[3].Style.ForeColor = clr;
+            //    row.Cells[3].Value = "";
+            //}
+            DataGrid.Rows[0].Cells[3].Style.BackColor = Color.Red;
+            DataGrid.Rows[0].Cells[3].Style.ForeColor = Color.Red;
+            
+
         }
     }
 }

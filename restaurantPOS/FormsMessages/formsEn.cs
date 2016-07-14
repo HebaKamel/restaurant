@@ -54,8 +54,9 @@ namespace restaurantPOS.FormsMessages
 
         #region status
         public string status = "Table colors";
-        public string statusNameEn = "status Name (English)";
-        public string statusColor = "status Color";
+        public string statusNameEn = "Status Name (English)";
+        public string statusNameAr = "Status Name (Arabic)";
+        public string statusColor = "Status Color";
         #endregion
 
         #region progSetting

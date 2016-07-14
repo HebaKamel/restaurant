@@ -34,11 +34,11 @@
             this.txtNameEnglish = new DevExpress.XtraEditors.TextEdit();
             this.lblNameEnglishAr = new DevExpress.XtraEditors.LabelControl();
             this.lblNameEnglish = new DevExpress.XtraEditors.LabelControl();
-            this.lblHeader = new System.Windows.Forms.Label();
-            this.statusColorPick = new DevExpress.XtraEditors.ColorPickEdit();
             this.lblColorAr = new DevExpress.XtraEditors.LabelControl();
             this.lblColorEn = new DevExpress.XtraEditors.LabelControl();
             this.btnUpdate = new restaurantPOS.GelButton();
+            this.statusColorPick = new DevExpress.XtraEditors.ColorPickEdit();
+            this.lblHeader = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtNameArabic.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNameEnglish.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusColorPick.Properties)).BeginInit();
@@ -46,7 +46,7 @@
             // 
             // txtNameArabic
             // 
-            this.txtNameArabic.Location = new System.Drawing.Point(167, 104);
+            this.txtNameArabic.Location = new System.Drawing.Point(159, 132);
             this.txtNameArabic.Name = "txtNameArabic";
             this.txtNameArabic.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNameArabic.Properties.Appearance.Options.UseFont = true;
@@ -56,7 +56,7 @@
             // lblNameArabicAr
             // 
             this.lblNameArabicAr.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameArabicAr.Location = new System.Drawing.Point(576, 111);
+            this.lblNameArabicAr.Location = new System.Drawing.Point(563, 136);
             this.lblNameArabicAr.Name = "lblNameArabicAr";
             this.lblNameArabicAr.Size = new System.Drawing.Size(94, 19);
             this.lblNameArabicAr.TabIndex = 61;
@@ -65,7 +65,7 @@
             // lblNameArabic
             // 
             this.lblNameArabic.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameArabic.Location = new System.Drawing.Point(48, 107);
+            this.lblNameArabic.Location = new System.Drawing.Point(35, 136);
             this.lblNameArabic.Name = "lblNameArabic";
             this.lblNameArabic.Size = new System.Drawing.Size(103, 19);
             this.lblNameArabic.TabIndex = 60;
@@ -73,7 +73,7 @@
             // 
             // txtNameEnglish
             // 
-            this.txtNameEnglish.Location = new System.Drawing.Point(167, 75);
+            this.txtNameEnglish.Location = new System.Drawing.Point(159, 75);
             this.txtNameEnglish.Name = "txtNameEnglish";
             this.txtNameEnglish.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNameEnglish.Properties.Appearance.Options.UseFont = true;
@@ -83,7 +83,7 @@
             // lblNameEnglishAr
             // 
             this.lblNameEnglishAr.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameEnglishAr.Location = new System.Drawing.Point(576, 82);
+            this.lblNameEnglishAr.Location = new System.Drawing.Point(563, 79);
             this.lblNameEnglishAr.Name = "lblNameEnglishAr";
             this.lblNameEnglishAr.Size = new System.Drawing.Size(112, 19);
             this.lblNameEnglishAr.TabIndex = 69;
@@ -92,36 +92,16 @@
             // lblNameEnglish
             // 
             this.lblNameEnglish.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameEnglish.Location = new System.Drawing.Point(42, 78);
+            this.lblNameEnglish.Location = new System.Drawing.Point(29, 79);
             this.lblNameEnglish.Name = "lblNameEnglish";
             this.lblNameEnglish.Size = new System.Drawing.Size(109, 19);
             this.lblNameEnglish.TabIndex = 68;
             this.lblNameEnglish.Text = "Name (English)";
             // 
-            // lblHeader
-            // 
-            this.lblHeader.AutoSize = true;
-            this.lblHeader.Location = new System.Drawing.Point(312, 9);
-            this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(35, 13);
-            this.lblHeader.TabIndex = 76;
-            this.lblHeader.Text = "label1";
-            // 
-            // statusColorPick
-            // 
-            this.statusColorPick.EditValue = System.Drawing.Color.Empty;
-            this.statusColorPick.Location = new System.Drawing.Point(224, 136);
-            this.statusColorPick.Name = "statusColorPick";
-            this.statusColorPick.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.statusColorPick.Properties.StoreColorAsInteger = true;
-            this.statusColorPick.Size = new System.Drawing.Size(264, 20);
-            this.statusColorPick.TabIndex = 80;
-            // 
             // lblColorAr
             // 
             this.lblColorAr.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColorAr.Location = new System.Drawing.Point(601, 137);
+            this.lblColorAr.Location = new System.Drawing.Point(586, 193);
             this.lblColorAr.Name = "lblColorAr";
             this.lblColorAr.Size = new System.Drawing.Size(33, 19);
             this.lblColorAr.TabIndex = 78;
@@ -130,7 +110,7 @@
             // lblColorEn
             // 
             this.lblColorEn.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColorEn.Location = new System.Drawing.Point(73, 137);
+            this.lblColorEn.Location = new System.Drawing.Point(58, 193);
             this.lblColorEn.Name = "lblColorEn";
             this.lblColorEn.Size = new System.Drawing.Size(38, 19);
             this.lblColorEn.TabIndex = 79;
@@ -140,7 +120,7 @@
             // 
             this.btnUpdate.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
             this.btnUpdate.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
-            this.btnUpdate.Location = new System.Drawing.Point(264, 204);
+            this.btnUpdate.Location = new System.Drawing.Point(270, 240);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(155, 28);
             this.btnUpdate.TabIndex = 77;
@@ -148,16 +128,39 @@
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // statusColorPick
+            // 
+            this.statusColorPick.EditValue = System.Drawing.Color.White;
+            this.statusColorPick.Location = new System.Drawing.Point(216, 192);
+            this.statusColorPick.Name = "statusColorPick";
+            this.statusColorPick.Properties.Appearance.BackColor = System.Drawing.Color.Gainsboro;
+            this.statusColorPick.Properties.Appearance.Options.UseBackColor = true;
+            this.statusColorPick.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.statusColorPick.Size = new System.Drawing.Size(264, 20);
+            this.statusColorPick.TabIndex = 80;
+            // 
+            // lblHeader
+            // 
+            this.lblHeader.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader.Location = new System.Drawing.Point(260, 9);
+            this.lblHeader.Name = "lblHeader";
+            this.lblHeader.Size = new System.Drawing.Size(58, 25);
+            this.lblHeader.TabIndex = 81;
+            this.lblHeader.Text = "Status";
+            // 
             // UpdateStatus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(701, 281);
+            this.BackgroundImage = global::restaurantPOS.Properties.Resources.Untitled_11;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(701, 287);
+            this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.statusColorPick);
             this.Controls.Add(this.lblColorAr);
             this.Controls.Add(this.lblColorEn);
             this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.txtNameArabic);
             this.Controls.Add(this.lblNameArabicAr);
             this.Controls.Add(this.lblNameArabic);
@@ -188,10 +191,10 @@
         private DevExpress.XtraEditors.TextEdit txtNameEnglish;
         private DevExpress.XtraEditors.LabelControl lblNameEnglishAr;
         private DevExpress.XtraEditors.LabelControl lblNameEnglish;
-        private System.Windows.Forms.Label lblHeader;
         private GelButton btnUpdate;
-        private DevExpress.XtraEditors.ColorPickEdit statusColorPick;
         private DevExpress.XtraEditors.LabelControl lblColorAr;
         private DevExpress.XtraEditors.LabelControl lblColorEn;
+        private DevExpress.XtraEditors.ColorPickEdit statusColorPick;
+        private DevExpress.XtraEditors.LabelControl lblHeader;
     }
 }

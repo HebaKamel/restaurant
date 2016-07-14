@@ -55,6 +55,7 @@ namespace restaurantPOS.FormsMessages
         #region status
         public string status = "ألوان ";
         public string statusNameEn = "اسم الحالة بالانجليزية";
+        public string statusNameAr = "اسم الحالة بالعربية";
         public string statusColor = "اللون";
         #endregion
 
