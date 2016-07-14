@@ -114,7 +114,7 @@ namespace restaurantPOS.Manage.Tables
 
         private void loadGrid()
         {
-            DataTable unitsDT = db.getStatus(txtNameEnglish.Text, txtNameArabic.Text, statusColorPick.SelectedText, null);
+            DataTable unitsDT = db.getStatus(txtNameEnglish.Text, txtNameArabic.Text, statusColorPick.Color.ToArgb().ToString(), null);
             DataGrid.DataSource = unitsDT;
             DataGrid.Columns[0].Visible = false;
             if (Settings.Default.Language == "En")
@@ -174,6 +174,10 @@ namespace restaurantPOS.Manage.Tables
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (DataGrid.CurrentCell == null)
+            {
+                return;
+            }
             int rowId = Convert.ToInt32(DataGrid.CurrentCell.RowIndex);
             UpdateStatus UpdateStatus = new UpdateStatus(Convert.ToInt32(DataGrid.Rows[rowId].Cells[0].Value), DataGrid.Rows[rowId].Cells[1].Value.ToString(), DataGrid.Rows[rowId].Cells[2].Value.ToString(), DataGrid.Rows[rowId].Cells[3].Value.ToString());
             UpdateStatus.ShowDialog();

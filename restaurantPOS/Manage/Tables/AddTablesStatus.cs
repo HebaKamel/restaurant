@@ -94,7 +94,7 @@ namespace restaurantPOS.Manage.Tables
                     name = formsAr.statusNameEn;
                 errMsg += "\n" + name;
             }
-            if (statusColorPick.EditValue.ToString().ToLower().Contains("empty"))
+            if (statusColorPick.Color.ToArgb().ToString().ToLower().Contains("empty"))
             {
                 if (Settings.Default.Language == "En")
                     color = formsEn.statusColor;

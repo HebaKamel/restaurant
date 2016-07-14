@@ -114,6 +114,7 @@
             this.statusColorPick.Name = "statusColorPick";
             this.statusColorPick.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.statusColorPick.Properties.StoreColorAsInteger = true;
             this.statusColorPick.Size = new System.Drawing.Size(264, 20);
             this.statusColorPick.TabIndex = 80;
             // 
