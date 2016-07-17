@@ -59,6 +59,16 @@ namespace restaurantPOS.FormsMessages
         public string statusColor = "اللون";
         #endregion
 
+        #region table
+        public string table = "الطاولات";
+        public string tableNameEn = "اسم الطاولة (بالانجليزية)";
+        public string tableNameAr = "اسم الطاولة (بالعربية)";
+        public string chairNumber = "عدد الكراسي";
+        public string isVip = "خاصة";
+        public string tableStatus = "حالة الطاولة";
+        public string searchTable = "بحث طاولة";
+        #endregion
+
         #region progSetting
         public string progHeader = "البيانات الاساسية للبرنامج ";
         #endregion

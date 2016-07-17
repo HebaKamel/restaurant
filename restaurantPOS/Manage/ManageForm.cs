@@ -32,6 +32,8 @@ namespace restaurantPOS
         Manage.Tables.AddTablesStatus addTablesStatus = new Manage.Tables.AddTablesStatus();
         Manage.ProgramSetting.ProgSetting progSetting = new Manage.ProgramSetting.ProgSetting();
         Manage.Tables.SearchStatus searchStatus = new SearchStatus();
+        Manage.Tables.AddTable addTable = new AddTable();
+        SearchTable searchTable = new SearchTable();
         #endregion
 
         public FrmManage()
@@ -341,8 +343,41 @@ namespace restaurantPOS
 
             progSetting = new Manage.ProgramSetting.ProgSetting();
             progSetting.Show();
-            progSetting.MdiParent = this;
-            progSetting.Dock = DockStyle.Right;
+            progSetting.MdiParent = this;progSetting.Dock = DockStyle.Right;
+        }
+
+        private void navBarItemAddTable_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            searchClient.Close();
+            searchUnits.Close();
+            addUnit.Close();
+            addClient.Close();
+            addClient.Close();
+            addGoods.Close();
+            addSupplier.Close();
+            searchTable.Close();
+
+            addTable = new AddTable();
+            addTable.Show();
+            addTable.MdiParent = this;
+            addTable.Dock = DockStyle.Right;
+        }
+
+        private void navBarItemUpdateDeleteTable_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            searchClient.Close();
+            searchUnits.Close();
+            addUnit.Close();
+            addClient.Close();
+            addClient.Close();
+            addGoods.Close();
+            addSupplier.Close();
+            addTable.Close();
+
+            searchTable = new SearchTable();
+            searchTable.Show();
+            searchTable.MdiParent = this;
+            searchTable.Dock = DockStyle.Right;
         }
 
         

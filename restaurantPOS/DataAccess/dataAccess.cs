@@ -611,7 +611,7 @@ namespace restaurantPOS.DataAccess
                 cmd.Parameters["@statusNameEn"].Value = statusNameEn;
                 cmd.Parameters["@statusNameAr"].Value = statusNameAr;
                 cmd.Parameters["@statusColor"].Value = statusColor;
-                
+
                 if (con.State != ConnectionState.Open)
                     con.Open();
                 cmd.ExecuteNonQuery();
@@ -687,6 +687,130 @@ namespace restaurantPOS.DataAccess
                 cmd.Parameters["@statusNameEn"].Value = statusNameEn;
                 cmd.Parameters["@statusNameAr"].Value = statusNameAr;
                 cmd.Parameters["@statusColor"].Value = statusColor;
+                if (con.State != ConnectionState.Open)
+                    con.Open();
+                SqlParameter returnParameter = cmd.Parameters.Add("RetVal", SqlDbType.Int);
+                returnParameter.Direction = ParameterDirection.ReturnValue;
+                cmd.ExecuteReader();
+                if (returnParameter.Value != null)
+                    updated = (int)returnParameter.Value;
+                if (con.State != ConnectionState.Closed)
+                    con.Close();
+            }
+            return updated;
+        }
+        #endregion
+
+
+        #region Tables
+        public int addTable(string tableNameEn, string tableNameAr, int tableChairNumber, bool tableIsVip, int tableStatusId)
+        {
+            //transaction = con.BeginTransaction("SampleTransaction");
+            int tableId;
+            using (SqlCommand cmd = new SqlCommand("addTable", con))
+            {
+                //cmd.Transaction = transaction;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@tableNameEn", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@tableNameAr", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@tableChairNumber", SqlDbType.Int);
+                cmd.Parameters.Add("@tableIsVip", SqlDbType.Bit);
+                cmd.Parameters.Add("@tableStatusId", SqlDbType.Int);
+                cmd.Parameters.Add("@tableId", SqlDbType.Int).Direction = ParameterDirection.Output;
+                cmd.Parameters["@tableNameEn"].Value = tableNameEn;
+                cmd.Parameters["@tableNameAr"].Value = tableNameAr;
+                cmd.Parameters["@tableChairNumber"].Value = tableChairNumber;
+                cmd.Parameters["@tableIsVip"].Value = tableIsVip;
+                cmd.Parameters["@tableStatusId"].Value = tableStatusId;
+
+                if (con.State != ConnectionState.Open)
+                    con.Open();
+                cmd.ExecuteNonQuery();
+                tableId = Convert.ToInt32(cmd.Parameters["@tableId"].Value);
+                if (con.State != ConnectionState.Closed)
+                    con.Close();
+            }
+            return tableId;
+        }
+
+        public DataTable getTable(string tableNameEn, string tableNameAr, string tableChairNumber, bool? tableIsVip = null, int? tableStatusId = 0, int? tableId = 0)
+        {
+            if (tableId == 0) tableId = null;
+            if (tableNameEn == "") tableNameEn = null;
+            if (tableNameAr == "") tableNameAr = null;
+            if (tableChairNumber == "") tableChairNumber = null;
+            if (tableIsVip == null) tableIsVip = null;
+            if (tableStatusId == 0) tableStatusId = null;
+            DataTable dt = new DataTable();
+            using (SqlCommand cmd = new SqlCommand("SearchTable", con))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@tableId", SqlDbType.Int);
+                cmd.Parameters.Add("@tableNameEn", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@tableNameAr", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@tableChairNumber", SqlDbType.Int);
+                cmd.Parameters.Add("@tableIsVip", SqlDbType.Bit);
+                cmd.Parameters.Add("@tableStatusId", SqlDbType.Int);
+                cmd.Parameters["@tableId"].Value = tableId;
+                cmd.Parameters["@tableNameEn"].Value = tableNameEn;
+                cmd.Parameters["@tableNameAr"].Value = tableNameAr;
+                cmd.Parameters["@tableChairNumber"].Value = tableChairNumber;
+                cmd.Parameters["@tableIsVip"].Value = @tableIsVip;
+                cmd.Parameters["@tableStatusId"].Value = @tableStatusId;
+                if (con.State != ConnectionState.Open)
+                    con.Open();
+                dt.Load(cmd.ExecuteReader());
+                if (con.State != ConnectionState.Closed)
+                    con.Close();
+            }
+            return dt;
+        }
+
+        public int DeleteTable(int tableId)
+        {
+            int deleted = 0;
+            using (SqlCommand cmd = new SqlCommand("deleteTable", con))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@tableId", SqlDbType.Int);
+                cmd.Parameters["@tableId"].Value = tableId;
+                if (con.State != ConnectionState.Open)
+                    con.Open();
+                SqlParameter returnParameter = cmd.Parameters.Add("RetVal", SqlDbType.Int);
+                returnParameter.Direction = ParameterDirection.ReturnValue;
+                cmd.ExecuteNonQuery();
+                if (returnParameter.Value != null)
+                    deleted = (int)returnParameter.Value;
+                if (con.State != ConnectionState.Closed)
+                    con.Close();
+            }
+            return deleted;
+        }
+
+        public int UpdateStatus(string tableNameEn, string tableNameAr, string tableChairNumber, bool? tableIsVip = null, int? tableStatusId = 0, int? tableId = 0)
+        {
+            int updated = 0;
+            if (tableId == 0) tableId = null;
+            if (tableNameEn == "") tableNameEn = null;
+            if (tableNameAr == "") tableNameAr = null;
+            if (tableChairNumber == "") tableChairNumber = null;
+            if (tableIsVip == null) tableIsVip = null;
+            if (tableStatusId == 0) tableStatusId = null;
+            using (SqlCommand cmd = new SqlCommand("updateTable", con))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@tableId", SqlDbType.Int);
+                cmd.Parameters.Add("@tableNameEn", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@tableNameAr", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@tableChairNumber", SqlDbType.Int);
+                cmd.Parameters.Add("@tableIsVip", SqlDbType.Bit);
+                cmd.Parameters.Add("@tableStatusId", SqlDbType.Int);
+                cmd.Parameters["@tableId"].Value = tableId;
+                cmd.Parameters["@tableNameEn"].Value = tableNameEn;
+                cmd.Parameters["@tableNameAr"].Value = tableNameAr;
+                cmd.Parameters["@tableChairNumber"].Value = tableChairNumber;
+                cmd.Parameters["@tableIsVip"].Value = tableIsVip;
+                cmd.Parameters["@tableStatusId"].Value = tableStatusId;
                 if (con.State != ConnectionState.Open)
                     con.Open();
                 SqlParameter returnParameter = cmd.Parameters.Add("RetVal", SqlDbType.Int);

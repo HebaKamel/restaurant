@@ -33,7 +33,7 @@
             this.statusColorPick = new DevExpress.XtraEditors.ColorPickEdit();
             this.lblColorAr = new DevExpress.XtraEditors.LabelControl();
             this.lblColorEn = new DevExpress.XtraEditors.LabelControl();
-            this.lblSearchUnitHeader = new DevExpress.XtraEditors.LabelControl();
+            this.lblSearchHeader = new DevExpress.XtraEditors.LabelControl();
             this.txtNameArabic = new DevExpress.XtraEditors.TextEdit();
             this.lblNameArabicAr = new DevExpress.XtraEditors.LabelControl();
             this.lblNameArabic = new DevExpress.XtraEditors.LabelControl();
@@ -82,7 +82,7 @@
             this.groupControlAddClientInfo.Controls.Add(this.statusColorPick);
             this.groupControlAddClientInfo.Controls.Add(this.lblColorAr);
             this.groupControlAddClientInfo.Controls.Add(this.lblColorEn);
-            this.groupControlAddClientInfo.Controls.Add(this.lblSearchUnitHeader);
+            this.groupControlAddClientInfo.Controls.Add(this.lblSearchHeader);
             this.groupControlAddClientInfo.Controls.Add(this.txtNameArabic);
             this.groupControlAddClientInfo.Controls.Add(this.lblNameArabicAr);
             this.groupControlAddClientInfo.Controls.Add(this.lblNameArabic);
@@ -129,12 +129,12 @@
             // 
             // lblSearchUnitHeader
             // 
-            this.lblSearchUnitHeader.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearchUnitHeader.Location = new System.Drawing.Point(267, 12);
-            this.lblSearchUnitHeader.Name = "lblSearchUnitHeader";
-            this.lblSearchUnitHeader.Size = new System.Drawing.Size(58, 25);
-            this.lblSearchUnitHeader.TabIndex = 58;
-            this.lblSearchUnitHeader.Text = "Status";
+            this.lblSearchHeader.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchHeader.Location = new System.Drawing.Point(267, 12);
+            this.lblSearchHeader.Name = "lblSearchHeader";
+            this.lblSearchHeader.Size = new System.Drawing.Size(58, 25);
+            this.lblSearchHeader.TabIndex = 58;
+            this.lblSearchHeader.Text = "Status";
             // 
             // txtNameArabic
             // 
@@ -308,7 +308,7 @@
         private GelButton btnClearClient;
         private GelButton btnSearch;
         private DevExpress.XtraEditors.GroupControl groupControlAddClientInfo;
-        private DevExpress.XtraEditors.LabelControl lblSearchUnitHeader;
+        private DevExpress.XtraEditors.LabelControl lblSearchHeader;
         private DevExpress.XtraEditors.TextEdit txtNameArabic;
         private DevExpress.XtraEditors.LabelControl lblNameArabicAr;
         private DevExpress.XtraEditors.LabelControl lblNameArabic;
