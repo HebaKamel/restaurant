@@ -11,7 +11,7 @@ GO
 -- Description:	<Description,,>
 
 -- =============================================
-alter Procedure [dbo].[updateProg]
+CREATE Procedure [dbo].[updateProg]
 (
 	@nameEn nvarchar(255) = NULL,
 	@nameAr nvarchar(255) = NULL,

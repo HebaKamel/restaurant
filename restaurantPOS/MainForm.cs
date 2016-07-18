@@ -120,7 +120,8 @@ namespace restaurantPOS
                     XtraMessageBox.Show(messagesEn.fontsError, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                     XtraMessageBox.Show(messagesAr.fontsError, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }}
+            }
+        }
 
         private void FrmMainForm_Activated(object sender, EventArgs e)
         {

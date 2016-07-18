@@ -25,7 +25,7 @@ namespace restaurantPOS.Manage.ProgramSetting
         private DataAccess.dataAccess db = new dataAccess();
         private SystemSetting.system system = new system();
         string errMsg = "", fileName;
-        
+
         public ProgSetting()
         {
             InitializeComponent();
@@ -33,10 +33,10 @@ namespace restaurantPOS.Manage.ProgramSetting
 
         private void ProgSetting_Load(object sender, EventArgs e)
         {
-            setLanguage();
-            loadData();
-            this.panel1.AutoScroll = true;
-            this.logoPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize; 
+            SetLanguage();
+            LoadData();
+            //this.panel1.AutoScroll = true;
+            //this.logoPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             //logoPicture.SizeMode = PictureBoxSizeMode.AutoSize;
             //use custom font
             var pfc = new PrivateFontCollection();
@@ -44,6 +44,10 @@ namespace restaurantPOS.Manage.ProgramSetting
             const string fontNameBlue = "blue.ttf";
             if (File.Exists(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), fontNameRechargebd)) && File.Exists(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), fontNameBlue)))
             {
+                CustomFunctions.ChangeLabelControlFontTo11(this);
+                pfc.AddFontFile(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), fontNameBlue));
+                lblAddClientHeader.Font = new Font(pfc.Families[0], 25, FontStyle.Regular);
+
                 //pfc.AddFontFile(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), fontNameBlue));
                 //lblAddClientHeader.Font = new Font(pfc.Families[0], 30, FontStyle.Regular);
                 //lblAddrArabic.Font = new Font(pfc.Families[0], 20, FontStyle.Regular);
@@ -61,11 +65,12 @@ namespace restaurantPOS.Manage.ProgramSetting
                 //pfc.AddFontFile(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), fontNameRechargebd));
                 //btnDelete.Font = new Font(pfc.Families[0], 15, FontStyle.Regular);
                 //btnUpdate.Font = new Font(pfc.Families[0], 15, FontStyle.Regular);
-
             }
+            btnAdd.ForeColor = Color.Black;
+            btnUploadLogo.ForeColor = Color.Black;
         }
 
-        private void setLanguage()
+        private void SetLanguage()
         {
             if (Settings.Default.Language == "En")
             {
@@ -99,7 +104,7 @@ namespace restaurantPOS.Manage.ProgramSetting
             }
         }
 
-        private string validation()
+        private string Validation()
         {
             errMsg = "";
             string name = "", mobile = "";
@@ -131,15 +136,20 @@ namespace restaurantPOS.Manage.ProgramSetting
         private void btnAdd_Click(object sender, EventArgs e)
         {
             //save image in path..
-            Image bitmap = Image.FromFile(fileName);
-            bitmap.Save(@"D:\Heba\sourceControl\restaurant\restaurantPOS\Images\logo.bmp");  
+            if (fileName != null)
+            {
+                Image bitmap = Image.FromFile(fileName);
+                
+                //bitmap.Save(Directory.GetCurrentDirectory()+@"\Images\logo.bmp");
 
-            int id = db.updateProg(txtNameEnglish.Text, txtNameArabic.Text, txtAddrEnglish.Text,
-                                      txtAddrArabic.Text, txtLandLine.Text, txtMobile.Text, txtWebsite.Text, txtFooter.Text, "logo.bmp");
-            if (id >= 0)
-                XtraMessageBox.Show(messagesEn.insertedSuccessfully, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            else
-                XtraMessageBox.Show(messagesEn.insertedError, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                int id = db.updateProg(txtNameEnglish.Text, txtNameArabic.Text, txtAddrEnglish.Text,
+                                          txtAddrArabic.Text, txtLandLine.Text, txtMobile.Text, txtWebsite.Text, txtFooter.Text, "logo.bmp");
+                if (id >= 0)
+                    XtraMessageBox.Show(messagesEn.insertedSuccessfully, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                else
+                    XtraMessageBox.Show(messagesEn.insertedError, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void txtMobile_KeyPress(object sender, KeyPressEventArgs e)
@@ -154,11 +164,11 @@ namespace restaurantPOS.Manage.ProgramSetting
                 e.Handled = true;
         }
 
-        private void loadData()
+        private void LoadData()
         {
             DataTable dt = new DataTable();
             dt = db.getProg();
-            if(dt.Rows.Count == 1)
+            if (dt.Rows.Count == 1)
             {
                 txtNameEnglish.Text = dt.Rows[0]["name_en"].ToString();
                 txtNameArabic.Text = dt.Rows[0]["name_ar"].ToString();
@@ -170,6 +180,7 @@ namespace restaurantPOS.Manage.ProgramSetting
                 txtFooter.Text = dt.Rows[0]["reset_footer"].ToString();
             }
         }
+
         private void btnUploadLogo_Click(object sender, EventArgs e)
         {
             OpenFileDialog dlg = new OpenFileDialog();
@@ -180,7 +191,8 @@ namespace restaurantPOS.Manage.ProgramSetting
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                 fileName = dlg.FileName;
-                logoPicture.Image = new Bitmap(dlg.FileName);
+                logoPicture.BackgroundImage = new Bitmap(dlg.FileName);
+                logoPicture.BackgroundImageLayout = ImageLayout.Zoom;
             }
         }
     }

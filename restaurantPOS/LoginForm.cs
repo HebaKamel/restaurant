@@ -37,7 +37,8 @@ namespace restaurantPOS
             {
                 pfc.AddFontFile(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), fontNameblue));
                 btnLogin.Font = new Font(pfc.Families[0], 20, FontStyle.Regular);
-                pfc.AddFontFile(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), fontNameblue));lblChooseLang.Font = new Font(pfc.Families[0], 20, FontStyle.Regular);
+                pfc.AddFontFile(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), fontNameblue));
+                lblChooseLang.Font = new Font(pfc.Families[0], 20, FontStyle.Regular);
                 lblPassword.Font = new Font(pfc.Families[0], 20, FontStyle.Regular);
                 lblUserName.Font = new Font(pfc.Families[0], 20, FontStyle.Regular);
                 lblCopyRightsLoginForm.Font = new Font(pfc.Families[0], 8, FontStyle.Regular);

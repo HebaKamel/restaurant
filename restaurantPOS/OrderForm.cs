@@ -24,15 +24,19 @@ namespace restaurantPOS
             picPlusSign.Properties.AllowFocused = false;
             picVoid.Properties.AllowFocused = false;
 
-            var pfc = new PrivateFontCollection();
-            const string fontNameblue = "recharge bd.ttf";
-            const string fontNamerechargebd = "blue.ttf";
-            pfc.AddFontFile(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), fontNamerechargebd));
-            pfc.AddFontFile(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), fontNameblue));
-            //Font = new Font(pfc.Families[0],7);
-            AllSubControls(this).OfType<TabControl>().ToList().ForEach(o => o.Font = new Font(pfc.Families[0], (float)12));
-            AllSubControls(this).OfType<LabelControl>().ToList().ForEach(o => o.Font = new Font(pfc.Families[0], (float)8.5));
-            AllSubControls(this).OfType<GelButton>().ToList().ForEach(o => o.Font = new Font(pfc.Families[1], (float)10));
+            //var pfc = new PrivateFontCollection();
+            //const string fontNameblue = "recharge bd.ttf";
+            //const string fontNamerechargebd = "blue.ttf";
+            //pfc.AddFontFile(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), fontNamerechargebd));
+            //pfc.AddFontFile(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), fontNameblue));
+            ////Font = new Font(pfc.Families[0],7);
+            //AllSubControls(this).OfType<TabControl>().ToList().ForEach(o => o.Font = new Font(pfc.Families[0], (float)12));
+            //AllSubControls(this).OfType<LabelControl>().ToList().ForEach(o => o.Font = new Font(pfc.Families[0], (float)8.5));
+            //AllSubControls(this).OfType<GelButton>().ToList().ForEach(o => o.Font = new Font(pfc.Families[1], (float)10));
+
+            CustomFunctions.ChangeTabControlFontTo12(this);
+            CustomFunctions.ChangeGelButtonFontTo10(this);
+            CustomFunctions.ChangeLabelControlFontTo85(this);
         }
         private static List<Control> AllSubControls(Control control)
         {
