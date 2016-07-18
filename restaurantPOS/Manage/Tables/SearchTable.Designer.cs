@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupControlButtons = new DevExpress.XtraEditors.GroupControl();
             this.btnDelete = new restaurantPOS.GelButton();
             this.btnUpdate = new restaurantPOS.GelButton();
-            this.btnClearClient = new restaurantPOS.GelButton();
+            this.btnClear = new restaurantPOS.GelButton();
             this.btnSearch = new restaurantPOS.GelButton();
             this.groupControlAddClientInfo = new DevExpress.XtraEditors.GroupControl();
             this.dropDownTableStatus = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -51,7 +51,7 @@
             this.txtTableEnglish = new DevExpress.XtraEditors.TextEdit();
             this.lblNameEnglishAr = new DevExpress.XtraEditors.LabelControl();
             this.lblNameEnglish = new DevExpress.XtraEditors.LabelControl();
-            this.lblSearchHeader = new DevExpress.XtraEditors.LabelControl();
+            this.lblHeader = new DevExpress.XtraEditors.LabelControl();
             this.splitContainerControlAddClients = new DevExpress.XtraEditors.SplitContainerControl();
             this.DataGrid = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlButtons)).BeginInit();
@@ -74,7 +74,7 @@
             this.groupControlButtons.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.groupControlButtons.Controls.Add(this.btnDelete);
             this.groupControlButtons.Controls.Add(this.btnUpdate);
-            this.groupControlButtons.Controls.Add(this.btnClearClient);
+            this.groupControlButtons.Controls.Add(this.btnClear);
             this.groupControlButtons.Controls.Add(this.btnSearch);
             this.groupControlButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupControlButtons.Location = new System.Drawing.Point(0, 308);
@@ -107,17 +107,17 @@
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // btnClearClient
+            // btnClear
             // 
-            this.btnClearClient.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
-            this.btnClearClient.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
-            this.btnClearClient.Location = new System.Drawing.Point(620, 6);
-            this.btnClearClient.Name = "btnClearClient";
-            this.btnClearClient.Size = new System.Drawing.Size(155, 28);
-            this.btnClearClient.TabIndex = 0;
-            this.btnClearClient.Text = "Clear";
-            this.btnClearClient.UseVisualStyleBackColor = true;
-            this.btnClearClient.Click += new System.EventHandler(this.btnClear_Click);
+            this.btnClear.GradientBottom = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(222)))));
+            this.btnClear.GradientTop = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(126)))), ((int)(((byte)(10)))));
+            this.btnClear.Location = new System.Drawing.Point(620, 6);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(155, 28);
+            this.btnClear.TabIndex = 0;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnSearch
             // 
@@ -150,7 +150,7 @@
             this.groupControlAddClientInfo.Controls.Add(this.txtTableEnglish);
             this.groupControlAddClientInfo.Controls.Add(this.lblNameEnglishAr);
             this.groupControlAddClientInfo.Controls.Add(this.lblNameEnglish);
-            this.groupControlAddClientInfo.Controls.Add(this.lblSearchHeader);
+            this.groupControlAddClientInfo.Controls.Add(this.lblHeader);
             this.groupControlAddClientInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControlAddClientInfo.Location = new System.Drawing.Point(0, 0);
             this.groupControlAddClientInfo.Name = "groupControlAddClientInfo";
@@ -297,14 +297,14 @@
             this.lblNameEnglish.TabIndex = 72;
             this.lblNameEnglish.Text = "Table Name (English)";
             // 
-            // lblSearchHeader
+            // lblHeader
             // 
-            this.lblSearchHeader.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearchHeader.Location = new System.Drawing.Point(267, 12);
-            this.lblSearchHeader.Name = "lblSearchHeader";
-            this.lblSearchHeader.Size = new System.Drawing.Size(58, 25);
-            this.lblSearchHeader.TabIndex = 58;
-            this.lblSearchHeader.Text = "Status";
+            this.lblHeader.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader.Location = new System.Drawing.Point(267, 12);
+            this.lblHeader.Name = "lblHeader";
+            this.lblHeader.Size = new System.Drawing.Size(58, 25);
+            this.lblHeader.TabIndex = 58;
+            this.lblHeader.Text = "Status";
             // 
             // splitContainerControlAddClients
             // 
@@ -328,36 +328,36 @@
             // 
             this.DataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DataGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGrid.DefaultCellStyle = dataGridViewCellStyle5;
             this.DataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DataGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.DataGrid.Location = new System.Drawing.Point(0, 0);
             this.DataGrid.MultiSelect = false;
             this.DataGrid.Name = "DataGrid";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGrid.Size = new System.Drawing.Size(800, 347);
             this.DataGrid.TabIndex = 0;
@@ -396,10 +396,10 @@
         #endregion
 
         private DevExpress.XtraEditors.GroupControl groupControlButtons;
-        private GelButton btnClearClient;
+        private GelButton btnClear;
         private GelButton btnSearch;
         private DevExpress.XtraEditors.GroupControl groupControlAddClientInfo;
-        private DevExpress.XtraEditors.LabelControl lblSearchHeader;
+        private DevExpress.XtraEditors.LabelControl lblHeader;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControlAddClients;
         private GelButton btnDelete;
         private GelButton btnUpdate;

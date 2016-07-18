@@ -783,11 +783,10 @@ namespace restaurantPOS.DataAccess
                     deleted = (int)returnParameter.Value;
                 if (con.State != ConnectionState.Closed)
                     con.Close();
-            }
-            return deleted;
+            }return deleted;
         }
 
-        public int UpdateStatus(string tableNameEn, string tableNameAr, string tableChairNumber, bool? tableIsVip = null, int? tableStatusId = 0, int? tableId = 0)
+        public int UpdateTable(string tableNameEn, string tableNameAr, string tableChairNumber, bool? tableIsVip = null, int? tableStatusId = 0, int? tableId = 0)
         {
             int updated = 0;
             if (tableId == 0) tableId = null;

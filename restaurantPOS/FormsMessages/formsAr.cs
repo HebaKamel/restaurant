@@ -67,6 +67,8 @@ namespace restaurantPOS.FormsMessages
         public string isVip = "خاصة";
         public string tableStatus = "حالة الطاولة";
         public string searchTable = "بحث طاولة";
+        public string updateTable = "تعديل طاولة";
+
         #endregion
 
         #region progSetting

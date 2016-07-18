@@ -35,15 +35,14 @@ namespace restaurantPOS.Manage.Tables
             InitializeComponent();
         }
 
-
         private void SetLanguage()
         {
             if (Settings.Default.Language == "En")
             {
-                lblSearchHeader.Text = formsEn.searchTable;
+                lblHeader.Text = formsEn.searchTable;
                 btnSearch.Text = formsEn.btnSearch;
                 btnDelete.Text = formsEn.btnDelete;
-                btnClearClient.Text = formsEn.btnClear;
+                btnClear.Text = formsEn.btnClear;
                 btnUpdate.Text = formsEn.btnUpdate;
                 lblNameArabicAr.Visible = false;
                 lblNameEnglishAr.Visible = false;
@@ -55,10 +54,10 @@ namespace restaurantPOS.Manage.Tables
             }
             else
             {
-                lblSearchHeader.Text = formsAr.searchTable;
+                lblHeader.Text = formsAr.searchTable;
                 btnSearch.Text = formsAr.btnSearch;
                 btnDelete.Text = formsAr.btnDelete;
-                btnClearClient.Text = formsAr.btnClear;
+                btnClear.Text = formsAr.btnClear;
                 btnUpdate.Text = formsAr.btnUpdate;
                 lblNameArabic.Visible = false;
                 lblNameEnglish.Visible = false;
@@ -140,11 +139,16 @@ namespace restaurantPOS.Manage.Tables
         }
 
         private void LoadGrid()
-        {var selectedStatus = 0;
+        {
+            int? selectedStatus = 0;
             //string statusColorSelected = statusColorPick.Color.ToArgb() == 0 ? null : statusColorPick.Color.ToArgb().ToString(CultureInfo.InvariantCulture);
             if ((string) dropDownTableStatus.SelectedItem != formsEn.tableStatus && (string) dropDownTableStatus.SelectedItem != formsAr.tableStatus)
             {
                 selectedStatus = Convert.ToInt32(((ListItem)(dropDownTableStatus.SelectedItem)).Value);                
+            }
+            else
+            {
+                selectedStatus = null;
             }
             bool isVip = false;
             if (Settings.Default.Language == "En" && checkBoxIsVipEn.Checked)
@@ -225,8 +229,6 @@ namespace restaurantPOS.Manage.Tables
             updateStatus.ShowDialog();
             LoadGrid();
         }
-
-        
 
         private void DataGrid_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {

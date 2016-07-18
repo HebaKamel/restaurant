@@ -67,6 +67,8 @@ namespace restaurantPOS.FormsMessages
         public string isVip = "VIP";
         public string tableStatus = "Table Status";
         public string searchTable = "Search Table";
+        public string updateTable = "Update Table";
+
         
         #endregion
 

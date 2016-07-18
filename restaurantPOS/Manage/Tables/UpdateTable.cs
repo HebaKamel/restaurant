@@ -1,15 +1,9 @@
-﻿using DevExpress.XtraEditors;
+﻿using System.Web.UI.WebControls;
+using DevExpress.XtraEditors;
 using restaurantPOS.DataAccess;
 using restaurantPOS.Properties;
 using restaurantPOS.SystemSetting;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace restaurantPOS.Manage.Tables
@@ -23,42 +17,58 @@ namespace restaurantPOS.Manage.Tables
         private DataAccess.dataAccess db = new dataAccess();
         private SystemSetting.system system = new system();
         int statusId;
-        private string statusNameEn, statusNameAr, statusColor;
+        private string statusNameEn, statusNameAr;
         private string errMsg = "";
-
-        public UpdateTable(int statusId, string statusNameEn, string statusNameAr, string statusColor)
+        private int chairNumber, selectedStatus;
+        private bool isVip;
+        public UpdateTable(int statusId, string statusNameEn, string statusNameAr, int  chairNumber,bool isVip,int selectedStatus)
         {
             InitializeComponent();
             this.statusId = statusId;
             this.statusNameEn = statusNameEn;
             this.statusNameAr = statusNameAr;
-            this.statusColor = statusColor;
-            //statusColorPick
-           // statusColorPick.EditValue = Color.FromArgb(Convert.ToInt32(statusColor));
+            this.chairNumber = chairNumber;
+            this.isVip = isVip;
+            this.selectedStatus = selectedStatus;
         }
 
         private void UpdateTable_Load(object sender, EventArgs e)
         {
-            setLanguage();
+            SetLanguage();
            // txtNameEnglish.Text = statusNameEn;
            // txtNameArabic.Text = statusNameAr;
             //statusColor;
         }
 
-        private void setLanguage()
+        private void SetLanguage()
         {
-            if (Settings.Default.Language == "En"){
-                lblHeader.Text = formsEn.AddUnitHeader;
+            if (Settings.Default.Language == "En")
+            {
+                lblHeader.Text = formsEn.updateTable;
+                //btnSearch.Text = formsEn.btnSearch;
                 btnUpdate.Text = formsEn.btnUpdate;
+                //btnDelete.Text = formsEn.btnDelete;
+                //btnClear.Text = formsEn.btnClear;
                 lblNameArabicAr.Visible = false;
                 lblNameEnglishAr.Visible = false;
+                lblChairNumberAr.Visible = false;
+                checkBoxIsVipAr.Visible = false;
+                lblTableStatusAr.Visible = false;
+                dropDownTableStatus.Text = formsEn.tableStatus;
             }
             else
             {
-                lblHeader.Text = formsAr.AddUnitHeader;
+                lblHeader.Text =formsAr.updateTable;
+                //btnSearch.Text =formsAr.btnSearch;
                 btnUpdate.Text = formsAr.btnUpdate;
+                //btnDelete.Text = formsAr.btnDelete;
+                //btnClear.Text = formsAr.btnClear;
                 lblNameArabic.Visible = false;
                 lblNameEnglish.Visible = false;
+                lblChairNumberEn.Visible = false;
+                checkBoxIsVipEn.Visible = false;
+                lblTableStatusEn.Visible = false;
+                dropDownTableStatus.Text = formsAr.tableStatus;
             }
         }
 
@@ -67,8 +77,14 @@ namespace restaurantPOS.Manage.Tables
 
             if (Validation() == messagesEn.ErrorMessae)
             {
-                //MessageBox.Show("color--->" + statusColorPick.Color.ToArgb());
-                int updated = db.UpdateStatus(txtNameEnglish.Text, txtNameArabic.Text, statusColorPick.Color.ToArgb().ToString(), this.statusId);
+                bool isVip = false;
+                if (Settings.Default.Language == "En" && checkBoxIsVipEn.Checked)
+                    isVip = true;
+                else if (Settings.Default.Language == "Ar" && checkBoxIsVipAr.Checked)
+                    isVip = true;
+                var selectedStatus = Convert.ToInt32(((ListItem)(dropDownTableStatus.SelectedItem)).Value);
+
+                int updated = db.UpdateTable(txtTableEnglish.Text, txtTableArabic.Text, txtChairNumber.Text, isVip, selectedStatus);
                 if (updated == 0)
                 {
                     if (Settings.Default.Language == "En")
@@ -95,31 +111,41 @@ namespace restaurantPOS.Manage.Tables
         {
             errMsg = messagesEn.ErrorMessae;
             string name = "", color = "";
-            if (string.IsNullOrEmpty(txtNameEnglish.Text))
+            if (string.IsNullOrEmpty(txtTableEnglish.Text))
             {
                 if (Settings.Default.Language == "En")
-                    name = formsEn.statusNameEn;
+                    name = formsEn.tableNameEn;
                 else
-                    name = formsAr.statusNameEn;
+                    name = formsAr.tableNameEn;
                 errMsg += "\n" + name;
             }
-            if (string.IsNullOrEmpty(txtNameArabic.Text))
+            if (string.IsNullOrEmpty(txtTableArabic.Text))
             {
                 if (Settings.Default.Language == "En")
-                    name = formsEn.statusNameAr;
+                    name = formsEn.tableNameAr;
                 else
-                    name = formsAr.statusNameAr;
+                    name = formsAr.tableNameAr;
                 errMsg += "\n" + name;
             }
-            if (statusColorPick.Color.ToArgb()== 0)
+            if (string.IsNullOrEmpty(txtChairNumber.Text))
             {
                 if (Settings.Default.Language == "En")
-                    color = formsEn.statusColor;
+                    color = formsEn.chairNumber;
                 else
-                    color = formsAr.statusColor;
+                    color = formsAr.chairNumber;
                 errMsg += "\n" + color;
             }
+            //if (dropDownTableStatus.Text == @"Table Status")
+            //{
+            //    if (Settings.Default.Language == "En")
+            //        color = formsEn.tableStatus;
+            //    else
+            //        color = formsAr.tableStatus;
+            //    errMsg += "\n" + color;
+            //}
+
             return errMsg;
         }
+
     }
 }
