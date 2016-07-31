@@ -62,7 +62,7 @@ namespace restaurantPOS.Manage.Units
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (validation() == "")
+            if (validation() == messagesEn.ErrorMessae)
             {
                 int updated = db.updateUnit(txtNameEnglish.Text, txtNameArabic.Text, this.unitId);
                 if (updated == 0)

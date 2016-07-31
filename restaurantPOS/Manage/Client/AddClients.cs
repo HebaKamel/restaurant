@@ -118,7 +118,7 @@ namespace restaurantPOS.Manage.Client
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (validation() == "")
+            if (validation() == messagesEn.ErrorMessae)
             {
                 int isVip = 0;
                 if (chkIsVip.Checked) isVip = 1;

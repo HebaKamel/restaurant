@@ -12,9 +12,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace restaurantPOS.Manage.Goods
+namespace restaurantPOS.Manage.Categories
 {
-    public partial class UpdateGoods : Form
+    public partial class UpdateCategory : Form
     {
         private FormsMessages.formsAr formsAr = new FormsMessages.formsAr();
         private FormsMessages.formsEn formsEn = new FormsMessages.formsEn();
@@ -22,25 +22,23 @@ namespace restaurantPOS.Manage.Goods
         private userMessages.messagesEn messagesEn = new userMessages.messagesEn();
         private DataAccess.dataAccess db = new dataAccess();
         private SystemSetting.system system = new system();
-        int goodsId;
+        int categoryId;
         private string errMsg = "";
 
-        public UpdateGoods(int goodsId)
+        public UpdateCategory(int categoryId)
         {
             InitializeComponent();
-            this.goodsId = goodsId;
+            this.categoryId = categoryId;
         }
 
-        private void UpdateGoods_Load(object sender, EventArgs e)
+        private void UpdateCategory_Load(object sender, EventArgs e)
         {
             setLanguage();
-            fillComboBox();
-            DataTable goodsDT = db.getGoods(null, null, null, this.goodsId);
-            if (goodsDT.Rows.Count > 0)
+            DataTable categoryDT = db.getCategory(null, null, this.categoryId);
+            if (categoryDT.Rows.Count > 0)
             {
-                txtNameEnglish.Text = goodsDT.Rows[0]["goods_name_en"].ToString();
-                txtNameArabic.Text = goodsDT.Rows[0]["goods_name_ar"].ToString();
-                comboUnit.SelectedValue = Convert.ToInt32(goodsDT.Rows[0]["unit_id"].ToString());
+                txtNameEnglish.Text = categoryDT.Rows[0]["category_name_en"].ToString();
+                txtNameArabic.Text = categoryDT.Rows[0]["category_name_ar"].ToString();
             }
         }
 
@@ -48,19 +46,17 @@ namespace restaurantPOS.Manage.Goods
         {
             if (Settings.Default.Language == "En")
             {
-                lblHeader.Text = formsEn.AddGoodHeader;
+                lblHeader.Text = formsEn.AddUnitHeader;
                 btnUpdate.Text = formsEn.btnUpdate;
                 lblNameArabicAr.Visible = false;
                 lblNameEnglishAr.Visible = false;
-                lblUnitAr.Visible = false;
             }
             else
             {
-                lblHeader.Text = formsAr.AddGoodHeader;
+                lblHeader.Text = formsAr.AddUnitHeader;
                 btnUpdate.Text = formsAr.btnUpdate;
                 lblNameArabic.Visible = false;
                 lblNameEnglish.Visible = false;
-                lblUnitEn.Visible = false;
             }
         }
 
@@ -68,7 +64,7 @@ namespace restaurantPOS.Manage.Goods
         {
             if (validation() == messagesEn.ErrorMessae)
             {
-                int updated = db.updateGoods(txtNameEnglish.Text, txtNameArabic.Text, (int)comboUnit.SelectedValue, this.goodsId);
+                int updated = db.updateCategory(txtNameEnglish.Text, txtNameArabic.Text, this.categoryId);
                 if (updated == 0)
                 {
                     if (Settings.Default.Language == "En")
@@ -92,66 +88,27 @@ namespace restaurantPOS.Manage.Goods
                 XtraMessageBox.Show(errMsg, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void fillComboBox()
-        {
-            try
-            {
-                DataTable unitsDT = db.getUnit(null, null, null);
-                if (unitsDT.Rows.Count > 0)
-                {
-                    DataRow dr;
-                    dr = unitsDT.NewRow();
-                    dr.ItemArray = new object[3] { 0, "---Select---", "---اختر---" };
-                    unitsDT.Rows.InsertAt(dr, 0);
-                    if (Settings.Default.Language == "En")
-                        comboUnit.DisplayMember = "unit_name_en";
-                    else
-                    {
-                        comboUnit.DisplayMember = "unit_name_ar";
-                        comboUnit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-                    }
-
-                    comboUnit.ValueMember = "unit_id";
-                    comboUnit.DataSource = unitsDT;
-                }
-                else
-                {
-                    if (Settings.Default.Language == "En")
-                        MessageBox.Show(messagesEn.fillUnits, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    else
-                        MessageBox.Show(messagesAr.fillUnits, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception ex)
-            {
-                if (Settings.Default.Language == "En")
-                    MessageBox.Show(messagesEn.errorFillUnits, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else
-                    MessageBox.Show(messagesAr.errorFillUnits, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
         private string validation()
         {
             errMsg = messagesEn.ErrorMessae;
-            string name = "", unit = "";
+            string nameEn = "", nameAr = "";
             if (string.IsNullOrEmpty(txtNameEnglish.Text))
             {
                 if (Settings.Default.Language == "En")
-                    name = formsEn.unitNameEn;
+                    nameEn = formsEn.unitNameEn;
                 else
-                    name = formsAr.unitNameEn;
-
-                errMsg += "\n" + name;
+                    nameEn = formsAr.unitNameEn;
+                errMsg += "\n" + nameEn;
             }
 
-            if (comboUnit.SelectedIndex <= 0)
+            if (string.IsNullOrEmpty(txtNameArabic.Text))
             {
                 if (Settings.Default.Language == "En")
-                    unit = formsEn.AddUnitHeader;
+                    nameAr = formsEn.unitNameAr;
                 else
-                    unit = formsAr.AddUnitHeader;
-                errMsg += "\n" + unit;
+                    nameAr = formsAr.unitNameAr;
+                errMsg += "\n" + nameAr;
             }
 
             return errMsg;

@@ -14,9 +14,9 @@ using restaurantPOS.DataAccess;
 using restaurantPOS.Properties;
 using restaurantPOS.SystemSetting;
 
-namespace restaurantPOS.Manage.Supplier
+namespace restaurantPOS.Manage.Items
 {
-    public partial class AddSupplier : Form
+    public partial class AddItem : Form
     {
         private FormsMessages.formsAr formsAr = new FormsMessages.formsAr();
         private FormsMessages.formsEn formsEn = new FormsMessages.formsEn();
@@ -24,16 +24,20 @@ namespace restaurantPOS.Manage.Supplier
         private userMessages.messagesEn messagesEn = new userMessages.messagesEn();
         private DataAccess.dataAccess db = new dataAccess();
         private SystemSetting.system system = new system();
+
+        private List<int> goodsId = new List<int>();
+        private List<decimal> quantities = new List<decimal>();
         string errMsg = "";
 
-        public AddSupplier()
+        public AddItem()
         {
             InitializeComponent();
         }
 
-        private void AddSupplier_Load(object sender, EventArgs e)
+        private void AddItem_Load(object sender, EventArgs e)
         {
             setLanguage();
+            fillComboBox();
             //use custom font
             var pfc = new PrivateFontCollection();
             const string fontNameRechargebd = "recharge bd.ttf";
@@ -64,34 +68,40 @@ namespace restaurantPOS.Manage.Supplier
         private void setLanguage(){
             if (Settings.Default.Language == "En")
             {
-                lblAddHeader.Text = formsEn.AddSupplierHeader;
+                lblAddClientHeader.Text = formsEn.itemsHeader;
                 btnAdd.Text = formsEn.btnAdd;
                 btnClear.Text = formsEn.btnClear;
+                btnAddGoods.Text = formsEn.btnAdd;
                 lblNameArabicAr.Visible = false;
                 lblNameEnglishAr.Visible = false;
-                lblAddrArabicAr.Visible = false;
-                lblAddrEnglishAr.Visible = false;
-                lblLandLineAr.Visible = false;
-                lblMobileAr.Visible = false;
+                lblPriceAr.Visible = false;
+                lblGoodAr.Visible = false;
+                lblQuantityAr.Visible = false;
+                itemsTabs.RightToLeftLayout = false;
+                tabPage1.Text = formsEn.items;
+                tabPage2.Text = formsEn.itemsGoods;
             }
             else
             {
-                lblAddHeader.Text = formsAr.AddSupplierHeader;
+                lblAddClientHeader.Text = formsAr.itemsHeader;
                 btnAdd.Text = formsAr.btnAdd;
                 btnClear.Text = formsAr.btnClear;
+                btnAddGoods.Text = formsAr.btnAdd;
                 lblNameArabic.Visible = false;
                 lblNameEnglish.Visible = false;
-                lblAddrArabic.Visible = false;
-                lblAddrEnglish.Visible = false;
-                lblLandLine.Visible = false;
-                lblMobile.Visible = false;
+                lblPrice.Visible = false;
+                lblGoodEn.Visible = false;
+                lblQuantityEn.Visible = false;
+                itemsTabs.RightToLeftLayout = true;
+                tabPage1.Text = formsAr.items;
+                tabPage2.Text = formsAr.itemsGoods;
             }
         }
 
         private string validation()
         {
             errMsg = messagesEn.ErrorMessae;
-            string name = "", mobile = "";
+            string name = "", price = "";
             if (string.IsNullOrEmpty(txtNameEnglish.Text))
             {
                 if (Settings.Default.Language == "En")
@@ -101,27 +111,27 @@ namespace restaurantPOS.Manage.Supplier
                 errMsg += "\n" + name;
             }
 
-            if (string.IsNullOrEmpty(txtMobile.Text))
+            if (string.IsNullOrEmpty(txtPrice.Text))
             {
                 if (Settings.Default.Language == "En")
-                    mobile = formsEn.clientMobile;
+                    price = formsEn.itemPrice;
                 else
-                    mobile = formsAr.clientMobile;
-                errMsg += "\n" + mobile;
+                    price = formsAr.itemPrice;
+                errMsg += "\n" + price;
             }
-            
             return errMsg;
-        } 
+        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (validation() == messagesEn.ErrorMessae)
+            if (validation() == "")
             {
-                int supplierId = db.addSupplier(txtNameEnglish.Text, txtNameArabic.Text, txtAddrEnglish.Text, txtAddrArabic.Text, txtLandLine.Text, txtMobile.Text);
-                if (supplierId != 0)
-                    XtraMessageBox.Show(messagesEn.insertedSuccessfully, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                else
-                    XtraMessageBox.Show(messagesEn.insertedError, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //int clientId = db.addClient(txtNameEnglish.Text, txtNameArabic.Text, txtAddrEnglish.Text,
+                //                          txtAddrArabic.Text, txtLandLine.Text, txtPrice.Text, isVip, txtEmail.Text);
+                //if (clientId != 0)
+                //    XtraMessageBox.Show(messagesEn.insertedSuccessfully, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                //else
+                //    XtraMessageBox.Show(messagesEn.insertedError, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
                 XtraMessageBox.Show(errMsg, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -133,15 +143,67 @@ namespace restaurantPOS.Manage.Supplier
                 e.Handled = true;
         }
 
-        private void txtLandLine_KeyPress(object sender, KeyPressEventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
                 e.Handled = true;
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+        private void btnAddGoods_Click(object sender, EventArgs e)
         {
-            
+            //validation details
+            if(comboGoods.SelectedIndex > 0 && !string.IsNullOrEmpty(txtQuantity.Text))
+            {
+                goodsId.Add((int)comboGoods.SelectedValue);
+                quantities.Add(Convert.ToDecimal(txtQuantity.Text));
+            } else {
+                if (Settings.Default.Language == "En")
+                        MessageBox.Show(messagesEn.itemDetail, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                    MessageBox.Show(messagesAr.itemDetail, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void fillComboBox()
+        {
+            try
+            {
+                DataTable goodsDT = db.getGoods(null, null, null);
+                if (goodsDT.Rows.Count > 0)
+                {
+                    DataRow dr;
+                    dr = goodsDT.NewRow();
+                    dr.ItemArray = new object[3] { 0, "---Select---", "---اختر---" };
+                    goodsDT.Rows.InsertAt(dr, 0); if (Settings.Default.Language == "En")
+                        comboGoods.DisplayMember = "goods_name_en";
+                    else
+                    {
+                        comboGoods.DisplayMember = "goods_name_ar";
+                        comboGoods.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+                    }
+                    comboGoods.ValueMember = "goods_id";
+                    comboGoods.DataSource = goodsDT;
+                }
+                else
+                {
+                    if (Settings.Default.Language == "En")
+                        MessageBox.Show(messagesEn.fillUnits, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                        MessageBox.Show(messagesAr.fillUnits, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                if (Settings.Default.Language == "En")
+                    MessageBox.Show(messagesEn.errorFillUnits, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                    MessageBox.Show(messagesAr.errorFillUnits, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

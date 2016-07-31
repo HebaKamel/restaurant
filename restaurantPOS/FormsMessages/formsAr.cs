@@ -74,5 +74,16 @@ namespace restaurantPOS.FormsMessages
         #region progSetting
         public string progHeader = "البيانات الاساسية للبرنامج ";
         #endregion
+
+        #region items
+        public string itemsHeader = "تفاصيل الصنف";
+        public string items = "الصنف";
+        public string itemsGoods = "مكونات الصنف";
+        public string itemPrice = "السعر";
+        #endregion
+
+        #region category
+        public string AddCategoryHeader = "تفاصيل الفئة";
+        #endregion
     }
 }

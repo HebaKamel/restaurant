@@ -73,7 +73,7 @@ namespace restaurantPOS.Manage.Supplier
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (validation() == "")
+            if (validation() == messagesEn.ErrorMessae)
             {
                 int updated = db.updateSupplier(txtNameEnglish.Text, txtNameArabic.Text, txtAddrEnglish.Text,
                                               txtAddrArabic.Text, txtLandLine.Text, txtMobile.Text, this.supplierId);
@@ -101,7 +101,7 @@ namespace restaurantPOS.Manage.Supplier
 
         private string validation()
         {
-            errMsg = "";
+            errMsg = messagesEn.ErrorMessae;
             string name = "", mobile = "";
             if (string.IsNullOrEmpty(txtNameEnglish.Text))
             {
@@ -109,6 +109,7 @@ namespace restaurantPOS.Manage.Supplier
                     name = formsEn.clientNameEn;
                 else
                     name = formsAr.clientNameEn;
+                errMsg += "\n" + name;
             }
 
             if (string.IsNullOrEmpty(txtMobile.Text))
@@ -117,14 +118,9 @@ namespace restaurantPOS.Manage.Supplier
                     mobile = formsEn.clientMobile;
                 else
                     mobile = formsAr.clientMobile;
+                errMsg += "\n" + mobile;
             }
-            if (name != "" || mobile != "")
-            {
-                if (Settings.Default.Language == "En")
-                    errMsg = messagesEn.ErrorMessae + "\n" + name + "\n" + mobile;
-                else
-                    errMsg = messagesAr.ErrorMessae + "\n" + name + "\n" + mobile;
-            }
+
             return errMsg;
         }
     }

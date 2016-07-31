@@ -75,5 +75,16 @@ namespace restaurantPOS.FormsMessages
         #region progSetting
         public string progHeader = "Program Main Information";
         #endregion
+
+        #region items
+        public string itemsHeader = "Item Details";
+        public string items = "Item";
+        public string itemsGoods = "Item's Goods";
+        public string itemPrice = "Price";
+        #endregion
+
+        #region category
+        public string AddCategoryHeader = "Category Details";
+        #endregion
     }
 }

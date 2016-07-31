@@ -47,5 +47,9 @@ namespace restaurantPOS.userMessages
         public string fillUnits = "Error, Please Fill Units First";
         public string errorFillUnits = "Error occured in fill units";
         #endregion
+
+        #region items
+        public string itemDetail = "Error, Please enter item details";
+        #endregion
     }
 }

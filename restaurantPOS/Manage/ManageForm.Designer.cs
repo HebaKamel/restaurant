@@ -66,9 +66,9 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.navBarControlLeft = new DevExpress.XtraNavBar.NavBarControl();
-            this.navBarGroupTableSetting = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarItemAddTable = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItemUpdateDeleteTable = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarGroupItems = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarItemAddItem = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItemSearchItem = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroupProgramSettings = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItemProgram = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroupUserSettings = new DevExpress.XtraNavBar.NavBarGroup();
@@ -89,15 +89,15 @@
             this.navBarGroupSuppliersSettings = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItemAddSupplier = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemSearchSupplier = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarGroupTableSetting = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarItemAddTable = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItemUpdateDeleteTable = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroupTableColor = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItemTableStatus = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemUpdateDeleteStatus = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroupCategory = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItemAddCategory = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemSearchCategory = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarGroupItems = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarItemAddItem = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItemSearchItem = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemAddMenuItem = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemUpdateDeleteMenuItem = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemAddStatus = new DevExpress.XtraNavBar.NavBarItem();
@@ -447,7 +447,7 @@
             // 
             // navBarControlLeft
             // 
-            this.navBarControlLeft.ActiveGroup = this.navBarGroupProgramSettings;
+            this.navBarControlLeft.ActiveGroup = this.navBarGroupCategory;
             this.navBarControlLeft.AllowDrop = false;
             this.navBarControlLeft.BackColor = System.Drawing.Color.Transparent;
             this.navBarControlLeft.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -499,30 +499,28 @@
             this.navBarControlLeft.ActiveGroupChanged += new DevExpress.XtraNavBar.NavBarGroupEventHandler(this.navBarControlLeft_ActiveGroupChanged);
             this.navBarControlLeft.Click += new System.EventHandler(this.navBarControlLeft_Click);
             // 
-            // navBarGroupTableSetting
+            // navBarGroupItems
             // 
-            this.navBarGroupTableSetting.Caption = "Table Settings";
-            this.navBarGroupTableSetting.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemAddTable),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemUpdateDeleteTable)});
-            this.navBarGroupTableSetting.Name = "navBarGroupTableSetting";
+            this.navBarGroupItems.Caption = "Items Settings";
+            this.navBarGroupItems.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemAddItem),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemSearchItem)});
+            this.navBarGroupItems.Name = "navBarGroupItems";
             // 
-            // navBarItemAddTable
+            // navBarItemAddItem
             // 
-            this.navBarItemAddTable.Caption = "Add Table";
-            this.navBarItemAddTable.Name = "navBarItemAddTable";
-            this.navBarItemAddTable.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemAddTable_LinkClicked);
+            this.navBarItemAddItem.Caption = "Add Item";
+            this.navBarItemAddItem.Name = "navBarItemAddItem";
+            this.navBarItemAddItem.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemAddItem_LinkClicked);
             // 
-            // navBarItemUpdateDeleteTable
+            // navBarItemSearchItem
             // 
-            this.navBarItemUpdateDeleteTable.Caption = "Update/Delete Table";
-            this.navBarItemUpdateDeleteTable.Name = "navBarItemUpdateDeleteTable";
-            this.navBarItemUpdateDeleteTable.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemUpdateDeleteTable_LinkClicked);
+            this.navBarItemSearchItem.Caption = "Search Item";
+            this.navBarItemSearchItem.Name = "navBarItemSearchItem";
             // 
             // navBarGroupProgramSettings
             // 
             this.navBarGroupProgramSettings.Caption = "Program Settings";
-            this.navBarGroupProgramSettings.Expanded = true;
             this.navBarGroupProgramSettings.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.SmallIconsText;
             this.navBarGroupProgramSettings.Hint = "Program Settings Adjusted From This Group";
             this.navBarGroupProgramSettings.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
@@ -658,6 +656,26 @@
             this.navBarItemSearchSupplier.Name = "navBarItemSearchSupplier";
             this.navBarItemSearchSupplier.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemSearchSupplier_LinkClicked);
             // 
+            // navBarGroupTableSetting
+            // 
+            this.navBarGroupTableSetting.Caption = "Table Settings";
+            this.navBarGroupTableSetting.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemAddTable),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemUpdateDeleteTable)});
+            this.navBarGroupTableSetting.Name = "navBarGroupTableSetting";
+            // 
+            // navBarItemAddTable
+            // 
+            this.navBarItemAddTable.Caption = "Add Table";
+            this.navBarItemAddTable.Name = "navBarItemAddTable";
+            this.navBarItemAddTable.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemAddTable_LinkClicked);
+            // 
+            // navBarItemUpdateDeleteTable
+            // 
+            this.navBarItemUpdateDeleteTable.Caption = "Update/Delete Table";
+            this.navBarItemUpdateDeleteTable.Name = "navBarItemUpdateDeleteTable";
+            this.navBarItemUpdateDeleteTable.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemUpdateDeleteTable_LinkClicked);
+            // 
             // navBarGroupTableColor
             // 
             this.navBarGroupTableColor.Caption = "Table Status Settings";
@@ -681,6 +699,7 @@
             // navBarGroupCategory
             // 
             this.navBarGroupCategory.Caption = "Categories Settings";
+            this.navBarGroupCategory.Expanded = true;
             this.navBarGroupCategory.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemAddCategory),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemSearchCategory)});
@@ -690,29 +709,13 @@
             // 
             this.navBarItemAddCategory.Caption = "Add Category";
             this.navBarItemAddCategory.Name = "navBarItemAddCategory";
+            this.navBarItemAddCategory.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemAddCategory_LinkClicked);
             // 
             // navBarItemSearchCategory
             // 
             this.navBarItemSearchCategory.Caption = "Search Category";
             this.navBarItemSearchCategory.Name = "navBarItemSearchCategory";
-            // 
-            // navBarGroupItems
-            // 
-            this.navBarGroupItems.Caption = "Items Settings";
-            this.navBarGroupItems.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemAddItem),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemSearchItem)});
-            this.navBarGroupItems.Name = "navBarGroupItems";
-            // 
-            // navBarItemAddItem
-            // 
-            this.navBarItemAddItem.Caption = "Add Item";
-            this.navBarItemAddItem.Name = "navBarItemAddItem";
-            // 
-            // navBarItemSearchItem
-            // 
-            this.navBarItemSearchItem.Caption = "Search Item";
-            this.navBarItemSearchItem.Name = "navBarItemSearchItem";
+            this.navBarItemSearchCategory.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemSearchCategory_LinkClicked);
             // 
             // navBarItemAddMenuItem
             // 

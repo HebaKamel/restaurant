@@ -889,5 +889,102 @@ namespace restaurantPOS.DataAccess
             return updated;
         }
         #endregion
+
+        #region categories
+        public int addCategory(string nameEn, string nameAr)
+        {
+            //transaction = con.BeginTransaction("SampleTransaction");
+            int unitId;
+            using (SqlCommand cmd = new SqlCommand("addCategory", con))
+            {//cmd.Transaction = transaction;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@categoryNameEn", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@categoryNameAr", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@categoryId", SqlDbType.Int).Direction = ParameterDirection.Output;
+                cmd.Parameters["@categoryNameEn"].Value = nameEn;
+                cmd.Parameters["@categoryNameAr"].Value = nameAr;
+                if (con.State != ConnectionState.Open)
+                    con.Open();
+                cmd.ExecuteNonQuery();
+                unitId = Convert.ToInt32(cmd.Parameters["@categoryId"].Value);
+                if (con.State != ConnectionState.Closed)
+                    con.Close();
+            }
+            return unitId;
+        }
+
+        public DataTable getCategory(string nameEn, string nameAr, int? categoryId = 0)
+        {
+            if (categoryId == 0) categoryId = null;
+            if (nameEn == "") nameEn = null;
+            if (nameAr == "") nameAr = null;
+            DataTable dt = new DataTable();
+            using (SqlCommand cmd = new SqlCommand("SearchCategory", con))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@categoryId", SqlDbType.Int);
+                cmd.Parameters.Add("@categoryNameEn", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@categoryNameAr", SqlDbType.NVarChar);
+                cmd.Parameters["@categoryId"].Value = categoryId;
+                cmd.Parameters["@categoryNameEn"].Value = nameEn;
+                cmd.Parameters["@categoryNameAr"].Value = nameAr;
+                if (con.State != ConnectionState.Open)
+                    con.Open();
+                dt.Load(cmd.ExecuteReader());
+                if (con.State != ConnectionState.Closed)
+                    con.Close();
+            }
+            return dt;
+        }
+
+        public int deleteCategory(int categoryId)
+        {
+            int deleted = 0;
+            using (SqlCommand cmd = new SqlCommand("deleteCategory", con))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@categoryId", SqlDbType.Int);
+                cmd.Parameters["@categoryId"].Value = categoryId;
+                if (con.State != ConnectionState.Open)
+                    con.Open();
+                SqlParameter returnParameter = cmd.Parameters.Add("RetVal", SqlDbType.Int);
+                returnParameter.Direction = ParameterDirection.ReturnValue;
+                cmd.ExecuteNonQuery();
+                if (returnParameter.Value != null)
+                    deleted = (int)returnParameter.Value;
+                if (con.State != ConnectionState.Closed)
+                    con.Close();
+            }
+            return deleted;
+        }
+
+        public int updateCategory(string nameEn, string nameAr, int? categoryId = 0)
+        {
+            int updated = 0;
+            if (categoryId == 0) categoryId = null;
+            if (nameEn == "") nameEn = null;
+            if (nameAr == "") nameAr = null;
+            using (SqlCommand cmd = new SqlCommand("updateCategory", con))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@categoryId", SqlDbType.Int);
+                cmd.Parameters.Add("@categoryNameEn", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@categoryNameAr", SqlDbType.NVarChar);
+                cmd.Parameters["@categoryId"].Value = categoryId;
+                cmd.Parameters["@categoryNameEn"].Value = nameEn;
+                cmd.Parameters["@categoryNameAr"].Value = nameAr;
+                if (con.State != ConnectionState.Open)
+                    con.Open();
+                SqlParameter returnParameter = cmd.Parameters.Add("RetVal", SqlDbType.Int);
+                returnParameter.Direction = ParameterDirection.ReturnValue;
+                cmd.ExecuteReader();
+                if (returnParameter.Value != null)
+                    updated = (int)returnParameter.Value;
+                if (con.State != ConnectionState.Closed)
+                    con.Close();
+            }
+            return updated;
+        }
+        #endregion
     }
 }

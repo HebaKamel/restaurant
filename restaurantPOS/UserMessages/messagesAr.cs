@@ -49,5 +49,9 @@ namespace restaurantPOS.userMessages
         public string fillUnits = "خطأ, من فضلك قم بتعبئة الوحدات اولا";
         public string errorFillUnits = "خطأ فى تعبئة الوحدات";
         #endregion
+
+        #region items
+        public string itemDetail = "خطأ, من فضلط ادخل بيانات الصنف";
+        #endregion
     }
 }

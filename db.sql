@@ -84,6 +84,8 @@ CREATE table category(
 	category_name_ar nvarchar(255),
 );
 
+drop TABLE 
+
 CREATE table items(
 	item_id int primary key identity(1,1),
 	item_name_en nvarchar(255),
@@ -94,18 +96,20 @@ CREATE table items(
 CREATE table items_goods(
 	item_id int,
 	goods_id int,
+	goods_quantity decimal(5,3),
 	CONSTRAINT fk_items_goods_item_id FOREIGN KEY (item_id) REFERENCES items(item_id),
 	CONSTRAINT fk_items_goods_goods_id FOREIGN KEY (goods_id) REFERENCES goods(goods_id),
 	PRIMARY KEY (item_id, goods_id)
 );
 
-CREATE table store_actions(
+CREATE table store_actions(--purchase + -
 	store_actions_id int primary key identity(1,1),
 	goods_id int,
 	quantity decimal(10,3),
 	action_date dateTime,
 	users_id int,
 	supplier_id int,
+	good_name nvarchar(255),
 	reason nvarchar(255)
 );
 GO

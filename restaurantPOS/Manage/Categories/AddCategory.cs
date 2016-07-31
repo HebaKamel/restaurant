@@ -14,9 +14,9 @@ using restaurantPOS.DataAccess;
 using restaurantPOS.Properties;
 using restaurantPOS.SystemSetting;
 
-namespace restaurantPOS.Manage.Units
+namespace restaurantPOS.Manage.Categories
 {
-    public partial class AddUnits : Form
+    public partial class AddCategory : Form
     {
         private FormsMessages.formsAr formsAr = new FormsMessages.formsAr();
         private FormsMessages.formsEn formsEn = new FormsMessages.formsEn();
@@ -26,12 +26,12 @@ namespace restaurantPOS.Manage.Units
         private SystemSetting.system system = new system();
         string errMsg = "";
 
-        public AddUnits()
+        public AddCategory()
         {
             InitializeComponent();
         }
 
-        private void AddUnits_Load(object sender, EventArgs e)
+        private void AddCategory_Load(object sender, EventArgs e)
         {
             setLanguage();
             //use custom font
@@ -64,7 +64,7 @@ namespace restaurantPOS.Manage.Units
         private void setLanguage(){
             if (Settings.Default.Language == "En")
             {
-                lblAddUnitHeader.Text = formsEn.AddUnitHeader;
+                lblAddUnitHeader.Text = formsEn.AddCategoryHeader;
                 btnAdd.Text = formsEn.btnAdd;
                 btnClear.Text = formsEn.btnClear;
                 lblNameArabicAr.Visible = false;
@@ -72,7 +72,7 @@ namespace restaurantPOS.Manage.Units
             }
             else
             {
-                lblAddUnitHeader.Text = formsAr.AddUnitHeader;
+                lblAddUnitHeader.Text = formsAr.AddCategoryHeader;
                 btnAdd.Text = formsAr.btnAdd;
                 btnClear.Text = formsAr.btnClear;
                 lblNameArabic.Visible = false;
@@ -87,18 +87,18 @@ namespace restaurantPOS.Manage.Units
             if (string.IsNullOrEmpty(txtNameEnglish.Text))
             {
                 if (Settings.Default.Language == "En")
-                    nameEn = formsEn.unitNameEn;
+                    nameEn = formsEn.clientNameEn;
                 else
-                    nameEn = formsAr.unitNameEn;
+                    nameEn = formsAr.clientNameEn;
                 errMsg += "\n" + nameEn;
             }
 
             if (string.IsNullOrEmpty(txtNameArabic.Text))
             {
                 if (Settings.Default.Language == "En")
-                    nameAr = formsEn.unitNameAr;
+                    nameAr = formsEn.clientNameAr;
                 else
-                    nameAr = formsAr.unitNameAr;
+                    nameAr = formsAr.clientNameAr;
                 errMsg += "\n" + nameAr;
             }
 
@@ -109,7 +109,7 @@ namespace restaurantPOS.Manage.Units
         {
             if (validation() == messagesEn.ErrorMessae)
             {
-                int unitId = db.addUnit(txtNameEnglish.Text, txtNameArabic.Text);
+                int unitId = db.addCategory(txtNameEnglish.Text, txtNameArabic.Text);
                 if (unitId != 0)
                     XtraMessageBox.Show(messagesEn.insertedSuccessfully, system.restName, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 else

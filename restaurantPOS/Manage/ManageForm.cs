@@ -34,6 +34,10 @@ namespace restaurantPOS
         Manage.Tables.SearchStatus searchStatus = new SearchStatus();
         Manage.Tables.AddTable addTable = new AddTable();
         SearchTable searchTable = new SearchTable();
+        Manage.Items.AddItem addItem = new Manage.Items.AddItem();
+
+        Manage.Categories.AddCategory addCategory = new Manage.Categories.AddCategory();
+        Manage.Categories.SearchCategory searchCategory = new Manage.Categories.SearchCategory();
         #endregion
 
         public FrmManage()
@@ -74,7 +78,7 @@ namespace restaurantPOS
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lblDateTimeManage.Text = DateTime.Now.ToString("dd MMMM yyyy hh:mm:ss tt");
+            //lblDateTimeManage.Text = DateTime.Now.ToString("dd MMMM yyyy hh:mm:ss tt");
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -382,6 +386,62 @@ namespace restaurantPOS
             searchTable.Show();
             searchTable.MdiParent = this;
             searchTable.Dock = DockStyle.Right;
+        }
+
+        private void navBarItemAddItem_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            searchClient.Close();
+            searchUnits.Close();
+            addUnit.Close();
+            addClient.Close();
+            addClient.Close();
+            addGoods.Close();
+            addSupplier.Close();
+            addTable.Close();
+            searchTable.Close();
+
+            addItem = new Manage.Items.AddItem();
+            addItem.Show();
+            addItem.MdiParent = this;addItem.Dock = DockStyle.Right;
+        }
+
+        private void navBarItemAddCategory_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            searchClient.Close();
+            searchUnits.Close();
+            addUnit.Close();
+            addClient.Close();
+            addClient.Close();
+            addGoods.Close();
+            addSupplier.Close();
+            addTable.Close();
+            searchTable.Close();
+            addItem.Close();
+            searchCategory.Close();
+            addCategory = new Manage.Categories.AddCategory();
+            addCategory.Show();
+            addCategory.MdiParent = this;
+            addCategory.Dock = DockStyle.Right;
+        }
+
+        private void navBarItemSearchCategory_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            searchClient.Close();
+            searchUnits.Close();
+            addUnit.Close();
+            addClient.Close();
+            addClient.Close();
+            addGoods.Close();
+            addSupplier.Close();
+            addTable.Close();
+            searchTable.Close();
+            addItem.Close();
+            addCategory.Close();
+
+            searchCategory = new Manage.Categories.SearchCategory();
+            searchCategory.Show();
+            searchCategory.MdiParent = this;
+            searchCategory.Dock = DockStyle.Right;
         }
 
 
